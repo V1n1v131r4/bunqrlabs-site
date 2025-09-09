@@ -1,257 +1,142 @@
-export default function BunqrLabsLanding() {
-  return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
-      {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
-        <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3 group">
-            <Logo className="w-8 h-8" />
-            <span className="text-xl font-semibold tracking-tight">BunqrLabs</span>
-          </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-            <a href="#services" className="hover:text-white/90 text-white/70">Services</a>
-            <a href="#training" className="hover:text-white/90 text-white/70">Training</a>
-            <a href="#why" className="hover:text-white/90 text-white/70">Why us</a>
-            <a href="#resources" className="hover:text-white/90 text-white/70">Resources</a>
-            <a href="#contact" className="rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-medium hover:bg-white/90 transition">Contact</a>
-          </nav>
-        </div>
-      </header>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BunqrLabs — OPSEC • Intelligence • Digital Survival</title>
+  <meta name="description" content="BunqrLabs trains teams and advises organizations to operate safely under pressure: counter‑surveillance, anti‑censorship architecture, and de‑anonymization defense." />
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Open Graph / Twitter Cards -->
+  <meta property="og:title" content="BunqrLabs — OPSEC • Intelligence • Digital Survival" />
+  <meta property="og:description" content="Training and consulting in OPSEC, intelligence tradecraft, anti‑censorship and de‑anonymization defense." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bunqrlabs.com/" />
+  <meta property="og:image" content="https://bunqrlabs.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BunqrLabs — OPSEC • Intelligence • Digital Survival" />
+  <meta name="twitter:description" content="Training and consulting in OPSEC, intelligence tradecraft, anti‑censorship and de‑anonymization defense." />
+  <meta name="twitter:image" content="https://bunqrlabs.com/og-image.jpg" />
 
-      {/* Hero */}
-      <section id="home" className="relative">
-        <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(255,255,255,0.08),rgba(0,0,0,0))]" />
-        <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs text-white/70">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
-              OPSEC • Intelligence • Digital Survival
-            </span>
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-              Build resilience against censorship & advanced tracking
-            </h1>
-            <p className="mt-6 text-white/70 text-lg leading-relaxed">
-              BunqrLabs trains teams and advises organizations to operate safely under pressure: counter‑surveillance, anti‑censorship architecture, and tradecraft for modern threat models.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#training" className="rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">Explore Training</a>
-              <a href="#services" className="rounded-xl px-5 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">Consulting Services</a>
-            </div>
-            <p className="mt-4 text-xs text-white/50">Trusted by security teams in finance, gov & tech. Private references on request.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="border-y border-neutral-900 bg-neutral-950/50">
-        <div className="mx-auto max-w-7xl px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {title: 'OPSEC playbooks', desc: 'Device, network & behavioral hygiene for real‑world ops.'},
-            {title: 'Anti‑censorship stacks', desc: 'Resilient comms: bridges, pluggable transports, P2P.'},
-            {title: 'De‑anonymization defense', desc: 'TLS/JA3, fingerprinting & correlation resistance.'},
-            {title: 'Intelligence tradecraft', desc: 'OSINT/FININT/HUMINT flows with risk controls.'},
-          ].map((c, i) => (
-            <div key={i} className="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-              <h3 className="font-semibold">{c.title}</h3>
-              <p className="mt-2 text-sm text-white/70">{c.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Services */}
-      <section id="services" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Consulting Services</h2>
-          <p className="mt-4 text-white/70">Advisory for executives and hands‑on guidance for security teams. Engagements are scoped with measurable outcomes, confidentiality, and strict OPSEC.</p>
-        </div>
-        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {title: 'OPSEC Program Build', bullets: ['Policy & SOPs', 'Device/identity separation', 'Clean‑room workflows', 'Incident‑safe comms']},
-            {title: 'Anti‑Censorship Architecture', bullets: ['Bridge networks & relays', 'P2P & offline comms', 'Content mirroring & takedown resilience', 'Traffic shaping & cover']},
-            {title: 'De‑Anonymization Defense', bullets: ['TLS/JA3 strategy', 'Fingerprint reduction', 'Timing/correlation controls', 'Operational testing']},
-            {title: 'Intelligence Operations', bullets: ['Collection frameworks', 'Attribution risk mgmt', 'Source protection', 'Counter‑intel hygiene']},
-            {title: 'Red Team Tradecraft', bullets: ['C2 resilience', 'Infrastructure hygiene', 'Emulated adversary tracking', 'Blue‑team safe rules']},
-            {title: 'Executive Advisory', bullets: ['Threat modeling', 'Crisis playbooks', 'Board communication', 'Policy & compliance mapping']},
-          ].map((s, i) => (
-            <div key={i} className="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
-              <h3 className="font-semibold text-lg">{s.title}</h3>
-              <ul className="mt-3 space-y-2 text-sm text-white/70">
-                {s.bullets.map((b, j) => <li key={j}>• {b}</li>)}
-              </ul>
-              <div className="mt-5 pt-4 border-t border-neutral-900">
-                <a href="#contact" className="text-sm font-medium underline underline-offset-4">Request scoping →</a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Training */}
-      <section id="training" className="border-y border-neutral-900 bg-neutral-950/50">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Training Catalog</h2>
-            <p className="mt-4 text-white/70">Workshops and masterclasses for teams that need repeatable, evidence‑based practice. Live or on‑demand.</p>
-          </div>
-          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {title: 'OPSEC Fundamentals', level: 'Foundational • 12h', points: ['Device & identity hygiene', 'Network & browser hardening', 'Operational rituals']},
-              {title: 'De‑Anonymization Defense', level: 'Advanced • 16h', points: ['JA3/JA3S basics‑to‑practice', 'Correlation & timing pitfalls', 'Hands‑on lab & tests']},
-              {title: 'Anti‑Censorship Survival', level: 'Intermediate • 12h', points: ['Bridges & transports', 'Mirroring & availability', 'Offline comms']},
-              {title: 'Intelligence Tradecraft', level: 'Advanced • 16h', points: ['Collection ethics', 'Attribution risk mgmt', 'Source protection & ops logs']},
-              {title: 'Red Team OPSEC', level: 'Advanced • 12h', points: ['Infra hygiene', 'Emulation without exposure', 'Blue‑safe constraints']},
-              {title: 'Custom Executive Brief', level: 'C‑suite • 2h', points: ['Threat surface overview', 'Crisis comms playbook', 'Board‑ready actions']},
-            ].map((c, i) => (
-              <div key={i} className="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="font-semibold text-lg">{c.title}</h3>
-                  <span className="text-xs text-white/60">{c.level}</span>
-                </div>
-                <ul className="mt-3 space-y-2 text-sm text-white/70">
-                  {c.points.map((p, j) => <li key={j}>• {p}</li>)}
-                </ul>
-                <div className="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
-                  <a href="#contact" className="text-sm font-medium underline underline-offset-4">Get syllabus →</a>
-                  <a href="#contact" className="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">Book a cohort</a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Us */}
-      <section id="why" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why BunqrLabs</h2>
-            <p className="mt-4 text-white/70">Pragmatic, field‑tested guidance. We combine academic rigor with operational realism for high‑stakes environments.</p>
-            <ul className="mt-6 space-y-3 text-sm text-white/80">
-              <li>• Senior SecOps leadership & hands‑on tradecraft</li>
-              <li>• Measurable outcomes, not vanity metrics</li>
-              <li>• Confidential, compartmentalized engagements</li>
-              <li>• Labs that mirror real correlation/fingerprinting threats</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-            <h3 className="font-semibold">Example syllabus: De‑Anonymization Defense</h3>
-            <ol className="mt-3 space-y-2 text-sm text-white/70 list-decimal list-inside">
-              <li>Threat model & goals</li>
-              <li>TLS/JA3/JA3S & handshake anatomy</li>
-              <li>Device/session fingerprint reduction</li>
-              <li>Timing & correlation pitfalls</li>
-              <li>Hands‑on: lab validation & red/blue safe rules</li>
-            </ol>
-            <div className="mt-5">
-              <a href="#contact" className="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">Request full outline</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources */}
-      <section id="resources" className="border-y border-neutral-900 bg-neutral-950/50">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Resources</h2>
-            <p className="mt-4 text-white/70">Guides, checklists, and research notes to help teams move fast without exposure.</p>
-          </div>
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
-            {[
-              {title: 'OPSEC Starter Kit', desc: '10 must‑do controls for any team.'},
-              {title: 'Anti‑Censorship Playbook', desc: 'Bridge, mirror, and persist under pressure.'},
-              {title: 'JA3 Defense Checklist', desc: 'Reduce fingerprint correlation in practice.'},
-            ].map((r, i) => (
-              <div key={i} className="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-                <h3 className="font-semibold">{r.title}</h3>
-                <p className="mt-2 text-sm text-white/70">{r.desc}</p>
-                <div className="mt-5 pt-4 border-t border-neutral-900">
-                  <a href="#contact" className="text-sm font-medium underline underline-offset-4">Download / Request →</a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-10">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Contact</h2>
-            <p className="mt-4 text-white/70">Tell us about your environment and objectives. We’ll propose a scoped, confidential engagement or a training cohort.</p>
-            <ul className="mt-6 text-sm text-white/75 space-y-2">
-              <li>• Email: hello@bunqrlabs.com</li>
-              <li>• PGP: available on request</li>
-              <li>• Jurisdictions: remote‑first, global</li>
-            </ul>
-          </div>
-          <form onSubmit={(e)=>e.preventDefault()} className="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-            <div className="grid sm:grid-cols-2 gap-4">
-              <Field label="Name"><input required className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2 focus:outline-none focus:ring focus:ring-white/10" placeholder="Your name"/></Field>
-              <Field label="Work email"><input type="email" required className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2 focus:outline-none focus:ring focus:ring-white/10" placeholder="you@company.com"/></Field>
-              <Field label="Company / Org" className="sm:col-span-2"><input className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2 focus:outline-none focus:ring focus:ring-white/10" placeholder="Company"/></Field>
-              <Field label="Topic" className="sm:col-span-2">
-                <select className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2">
-                  <option>OPSEC Program</option>
-                  <option>Anti‑Censorship Architecture</option>
-                  <option>De‑Anonymization Defense</option>
-                  <option>Intelligence Training</option>
-                  <option>Executive Advisory</option>
-                  <option>Other</option>
-                </select>
-              </Field>
-              <Field label="Message" className="sm:col-span-2"><textarea rows={5} className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2 focus:outline-none focus:ring focus:ring-white/10" placeholder="Objectives, constraints, timelines…"/></Field>
-            </div>
-            <button className="mt-6 w-full rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">Send</button>
-            <p className="mt-3 text-xs text-white/50">By submitting, you agree to confidential contact for scoping only. We do not share data with third parties.</p>
-          </form>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-neutral-900">
-        <div className="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <Logo className="w-5 h-5" />
-            <span>© {new Date().getFullYear()} BunqrLabs. All rights reserved.</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white/80">Privacy</a>
-            <a href="#" className="hover:text-white/80">Terms</a>
-            <a href="#" className="hover:text-white/80">PGP</a>
-          </div>
-        </div>
-      </footer>
+  <!-- Tailwind Play CDN (no build required) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth font rendering on dark bg */
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
+</head>
+<body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <svg viewBox="0 0 64 64" class="w-8 h-8" aria-hidden>
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-opacity="1" stop-color="#ffffff"/>
+              <stop offset="1" stop-opacity="1" stop-color="#bfbfbf"/>
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#g)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
+            <path d="M24 30 h16 v20 H24z"/>
+            <path d="M30 34 v6"/>
+          </g>
+        </svg>
+        <span class="text-xl font-semibold tracking-tight">BunqrLabs</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#services" class="hover:text-white/90 text-white/70">Services</a>
+        <a href="#training" class="hover:text-white/90 text-white/70">Training</a>
+        <a href="#why" class="hover:text-white/90 text-white/70">Why us</a>
+        <a href="#resources" class="hover:text-white/90 text-white/70">Resources</a>
+        <a href="#contact" class="rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-medium hover:bg-white/90 transition">Contact</a>
+      </nav>
     </div>
-  );
-}
+  </header>
 
-function Field({label, className = '', children}){
-  return (
-    <label className={`block ${className}`}>
-      <span className="text-xs text-white/60">{label}</span>
-      <div className="mt-1">{children}</div>
-    </label>
-  )
-}
+  <!-- Hero -->
+  <section id="home" class="relative">
+    <div class="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(255,255,255,0.08),rgba(0,0,0,0))]"></div>
+    <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
+      <div class="max-w-2xl">
+        <span class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs text-white/70">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-white"></span>
+          OPSEC • Intelligence • Digital Survival
+        </span>
+        <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+          Build resilience against censorship & advanced tracking
+        </h1>
+        <p class="mt-6 text-white/70 text-lg leading-relaxed">
+          BunqrLabs trains teams and advises organizations to operate safely under pressure: counter‑surveillance, anti‑censorship architecture, and tradecraft for modern threat models.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#training" class="rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">Explore Training</a>
+          <a href="#services" class="rounded-xl px-5 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">Consulting Services</a>
+        </div>
+        <p class="mt-4 text-xs text-white/50">Trusted by security teams in finance, gov & tech. Private references on request.</p>
+      </div>
+    </div>
+  </section>
 
-function Logo({className = ''}){
-  // Bunker glyph: shield + doorway
-  return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden>
-      <defs>
-        <linearGradient id="g" x1="0" x2="1">
-          <stop offset="0" stopOpacity="1" stopColor="#ffffff"/>
-          <stop offset="1" stopOpacity="1" stopColor="#bfbfbf"/>
-        </linearGradient>
-      </defs>
-      <g fill="none" stroke="url(#g)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
-        <path d="M24 30 h16 v20 H24z"/>
-        <path d="M30 34 v6"/>
-      </g>
-    </svg>
-  );
-}
+  <!-- Highlights -->
+  <section class="border-y border-neutral-900 bg-neutral-950/50">
+    <div class="mx-auto max-w-7xl px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <h3 class="font-semibold">OPSEC playbooks</h3>
+        <p class="mt-2 text-sm text-white/70">Device, network & behavioral hygiene for real‑world ops.</p>
+      </div>
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <h3 class="font-semibold">Anti‑censorship stacks</h3>
+        <p class="mt-2 text-sm text-white/70">Resilient comms: bridges, pluggable transports, P2P.</p>
+      </div>
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <h3 class="font-semibold">De‑anonymization defense</h3>
+        <p class="mt-2 text-sm text-white/70">TLS/JA3, fingerprinting & correlation resistance.</p>
+      </div>
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <h3 class="font-semibold">Intelligence tradecraft</h3>
+        <p class="mt-2 text-sm text-white/70">OSINT/FININT/HUMINT flows with risk controls.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="mx-auto max-w-7xl px-6 py-20">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Consulting Services</h2>
+      <p class="mt-4 text-white/70">Advisory for executives and hands‑on guidance for security teams. Engagements are scoped with measurable outcomes, confidentiality, and strict OPSEC.</p>
+    </div>
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+        <h3 class="font-semibold text-lg">OPSEC Program Build</h3>
+        <ul class="mt-3 space-y-2 text-sm text-white/70">
+          <li>• Policy & SOPs</li>
+          <li>• Device/identity separation</li>
+          <li>• Clean‑room workflows</li>
+          <li>• Incident‑safe comms</li>
+        </ul>
+        <div class="mt-5 pt-4 border-t border-neutral-900">
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Request scoping →</a>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+        <h3 class="font-semibold text-lg">Anti‑Censorship Architecture</h3>
+        <ul class="mt-3 space-y-2 text-sm text-white/70">
+          <li>• Bridge networks & relays</li>
+          <li>• P2P & offline comms</li>
+          <li>• Content mirroring & takedown resilience</li>
+          <li>• Traffic shaping & cover</li>
+        </ul>
+        <div class="mt-5 pt-4 border-t border-neutral-900">
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Request scoping →</a>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+        <h3 class="font-semibold text-lg">De‑Anonymization Defense</h3>
+        <ul class="mt-3 space-y-2 text-sm text-white/70">
+          <li>• TLS/JA3 strategy</li>
+          <li>• Fingerprint reduction</li>
+          <li>• Timing/correlation controls</li>
+          <li>• Operational testing</li>
+        </ul>
+        <div class="mt-5 pt-4 border-t border-neutral-900">
