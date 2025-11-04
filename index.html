@@ -36,14 +36,10 @@
   <section id="home" class="relative">
   <div class="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(255,255,255,0.08),rgba(0,0,0,0))]"></div>
   <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+    
+    <div class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-10">
       
-      <!-- Coluna esquerda: logo -->
-      <div class="flex justify-center lg:justify-start">
-        <img src="logo.png" alt="Logo BunqrLabs" class="w-48 h-auto drop-shadow-xl">
-      </div>
-
-      <!-- Coluna direita: texto -->
+      <!-- Bloco de texto -->
       <div class="max-w-2xl">
         <span class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs text-white/70">
           <span class="inline-block h-1.5 w-1.5 rounded-full bg-white"></span>
@@ -70,9 +66,16 @@
           Experiência comprovada de treinamento e atuação com times do Governo, Financeiro e Tecnologia.
         </p>
       </div>
+
+      <!-- Logo à direita -->
+      <div class="flex-shrink-0">
+        <img src="logo.png" alt="Logo BunqrLabs" class="w-[300px] h-[300px] object-contain">
+      </div>
     </div>
+
   </div>
 </section>
+
 
 
   <!-- Highlights -->
