@@ -3,362 +3,471 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>BunqrLabs — OPSEC • Inteligência • Sobrevivência Digital</title>
-  <meta name="description" content="A BunqrLabs treina equipes e orienta organizações para operar com segurança sob pressão: contravigilância, arquitetura anticensura e defesa contra desanonimização." />
 
-  <!-- Favicon atualizado -->
+  <meta name="description" content="BunqrLabs — treinamentos e conteúdos em OPSEC e Inteligência Cibernética. Modelagem de ameaça, risco, disciplina operacional e proteção de identidade em ambientes digitais e físicos." />
+
   <link rel="icon" type="image/png" href="logo.png" />
-
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
+
   <!-- Header -->
   <header class="sticky top-0 z-40 backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
-  <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-    
-    <!-- Logo + Nome -->
-    <a href="#home" class="flex items-center gap-3 group">
-      <img src="logo.png" alt="Logo BunqrLabs" class="w-8 h-8 object-contain">
-      <span class="text-xl font-semibold tracking-tight">BunqrLabs</span>
-    </a>
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
 
-    <!-- Navegação -->
-    <nav class="hidden md:flex items-center gap-8 text-sm">
-      <a href="#services" class="hover:text-white/90 text-white/70">Serviços</a>
-      <a href="#training" class="hover:text-white/90 text-white/70">Treinamentos</a>
-      <a href="#why" class="hover:text-white/90 text-white/70">Sobre nós</a>
-      <a href="#resources" class="hover:text-white/90 text-white/70">Recursos</a>
-      <a href="mailto:contact@bunqrlabs.com"
-         class="rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-medium hover:bg-white/90 transition">
-        Contato
+      <a href="#home" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Logo BunqrLabs" class="w-8 h-8 object-contain">
+        <span class="text-xl font-semibold tracking-tight">BunqrLabs</span>
       </a>
-    </nav>
-  </div>
-</header>
 
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#training" class="hover:text-white/90 text-white/70">Treinamentos</a>
+        <a href="#services" class="hover:text-white/90 text-white/70">Programas</a>
+        <a href="#why" class="hover:text-white/90 text-white/70">Sobre</a>
+        <a href="#resources" class="hover:text-white/90 text-white/70">Recursos</a>
+        <a href="#contact"
+           class="rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-medium hover:bg-white/90 transition">
+          Contato
+        </a>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero -->
   <section id="home" class="relative">
-  <div class="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(255,255,255,0.08),rgba(0,0,0,0))]"></div>
-  <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
-    
-    <div class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-10">
-      
-      <!-- Bloco de texto -->
-      <div class="max-w-2xl">
-        <span class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs text-white/70">
-          <span class="inline-block h-1.5 w-1.5 rounded-full bg-white"></span>
-          OPSEC • Inteligência • Sobrevivência Digital
-        </span>
-        <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-          Construa resiliência contra censura e rastreamento avançado
-        </h1>
-        <p class="mt-6 text-white/70 text-lg leading-relaxed">
-          A BunqrLabs treina equipes e orienta organizações para operar com segurança sob pressão:
-          contravigilância, arquitetura anticensura e práticas operacionais adaptadas a modelos de ameaça modernos.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#training" target="_blank"
-             class="rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
-            Explorar Treinamentos
-          </a>
-          <a href="#services"
-             class="rounded-xl px-5 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">
-            Serviços de Consultoria
-          </a>
-        </div>
-        <p class="mt-4 text-xs text-white/50">
-          Experiência comprovada de treinamento e atuação com times do Governo, Financeiro e Tecnologia.
-        </p>
-      </div>
+    <div class="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(255,255,255,0.08),rgba(0,0,0,0))]"></div>
 
-      <!-- Logo à direita -->
-      <div class="flex-shrink-0">
-        <img src="logo.png" alt="Logo BunqrLabs" class="w-[300px] h-[300px] object-contain">
+    <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
+      <div class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-10">
+
+        <div class="max-w-2xl">
+          <span class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs text-white/70">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-white"></span>
+            OPSEC • Inteligência • Sobrevivência Digital
+          </span>
+
+          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+            OPSEC e Inteligência Cibernética
+          </h1>
+
+          <p class="mt-6 text-white/70 text-lg leading-relaxed">
+            A BunqrLabs desenvolve profissionais e equipes para atuar com <span class="text-white font-semibold">disciplina operacional</span>,
+            <span class="text-white font-semibold">modelagem de ameaça</span> e <span class="text-white font-semibold">proteção de identidade</span>
+            sob vigilância digital e física.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#training"
+               class="rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+              Ver Treinamentos
+            </a>
+            <a href="#resources"
+               class="rounded-xl px-5 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">
+              Baixar Guia (gratuito)
+            </a>
+          </div>
+
+          <p class="mt-4 text-xs text-white/50">
+            Metodologia baseada em experiência prática e ensino aplicado. Conteúdo educacional com foco em responsabilidade e discrição.
+          </p>
+        </div>
+
+        <div class="flex-shrink-0">
+          <img src="logo.png" alt="Logo BunqrLabs" class="w-[300px] h-[300px] object-contain">
+        </div>
+
       </div>
     </div>
-
-  </div>
-</section>
-
-
+  </section>
 
   <!-- Highlights -->
   <section class="border-y border-neutral-900 bg-neutral-950/50">
     <div class="mx-auto max-w-7xl px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
       <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
         <h3 class="font-semibold">Modelagem de Ameaça</h3>
-        <p class="mt-2 text-sm text-white/70">Foco no mindset e nas respostas humanas diante de cenários adversos.</p>
+        <p class="mt-2 text-sm text-white/70">
+          Entenda intenção, capacidade e consequência. Critérios antes de ferramentas.
+        </p>
       </div>
+
       <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-        <h3 class="font-semibold">Stacks Anticensura</h3>
-        <p class="mt-2 text-sm text-white/70">Infraestrutura de comunicação voltada à resiliência e liberdade operacional.</p>
+        <h3 class="font-semibold">Disciplina Operacional</h3>
+        <p class="mt-2 text-sm text-white/70">
+          Rotinas, comportamento e consistência sob pressão — sem criar exposição desnecessária.
+        </p>
       </div>
+
       <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-        <h3 class="font-semibold">Defesa contra Desanonimização</h3>
-        <p class="mt-2 text-sm text-white/70">Redução de exposição e fortalecimento da anonimização em contextos de alto risco.</p>
+        <h3 class="font-semibold">Identidade Operacional</h3>
+        <p class="mt-2 text-sm text-white/70">
+          Gestão de rastros e risco de correlação no tempo, do digital ao físico.
+        </p>
       </div>
+
       <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-        <h3 class="font-semibold">Metodologias de Inteligência</h3>
-        <p class="mt-2 text-sm text-white/70">Coleta e análise de informações com foco em ética, segurança e mitigação de riscos.</p>
+        <h3 class="font-semibold">Inteligência Aplicada</h3>
+        <p class="mt-2 text-sm text-white/70">
+          Coleta, validação e análise com foco em contexto, inferência e tomada de decisão.
+        </p>
       </div>
+
     </div>
   </section>
 
   <!-- Treinamentos -->
   <section id="training" class="border-y border-neutral-900 bg-neutral-950/50">
-  <div class="mx-auto max-w-7xl px-6 py-20">
-    <div class="max-w-3xl">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Treinamentos em OPSEC e Inteligência Cibernética</h2>
-      <p class="mt-4 text-white/70">
-        Programas de formação voltados a profissionais e equipes que atuam sob pressão e precisam desenvolver
-        mentalidade operacional, análise de risco e disciplina de segurança aplicada. Os treinamentos unem prática,
-        simulações e metodologia real de campo.
-      </p>
-      <p class="mt-4 text-white/70">
-        Disponível em formatos <span class="font-semibold text-white">online</span>, <span class="font-semibold text-white">presencial</span> e
-        <span class="font-semibold text-white">in company</span>, com opções sob medida para times de segurança, operações e resposta a incidentes.
-      </p>
-      <div class="mt-8">
-        <a href="https://cursointeligenciacibernetica.kpages.online/turma-4" target="_blank"
-          class="inline-block rounded-xl px-6 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
-          Matrículas abertas →
-        </a>
+    <div class="mx-auto max-w-7xl px-6 py-20">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Treinamentos em OPSEC e Inteligência Cibernética</h2>
+
+        <p class="mt-4 text-white/70">
+          Programas de formação para profissionais e equipes que atuam sob pressão e precisam sustentar
+          <span class="text-white font-semibold">critérios de decisão</span>, <span class="text-white font-semibold">disciplina operacional</span>
+          e <span class="text-white font-semibold">redução de exposição</span> com consistência.
+        </p>
+
+        <p class="mt-4 text-white/70">
+          Disponível em formatos <span class="font-semibold text-white">online</span>, <span class="font-semibold text-white">presencial</span> e
+          <span class="font-semibold text-white">in company</span>, conforme agenda.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="https://cursointeligenciacibernetica.kpages.online/turma-4" target="_blank"
+             class="inline-block rounded-xl px-6 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+            Ver turma atual →
+          </a>
+          <a href="#contact"
+             class="inline-block rounded-xl px-6 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">
+            Solicitar informações →
+          </a>
+        </div>
       </div>
+
+      <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Curso principal -->
+        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+          <h3 class="font-semibold text-lg">OPSEC e Inteligência Cibernética na Prática</h3>
+          <p class="mt-2 text-sm text-white/70">
+            Treinamento baseado em cenários e estudos de caso: risco, disciplina operacional, identidade e decisões
+            sob pressão em ambientes digitais e físicos.
+          </p>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• Modelagem de ameaça e análise de risco</li>
+            <li>• Consistência, previsibilidade e custo de exposição</li>
+            <li>• Inteligência aplicada com validação</li>
+            <li>• Simulações e exercícios guiados</li>
+          </ul>
+          <div class="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
+            <a href="LINK_DO_HOTMART_AQUI" target="_blank"
+               class="text-sm font-medium underline underline-offset-4">Ver detalhes →</a>
+            <a href="LINK_DO_HOTMART_AQUI" target="_blank"
+               class="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">
+              Inscreva-se
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+          <h3 class="font-semibold text-lg">Inteligência Aplicada (Método e Critério)</h3>
+          <p class="mt-2 text-sm text-white/70">
+            Formação orientada a método: coleta, validação, inferência e comunicação de inteligência com foco em risco e exposição.
+            Sem dependência de ferramentas específicas.
+          </p>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• Estrutura de coleta e validação</li>
+            <li>• Contradições, lacunas e confiança</li>
+            <li>• Correlação e risco de atribuição</li>
+            <li>• Entrega de inteligência sob pressão</li>
+          </ul>
+          <div class="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar agenda →</a>
+            <a href="#contact"
+               class="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">
+              In company
+            </a>
+          </div>
+        </div>
+
+        <!-- Workshop -->
+        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+          <h3 class="font-semibold text-lg">Workshop de Modelagem de Ameaças</h3>
+          <p class="mt-2 text-sm text-white/70">
+            Sessão intensiva para alinhar linguagem, critérios e decisões sobre risco, exposição e resposta em equipe.
+          </p>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• Exercícios de risco e consequência</li>
+            <li>• Comunicação e tomada de decisão</li>
+            <li>• Disciplina operacional e trade-offs</li>
+            <li>• Certificado BunqrLabs</li>
+          </ul>
+          <div class="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4">Agendar workshop →</a>
+            <a href="#contact"
+               class="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">
+              Contato
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-14 rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div class="max-w-3xl">
+            <h3 class="font-semibold text-lg">Próximos programas (assíncronos)</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Conteúdos estruturados para aprofundar critérios de OPSEC e Inteligência com baixa volatilidade (método, risco e identidade).
+            </p>
+            <ul class="mt-3 space-y-2 text-sm text-white/70">
+              <li>• Decisão sob Observação (OPSEC decisional)</li>
+              <li>• Identidade Operacional (persona, rastros e transição digital/física)</li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="#resources"
+               class="rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+              Entrar na lista →
+            </a>
+            <a href="#contact"
+               class="rounded-xl px-5 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">
+              Falar sobre formato
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Curso principal -->
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-        <h3 class="font-semibold text-lg">OPSEC e Inteligência Cibernética na Prática</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Baseado em cenários reais, o treinamento ensina a aplicar modelagem de ameaça, análise de risco e
-          proteção de identidade operacional em ambientes digitais e físicos.
-        </p>
-        <ul class="mt-3 space-y-2 text-sm text-white/70">
-          <li>• Mentalidade e comportamento sob risco</li>
-          <li>• Estruturação de rotinas seguras</li>
-          <li>• Práticas de inteligência e contrainteligência</li>
-          <li>• Simulações operacionais e estudos de caso</li>
-        </ul>
-        <div class="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
-          <a href="LINK_DO_HOTMART_AQUI" target="_blank" class="text-sm font-medium underline underline-offset-4">Ver detalhes →</a>
-          <a href="LINK_DO_HOTMART_AQUI" target="_blank"
-            class="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">
-            Inscreva-se agora
-          </a>
-        </div>
-      </div>
-
-      <!-- Curso complementar -->
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-        <h3 class="font-semibold text-lg">Formação em Inteligência Aplicada</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Curso complementar focado em coleta, análise e correlação de informações (OSINT/CTI), aplicando métodos
-          de avaliação de risco e atribuição em tempo real.
-        </p>
-        <ul class="mt-3 space-y-2 text-sm text-white/70">
-          <li>• Estrutura de coleta e análise</li>
-          <li>• Gestão de atribuição e exposição</li>
-          <li>• Inteligência de fonte aberta (OSINT) e técnica (CTI)</li>
-          <li>• Aplicação prática em cenários corporativos</li>
-        </ul>
-        <div class="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
-          <a href="mailto:contact@bunqrlabs.com" class="text-sm font-medium underline underline-offset-4">Solicitar proposta →</a>
-          <a href="mailto:contact@bunqrlabs.com"
-            class="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">
-            Treinamento in company
-          </a>
-        </div>
-      </div>
-
-      <!-- Workshop intensivo -->
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-        <h3 class="font-semibold text-lg">Workshop de Modelagem de Ameaças</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Sessão intensiva voltada a equipes de segurança que precisam alinhar comportamento, mentalidade e processos
-          à realidade do cenário de ameaças.
-        </p>
-        <ul class="mt-3 space-y-2 text-sm text-white/70">
-          <li>• Exercícios práticos de análise de risco</li>
-          <li>• Estruturação de resposta e comunicação</li>
-          <li>• Adaptação de mindset e disciplina operacional</li>
-          <li>• Entrega com certificação BunqrLabs</li>
-        </ul>
-        <div class="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
-          <a href="mailto:contact@bunqrlabs.com" class="text-sm font-medium underline underline-offset-4">Agendar workshop →</a>
-          <a href="mailto:contact@bunqrlabs.com"
-            class="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">
-            Fale com a equipe
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Serviços -->
   <section id="services" class="mx-auto max-w-7xl px-6 py-20">
     <div class="max-w-3xl">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Serviços de Consultoria</h2>
-      <p class="mt-4 text-white/70">Consultoria executiva e orientação prática para equipes de segurança. Os projetos são definidos com resultados mensuráveis, confidencialidade e OPSEC rigoroso.</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Programas e Orientação</h2>
+
+      <p class="mt-4 text-white/70">
+        Orientação prática e programas para equipes que precisam estruturar OPSEC e Inteligência com critérios claros,
+        preservando confidencialidade e reduzindo exposição ao longo do tempo.
+      </p>
     </div>
+
     <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
       <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
-        <h3 class="font-semibold text-lg">OPSEC Risk Assesment</h3>
+        <h3 class="font-semibold text-lg">OPSEC Risk Assessment</h3>
         <ul class="mt-3 space-y-2 text-sm text-white/70">
-          <li>• Políticas e SOPs</li>
-          <li>• Separação de dispositivos e identidades</li>
-          <li>• Fluxos de trabalho limpos</li>
-          <li>• Comunicações seguras para incidentes</li>
+          <li>• Rotinas, SOPs e pontos de falha</li>
+          <li>• Identidades, superfícies e separação</li>
+          <li>• Comunicação sob pressão</li>
+          <li>• Priorização por consequência</li>
         </ul>
         <div class="mt-5 pt-4 border-t border-neutral-900">
-          <a href="mailto:contact@bunqrlabs.com" class="text-sm font-medium underline underline-offset-4">Solicitar escopo →</a>
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
         </div>
       </div>
 
       <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
-        <h3 class="font-semibold text-lg">Arquitetura Anticensura</h3>
+        <h3 class="font-semibold text-lg">Comunicação Resiliente</h3>
         <ul class="mt-3 space-y-2 text-sm text-white/70">
-          <li>• Protocolos de comunicação segura</li>
-          <li>• Garantia de disponibilidade e resiliência</li>
+          <li>• Continuidade e dependências críticas</li>
           <li>• Proteção de ativos informacionais</li>
-          <li>• Modelagem e disfarce de tráfego</li>
+          <li>• Modelagem de risco e trade-offs</li>
+          <li>• Procedimentos de contingência</li>
         </ul>
         <div class="mt-5 pt-4 border-t border-neutral-900">
-          <a href="mailto:contact@bunqrlabs.com" class="text-sm font-medium underline underline-offset-4">Solicitar escopo →</a>
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
         </div>
       </div>
 
       <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
-        <h3 class="font-semibold text-lg">Defesa contra Desanonimização</h3>
+        <h3 class="font-semibold text-lg">Identidade Operacional</h3>
         <ul class="mt-3 space-y-2 text-sm text-white/70">
-          <li>• Proteção de identidade operacional</li>
-          <li>• Redução de rastreabilidade</li>
-          <li>• Mitigação de correlação entre vetores</li>
-          <li>• Validação de exposição em campo</li>
+          <li>• Gestão de rastros e exposição</li>
+          <li>• Redução de correlação no tempo</li>
+          <li>• Transição digital/físico</li>
+          <li>• Disciplina e consistência controlada</li>
         </ul>
         <div class="mt-5 pt-4 border-t border-neutral-900">
-          <a href="mailto:contact@bunqrlabs.com" class="text-sm font-medium underline underline-offset-4">Solicitar escopo →</a>
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
         </div>
       </div>
 
       <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
-       <h3 class="font-semibold text-lg">Operações de Inteligência</h3>
-       <ul class="mt-3 space-y-2 text-sm text-white/70">
-          <li>• Estruturas de coleta e validação</li>
-          <li>• Redução de risco de exposição</li>
-          <li>• Salvaguarda de fontes e canais</li>
-          <li>• Contramedidas e segurança operacional</li>
-        </ul>
-        <div class="mt-5 pt-4 border-t border-neutral-900">
-          <a href="mailto:contact@bunqrlabs.com" class="text-sm font-medium underline underline-offset-4">Solicitar escopo →</a>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
-        <h3 class="font-semibold text-lg">OPSEC para Red Teamers</h3>
+        <h3 class="font-semibold text-lg">Inteligência Aplicada</h3>
         <ul class="mt-3 space-y-2 text-sm text-white/70">
-          <li>• Proteção de vetores e infraestrutura crítica</li>
-          <li>• Gestão de exposição durante simulações</li>
-          <li>• Controle de integridade operacional</li>
-          <li>• Coordenação segura com Blue e Purple Teams</li>
+          <li>• Coleta e validação</li>
+          <li>• Preservação de fontes e canais</li>
+          <li>• Gestão de incerteza</li>
+          <li>• Comunicação de inteligência</li>
         </ul>
         <div class="mt-5 pt-4 border-t border-neutral-900">
-          <a href="mailto:contact@bunqrlabs.com" class="text-sm font-medium underline underline-offset-4">Solicitar escopo →</a>
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
         </div>
       </div>
 
       <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
-        <h3 class="font-semibold text-lg">Consultoria Executiva</h3>
+        <h3 class="font-semibold text-lg">OPSEC para Red Team</h3>
         <ul class="mt-3 space-y-2 text-sm text-white/70">
-          <li>• Modelagem de ameaças</li>
-          <li>• Planos de crise</li>
-          <li>• Comunicação com conselho</li>
-          <li>• Mapeamento de políticas e conformidade</li>
+          <li>• Exposição durante simulações</li>
+          <li>• Disciplina operacional</li>
+          <li>• Evidências e rastros</li>
+          <li>• Redução de risco colateral</li>
         </ul>
         <div class="mt-5 pt-4 border-t border-neutral-900">
-          <a href="mailto:contact@bunqrlabs.com" class="text-sm font-medium underline underline-offset-4">Solicitar escopo →</a>
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
         </div>
+      </div>
+
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+        <h3 class="font-semibold text-lg">Briefings Executivos</h3>
+        <ul class="mt-3 space-y-2 text-sm text-white/70">
+          <li>• Linguagem comum sobre risco</li>
+          <li>• Planos de crise e comunicação</li>
+          <li>• Critérios e priorização</li>
+          <li>• Alinhamento com liderança</li>
+        </ul>
+        <div class="mt-5 pt-4 border-t border-neutral-900">
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+      <h3 class="font-semibold">Colaborações</h3>
+      <p class="mt-3 text-sm text-white/70">
+        Em casos específicos, a BunqrLabs participa de colaborações e briefings privados voltados a OPSEC e Inteligência,
+        sempre com foco educacional, responsabilidade e discrição.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="why" class="mx-auto max-w-7xl px-6 py-20">
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Sobre a BunqrLabs</h2>
+
+        <p class="mt-4 text-white/70">
+          A BunqrLabs é um núcleo independente focado em <span class="text-white font-semibold">OPSEC</span>,
+          <span class="text-white font-semibold">Inteligência Cibernética</span> e sobrevivência digital.
+          O trabalho é centrado em risco, comportamento, disciplina operacional e proteção de identidade.
+        </p>
+
+        <p class="mt-4 text-white/70">
+          Treinamentos e conteúdos conduzidos por
+          <a href="https://www.linkedin.com/in/v1n1v131r4/" target="_blank" class="underline font-medium">Vinícius Vieira</a>,
+          especialista em OPSEC e Inteligência Cibernética, com atuação prática e experiência como formador de profissionais.
+        </p>
+
+        <ul class="mt-6 space-y-3 text-sm text-white/80">
+          <li>• Critérios de decisão e trade-offs sob pressão</li>
+          <li>• Modelagem de ameaça e análise de risco</li>
+          <li>• Proteção de identidade e redução de exposição</li>
+          <li>• Casos, exercícios e simulações em ambiente controlado</li>
+          <li>• Formatos online, presencial e in company</li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <h3 class="font-semibold">Abordagem</h3>
+        <p class="mt-3 text-sm text-white/70">
+          OPSEC não é uma lista de ferramentas — é disciplina, consistência e decisão.
+          A BunqrLabs combina princípios operacionais e metodologias de inteligência para reduzir exposição e
+          sustentar operações com previsibilidade controlada.
+        </p>
+        <p class="mt-3 text-sm text-white/70">
+          O foco é aplicar critérios que permaneçam válidos com o tempo, mesmo quando técnicas e ferramentas mudam.
+        </p>
       </div>
     </div>
   </section>
 
-
-  <!-- Por que nós -->
-  <section id="why" class="mx-auto max-w-7xl px-6 py-20">
-  <div class="grid lg:grid-cols-2 gap-10 items-start">
-    <div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Sobre a BunqrLabs</h2>
-      <p class="mt-4 text-white/70">
-        A BunqrLabs é um núcleo independente de pesquisa e treinamento focado em OPSEC, Inteligência Cibernética e
-        sobrevivência digital. Atuamos no cruzamento entre tecnologia, segurança e comportamento humano, desenvolvendo
-        práticas aplicáveis para equipes que operam em contextos de alta exposição e pressão.
-      </p>
-
-      <p class="mt-4 text-white/70">
-        Fundada e liderada por <a href="https://www.linkedin.com/in/v1n1v131r4/" target="_blank" class="underline font-medium">Vinícius Vieira</a>,
-        especialista OPSEC e Inteligência Cibernética com décadas de experiência, a BunqrLabs une conhecimento técnico, metodologias
-        de contrainteligência e visão estratégica para fortalecer a segurança operacional de indivíduos e organizações.
-      </p>
-
-      <ul class="mt-6 space-y-3 text-sm text-white/80">
-        <li>• Experiência comprovada em operações de segurança e inteligência cibernética</li>
-        <li>• Aplicação de modelagem de ameaça e análise de risco comportamental</li>
-        <li>• Desenvolvimento de frameworks e playbooks de OPSEC</li>
-        <li>• Consultoria para setores financeiro, governamental e tecnológico</li>
-        <li>• Treinamentos presenciais, online e "in company" em ambientes controlados</li>
-      </ul>
-    </div>
-
-    <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-      <h3 class="font-semibold">Nossa abordagem</h3>
-      <p class="mt-3 text-sm text-white/70">
-        Operamos sob a filosofia de que segurança não é apenas técnica, mas comportamental. 
-        Combinamos princípios de OPSEC, análise de ameaças e Inteligência para criar estruturas adaptáveis, seguras 
-        e orientadas a missão — tanto para equipes corporativas quanto para operadores individuais.
-      </p>
-      <p class="mt-3 text-sm text-white/70">
-        Nossa metodologia foi desenvolvida a partir de experiências práticas em ambientes críticos, 
-        garantindo entregas mensuráveis e aplicáveis em campo.
-      </p>
-    </div>
-  </div>
-</section>
-
-
   <!-- Recursos -->
   <section id="resources" class="border-y border-neutral-900 bg-neutral-950/50">
-  <div class="mx-auto max-w-7xl px-6 py-20">
-    <div class="max-w-3xl">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Recursos</h2>
-      <p class="mt-4 text-white/70">
-        Guias, checklists e notas de pesquisa para ajudar equipes a agir rapidamente sem se expor.
-      </p>
+    <div class="mx-auto max-w-7xl px-6 py-20">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Recursos</h2>
 
-      <div class="mt-8">
-        <a href="https://www.linkedin.com/in/v1n1v131r4/recent-activity/articles/" target="_blank"
-          class="inline-block rounded-xl px-6 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
-          Acesse aqui →
-        </a>
+        <p class="mt-4 text-white/70">
+          Guias, checklists e notas práticas para apoiar decisões rápidas sem ampliar exposição.
+        </p>
+
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+            <h3 class="font-semibold">Guia gratuito</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Um material curto para organizar risco, disciplina operacional e proteção de identidade no dia a dia.
+            </p>
+            <div class="mt-5">
+              <a href="LINK_DO_GUIA_AQUI" target="_blank"
+                 class="inline-block rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+                Baixar guia →
+              </a>
+            </div>
+            <p class="mt-3 text-xs text-white/50">
+              *Se preferir, solicite por e-mail e enviamos o acesso.
+            </p>
+          </div>
+
+
+	<div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+  <h3 class="font-semibold">Lista de lançamentos</h3>
+  <p class="mt-2 text-sm text-white/70">
+    Avisos sobre novas turmas, publicações e programas assíncronos.
+    Comunicação pontual, sem ruído.
+  </p>
+  <div class="mt-5">
+    <a href="https://tally.so/r/Gxv4De" target="_blank" rel="noopener"
+       class="inline-block rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+      Entrar na lista →
+    </a>
+  </div>
+  <p class="mt-3 text-xs text-white/50">
+    *Você pode sair a qualquer momento.
+  </p>
+</div>
+
+
+        </div>
+
+        <div class="mt-10">
+          <a href="https://www.linkedin.com/in/v1n1v131r4/recent-activity/articles/" target="_blank"
+             class="inline-block rounded-xl px-6 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">
+            Ver publicações →
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Contato -->
   <section id="contact" class="mx-auto max-w-7xl px-6 py-20">
     <div class="grid lg:grid-cols-2 gap-10">
       <div>
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Contato</h2>
-        <p class="mt-4 text-white/70">Conte-nos sobre seu ambiente e objetivos. Entre em contato diretamente por e-mail.</p>
+
+        <p class="mt-4 text-white/70">
+          Para agenda, treinamentos, workshops e informações, entre em contato por e-mail.
+        </p>
+
         <ul class="mt-6 text-sm text-white/75 space-y-2">
           <li>• E-mail: <a href="mailto:contact@bunqrlabs.com" class="underline">contact@bunqrlabs.com</a></li>
           <li>• PGP: 1a3a7f45b5824093983140ddc35dd80927b4916f</li>
         </ul>
+
+        <p class="mt-6 text-xs text-white/50">
+          Nota: Conteúdo e treinamentos de natureza educacional. Não há vínculo com empregadores, clientes ou organizações citadas em exemplos.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <h3 class="font-semibold">Preferência de contato</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Para solicitações sensíveis, inclua contexto mínimo e evite detalhes desnecessários. A resposta seguirá o mesmo princípio.
+        </p>
+        <p class="mt-3 text-sm text-white/70">
+          Se a demanda for treinamento corporativo, informe: formato (online/presencial), número de participantes e janela de datas.
+        </p>
       </div>
     </div>
   </section>
@@ -376,9 +485,12 @@
         </svg>
         <span>© <span id="year"></span> BunqrLabs. Todos os direitos reservados.</span>
       </div>
+
       <div class="flex items-center gap-6">
         <a href="/privacy" class="hover:text-white/80">Privacidade</a>
         <a href="/terms" class="hover:text-white/80">Termos</a>
+        <!-- Mudança proposta: “Política editorial” (sem editorializar demais; é um guardrail) -->
+        <a href="/policy" class="hover:text-white/80">Política</a>
       </div>
     </div>
   </footer>
