@@ -13,27 +13,29 @@
 
 <body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
 
-  <!-- Header (mesmo do site) -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
-    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+ <!-- Header (mesmo do site) -->
+<header class="sticky top-0 z-40 backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
+  <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
 
-      <a href="../" class="flex items-center gap-3 group">
-        <img src="../logo.png" alt="Logo BunqrLabs" class="w-8 h-8 object-contain">
-        <span class="text-xl font-semibold tracking-tight">BunqrLabs</span>
+    <a href="../" class="flex items-center gap-3 group">
+      <img src="../logo.png" alt="Logo BunqrLabs" class="w-8 h-8 object-contain">
+      <span class="text-xl font-semibold tracking-tight">BunqrLabs</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      <a href="../#training" class="hover:text-white/90 text-white/70">Treinamentos</a>
+      <a href="../#services" class="hover:text-white/90 text-white/70">Programas</a>
+      <a href="../#book" class="hover:text-white/90 text-white/70">Livro</a>
+      <a href="../#why" class="hover:text-white/90 text-white/70">Sobre</a>
+      <a href="../#resources" class="hover:text-white/90 text-white/70">Recursos</a>
+      <a href="../#contact"
+         class="rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-medium hover:bg-white/90 transition">
+        Contato
       </a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm">
-        <a href="../#training" class="hover:text-white/90 text-white/70">Treinamentos</a>
-        <a href="../#services" class="hover:text-white/90 text-white/70">Programas</a>
-        <a href="../#why" class="hover:text-white/90 text-white/70">Sobre</a>
-        <a href="../#resources" class="hover:text-white/90 text-white/70">Recursos</a>
-        <a href="../#contact"
-           class="rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-medium hover:bg-white/90 transition">
-          Contato
-        </a>
-      </nav>
-    </div>
-  </header>
 
   <!-- Hero (mesma linguagem visual) -->
   <section class="relative">
@@ -415,27 +417,29 @@
     </div>
   </main>
 
-  <!-- Rodapé (mesmo do site) -->
-  <footer class="border-t border-neutral-900">
-    <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden>
-          <g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
-            <path d="M24 30 h16 v20 H24z"/>
-            <path d="M30 34 v6"/>
-          </g>
-        </svg>
-        <span>© <span id="year"></span> BunqrLabs. Todos os direitos reservados.</span>
-      </div>
-
-      <div class="flex items-center gap-6">
-        <a href="/privacy" class="hover:text-white/80">Privacidade</a>
-        <a href="/terms" class="hover:text-white/80">Termos</a>
-        <a href="/policy" class="hover:text-white/80">Política</a>
-      </div>
+ <!-- Rodapé (mesmo do site) -->
+<footer class="border-t border-neutral-900">
+  <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden>
+        <g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
+          <path d="M24 30 h16 v20 H24z"/>
+          <path d="M30 34 v6"/>
+        </g>
+      </svg>
+      <span>© <span id="year"></span> BunqrLabs. Todos os direitos reservados.</span>
     </div>
-  </footer>
+
+    <div class="flex items-center gap-6">
+      <a href="https://instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80">@bunqrlabs</a>
+      <a href="/privacy" class="hover:text-white/80">Privacidade</a>
+      <a href="/terms" class="hover:text-white/80">Termos</a>
+      <a href="/policy" class="hover:text-white/80">Política</a>
+    </div>
+  </div>
+</footer>
+
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
