@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Termos de Uso — BunqrLabs</title>
+  <meta name="description" content="Termos de uso do site BunqrLabs." />
+  <link rel="icon" type="image/png" href="../logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
+
+<header class="sticky top-0 z-40 backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
+  <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+    <a href="../" class="flex items-center gap-3">
+      <img src="../logo.png" class="w-8 h-8" alt="BunqrLabs">
+      <span class="text-xl font-semibold">BunqrLabs</span>
+    </a>
+  </div>
+</header>
+
+<main class="mx-auto max-w-3xl px-6 py-20 space-y-6">
+  <h1 class="text-3xl font-bold">Termos de Uso</h1>
+
+  <p class="text-white/70">
+    Ao acessar este site, você concorda com os termos descritos abaixo.
+  </p>
+
+  <h2 class="text-xl font-semibold">Natureza do conteúdo</h2>
+  <p class="text-white/70">
+    Todo o conteúdo disponibilizado é de caráter educacional e informativo.
+    Não constitui aconselhamento legal, técnico ou operacional específico.
+  </p>
+
+  <h2 class="text-xl font-semibold">Responsabilidade do usuário</h2>
+  <p class="text-white/70">
+    O uso das informações é de inteira responsabilidade do usuário.
+    Decisões tomadas com base neste conteúdo devem considerar contexto, risco e consequências.
+  </p>
+
+  <h2 class="text-xl font-semibold">Limitação de responsabilidade</h2>
+  <p class="text-white/70">
+    A BunqrLabs não se responsabiliza por perdas, danos ou incidentes decorrentes do uso
+    das informações aqui apresentadas.
+  </p>
+
+  <h2 class="text-xl font-semibold">Propriedade intelectual</h2>
+  <p class="text-white/70">
+    Todo o conteúdo é protegido por direitos autorais.
+    A reprodução é permitida apenas para fins educacionais, com citação da fonte.
+  </p>
+</main>
+
+<footer class="border-t border-neutral-900">
+  <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60">
+    © <span id="year"></span> BunqrLabs
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
