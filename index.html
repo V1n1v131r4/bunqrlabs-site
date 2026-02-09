@@ -1,4 +1,581 @@
-<section id="why" class="mx-auto max-w-7xl px-6 py-20">
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>BunQr Labs — OPSEC • Inteligência • Sobrevivência Digital</title>
+
+  <meta name="description" content="BunQr Labs — treinamentos e conteúdos em OPSEC e Inteligência Cibernética. Modelagem de ameaça, risco, disciplina operacional e proteção de identidade em ambientes digitais e físicos." />
+
+  <link rel="icon" type="image/png" href="logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* micro-ajustes que dão “acabamento” sem virar framework */
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .card {
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+    .card:hover {
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.045);
+      transform: translateY(-2px);
+    }
+    .card, .btn, .navlink {
+      transition: all 180ms ease;
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid rgba(255,255,255,0.35);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-neutral-800/80 glass">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
+
+      <a href="#home" class="flex items-center gap-3 group focus-ring">
+        <img src="logo.png" alt="Logo BunQr Labs" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
+        <span class="text-lg sm:text-xl font-semibold tracking-tight">BunQr Labs</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
+        <a href="#book" class="navlink text-white/70 hover:text-white focus-ring">Livro</a>
+        <a href="#services" class="navlink text-white/70 hover:text-white focus-ring">Programas</a>
+        <a href="#why" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
+        <a href="#resources" class="navlink text-white/70 hover:text-white focus-ring">Recursos</a>
+        <a href="#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+        >
+          Alunos
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        id="menuBtn"
+        class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="mr-2">Menu</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile nav panel -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800/80 glass">
+      <div class="mx-auto max-w-7xl px-6 py-4 grid gap-2 text-sm">
+        <a href="#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
+        <a href="#book" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Livro</a>
+        <a href="#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Programas</a>
+        <a href="#why" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
+        <a href="#resources" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Recursos</a>
+        <a href="#contact" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+        >
+          Alunos
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <!-- Background image + overlays -->
+<div class="absolute inset-0">
+  <!-- Background image -->
+  <img
+    src="hero.webp"
+    alt=""
+    class="h-full w-full object-cover object-center"
+    loading="eager"
+    fetchpriority="high"
+  />
+
+  <!-- Overlay escuro (legibilidade) -->
+  <div class="absolute inset-0 bg-black/05"></div>
+
+  <!-- Gradiente para profundidade -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/80"></div>
+
+  <!-- Glow sutil (mantém estética anterior) -->
+  <div class="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/10 blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-white/5 blur-3xl"></div>
+</div>
+
+    <div class="relative mx-auto max-w-7xl px-6 pt-16 pb-14 sm:pt-20 sm:pb-16 lg:pt-28 lg:pb-20">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+        <!-- Left: text -->
+        <div class="max-w-2xl">
+          <!--<span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 glass">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-white/80"></span>
+            OPSEC • Inteligência • Decisão
+          </span>-->
+
+          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+            OPSEC e Inteligência Cibernética
+          </h1>
+
+          <p class="mt-6 text-white/70 text-base sm:text-lg leading-relaxed">
+            A BunQr Labs desenvolve profissionais e equipes para atuar com
+            <span class="text-white font-semibold">Inteligência e Contrainteligência</span>,
+            <span class="text-white font-semibold">Segurança Operacional (OPSEC)</span> e
+            <span class="text-white font-semibold">Proteção de Identidades</span>.
+          </p>
+
+          <!--<details class="group mt-4">
+            <summary class="cursor-pointer text-xs text-white/50 hover:text-white/70 select-none focus-ring inline-flex items-center gap-2">
+              Ler mais
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="mt-3 text-xs text-white/50 leading-relaxed">
+              sob vigilância digital e física. Metodologia baseada em experiência prática e ensino aplicado. Conteúdo educacional com foco em responsabilidade e discrição.
+            </div>
+          </details>-->
+
+          <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
+            <a href="#training"
+               class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center">
+              Ver Treinamentos
+            </a>
+            <a href="#resources"
+               class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">
+              Recursos Gratuitos
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: logo card -->
+        <div class="flex justify-center lg:justify-end">
+         <!-- <div class="relative rounded-3xl p-6 sm:p-8 border border-white/10 bg-white/5 glass">
+            <div class="absolute -inset-px rounded-3xl bg-gradient-to-b from-white/10 to-transparent opacity-70 pointer-events-none"></div>
+
+            <img
+              src="logo.png"
+              alt="Logo BunQr Labs"
+              class="w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-contain opacity-95"
+            />-->
+
+            
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="border-y border-neutral-900 bg-neutral-950/50">
+    <div class="mx-auto max-w-7xl px-6 py-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="card card rounded-2xl p-6">
+        <h3 class="font-semibold">Segurança Operacional</h3>
+        <p class="mt-2 text-sm text-white/70">
+          Rotinas, comportamento e consistência sob pressão.
+        </p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <h3 class="font-semibold">Proteção de Identidades</h3>
+        <p class="mt-2 text-sm text-white/70">
+          Gestão de rastros e mitigação de riscos.
+        </p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <h3 class="font-semibold">Inteligência Cibernética</h3>
+        <p class="mt-2 text-sm text-white/70">
+          Coleta, validação e análise com foco em decisão.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Treinamentos -->
+  <section id="training" class="border-y border-neutral-900 bg-neutral-950/50">
+    <div class="mx-auto max-w-7xl px-6 py-20">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Treinamentos em OPSEC e Inteligência Cibernética</h2>
+
+        <p class="mt-4 text-white/70">
+          Programas de formação para profissionais e equipes que atuam sob pressão e precisam sustentar
+          <span class="text-white font-semibold">critérios de decisão</span>, <span class="text-white font-semibold">disciplina operacional</span>
+          e <span class="text-white font-semibold">redução de exposição</span> com consistência.
+        </p>
+
+        <details class="group mt-4">
+          <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
+            Formatos disponíveis
+            <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="mt-3 text-white/70">
+            <p>
+              Disponível em formatos <span class="font-semibold text-white">online</span>, <span class="font-semibold text-white">presencial</span> e
+              <span class="font-semibold text-white">in company</span>, conforme agenda.
+            </p>
+          </div>
+        </details>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="https://cursointeligenciacibernetica.kpages.online/turma-4" target="_blank"
+             class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">
+            Ver turma atual →
+          </a>
+          <a href="#contact"
+             class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">
+            Solicitar informações →
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Curso principal -->
+        <div class="card rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">OPSEC e Inteligência Cibernética na Prática</h3>
+          <p class="mt-2 text-sm text-white/70">
+            Treinamento baseado em cenários e estudos de caso: risco, disciplina operacional, identidade e decisões
+            sob pressão em ambientes digitais e físicos.
+          </p>
+          <details class="group mt-3">
+            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
+              Ver tópicos
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="mt-3">
+              <ul class="space-y-2 text-sm text-white/70">
+                <li>• Modelagem de ameaça e análise de risco</li>
+                <li>• Consistência, previsibilidade e custo de exposição</li>
+                <li>• Inteligência aplicada com validação</li>
+                <li>• Simulações e exercícios guiados</li>
+              </ul>
+            </div>
+          </details>
+          <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+            <a href="https://cursointeligenciacibernetica.kpages.online/turma-4" target="_blank"
+               class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Ver detalhes →</a>
+            <a href="https://cursointeligenciacibernetica.kpages.online/turma-4" target="_blank"
+               class="btn rounded-lg px-3 py-2 border border-white/10 hover:border-white/20 text-xs glass focus-ring">
+              Inscreva-se
+            </a>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">Inteligência Aplicada (Método e Critério)</h3>
+          <p class="mt-2 text-sm text-white/70">
+            Formação orientada a método: coleta, validação, inferência e comunicação de inteligência com foco em risco e exposição.
+            Sem dependência de ferramentas específicas.
+          </p>
+          <details class="group mt-3">
+            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
+              Ver tópicos
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="mt-3">
+              <ul class="space-y-2 text-sm text-white/70">
+                <li>• Estrutura de coleta e validação</li>
+                <li>• Contradições, lacunas e confiança</li>
+                <li>• Correlação e risco de atribuição</li>
+                <li>• Entrega de inteligência sob pressão</li>
+              </ul>
+            </div>
+          </details>
+          <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar agenda →</a>
+            <a href="#contact"
+               class="btn rounded-lg px-3 py-2 border border-white/10 hover:border-white/20 text-xs glass focus-ring">
+              In company
+            </a>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">Workshop de Modelagem de Ameaças</h3>
+          <p class="mt-2 text-sm text-white/70">
+            Sessão intensiva para alinhar linguagem, critérios e decisões sobre risco, exposição e resposta em equipe.
+          </p>
+          <details class="group mt-3">
+            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
+              Ver tópicos
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="mt-3">
+              <ul class="space-y-2 text-sm text-white/70">
+                <li>• Exercícios de risco e consequência</li>
+                <li>• Comunicação e tomada de decisão</li>
+                <li>• Disciplina operacional e trade-offs</li>
+                <li>• Certificado BunQr Labs</li>
+              </ul>
+            </div>
+          </details>
+          <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Agendar workshop →</a>
+            <a href="#contact"
+               class="btn rounded-lg px-3 py-2 border border-white/10 hover:border-white/20 text-xs glass focus-ring">
+              Contato
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <details class="group mt-14">
+        <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
+          Próximos programas (assíncronos)
+          <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="mt-6 card rounded-2xl p-6">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div class="max-w-3xl">
+              <h3 class="font-semibold text-lg">Próximos programas (assíncronos)</h3>
+              <p class="mt-2 text-sm text-white/70">
+                Conteúdos estruturados para aprofundar critérios de OPSEC e Inteligência com baixa volatilidade (método, risco e identidade).
+              </p>
+              <ul class="mt-3 space-y-2 text-sm text-white/70">
+                <li>• Decisão sob Observação (OPSEC decisional)</li>
+                <li>• Identidade Operacional (persona, rastros e transição digital/física)</li>
+              </ul>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="#resources"
+                 class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center">
+                Entrar na lista →
+              </a>
+              <a href="#contact"
+                 class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">
+                Falar sobre formato
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- Livro -->
+  <section id="book" class="border-y border-neutral-900 bg-neutral-950/50">
+    <div class="mx-auto max-w-7xl px-6 py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <div class="flex justify-center lg:justify-start">
+          <img
+            src="capa-opsec.jpg"
+            alt="Capa do livro OPSEC — Inteligência Cibernética na Prática"
+            class="w-[260px] md:w-[300px] rounded-2xl border border-white/10 bg-white/5 shadow-sm"
+          >
+        </div>
+
+        <div class="max-w-2xl">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+            Livro OPSEC — Inteligência Cibernética na Prática
+          </h2>
+
+          <p class="mt-4 text-white/70">
+            Este volume organiza conceitos, técnicas e táticas para operar com mais critério em ambientes digitais
+            — do básico ao avançado — incluindo ferramentas quando elas são necessárias para sustentar decisão e reduzir exposição.
+          </p>
+
+          <details class="group mt-4">
+            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
+              Ler mais
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="mt-3 text-white/70 leading-relaxed">
+              <p>
+                O foco não é “truque” nem promessa de anonimato: é método, trade-offs e execução com responsabilidade.
+                Muitos dos princípios aplicados nos treinamentos e recursos gratuitos partem dessas bases.
+              </p>
+            </div>
+          </details>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://www.amazon.com.br/OPSEC-Intelig%C3%AAncia-Cibern%C3%A9tica-na-Pr%C3%A1tica-ebook/dp/B09WG4FYKH"
+              target="_blank"
+              rel="noopener"
+              class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center"
+            >
+              Ver na Amazon →
+            </a>
+
+            <a
+              href="#contact"
+              class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center"
+            >
+              Falar sobre uso em equipe
+            </a>
+          </div>
+
+          <p class="mt-4 text-xs text-white/50">
+            Conteúdo educacional. Técnicas e ferramentas são apresentadas com foco em contexto, critério e responsabilidade.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Programas / Orientação -->
+  <section id="services" class="mx-auto max-w-7xl px-6 py-20">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Programas e Orientação</h2>
+
+      <p class="mt-4 text-white/70">
+        Orientação prática e programas para equipes que precisam estruturar OPSEC e Inteligência com critérios claros,
+        preservando confidencialidade e reduzindo exposição ao longo do tempo.
+      </p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card rounded-2xl p-6 flex flex-col">
+        <h3 class="font-semibold text-lg">OPSEC Risk Assessment</h3>
+        <ul class="mt-3 space-y-2 text-sm text-white/70">
+          <li>• Rotinas, SOPs e pontos de falha</li>
+          <li>• Identidades, superfícies e separação</li>
+          <li>• Comunicação sob pressão</li>
+          <li>• Priorização por consequência</li>
+        </ul>
+        <div class="mt-5 pt-4 border-t border-white/10">
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
+        </div>
+      </div>
+
+      <div class="card rounded-2xl p-6 flex flex-col">
+        <h3 class="font-semibold text-lg">Comunicação Resiliente</h3>
+        <ul class="mt-3 space-y-2 text-sm text-white/70">
+          <li>• Continuidade e dependências críticas</li>
+          <li>• Proteção de ativos informacionais</li>
+          <li>• Modelagem de risco e trade-offs</li>
+          <li>• Procedimentos de contingência</li>
+        </ul>
+        <div class="mt-5 pt-4 border-t border-white/10">
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
+        </div>
+      </div>
+
+      <div class="card rounded-2xl p-6 flex flex-col">
+        <h3 class="font-semibold text-lg">Identidade Operacional</h3>
+        <ul class="mt-3 space-y-2 text-sm text-white/70">
+          <li>• Gestão de rastros e exposição</li>
+          <li>• Redução de correlação no tempo</li>
+          <li>• Transição digital/físico</li>
+          <li>• Disciplina e consistência controlada</li>
+        </ul>
+        <div class="mt-5 pt-4 border-t border-white/10">
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
+        </div>
+      </div>
+    </div>
+
+    <details class="group mt-10">
+      <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
+        Ver todos os programas
+        <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="card rounded-2xl p-6 flex flex-col">
+          <h3 class="font-semibold text-lg">Inteligência Aplicada</h3>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• Coleta e validação</li>
+            <li>• Preservação de fontes e canais</li>
+            <li>• Gestão de incerteza</li>
+            <li>• Comunicação de inteligência</li>
+          </ul>
+          <div class="mt-5 pt-4 border-t border-white/10">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col">
+          <h3 class="font-semibold text-lg">OPSEC para Red Team</h3>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• Exposição durante simulações</li>
+            <li>• Disciplina operacional</li>
+            <li>• Evidências e rastros</li>
+            <li>• Redução de risco colateral</li>
+          </ul>
+          <div class="mt-5 pt-4 border-t border-white/10">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col">
+          <h3 class="font-semibold text-lg">Briefings Executivos</h3>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• Linguagem comum sobre risco</li>
+            <li>• Planos de crise e comunicação</li>
+            <li>• Critérios e priorização</li>
+            <li>• Alinhamento com liderança</li>
+          </ul>
+          <div class="mt-5 pt-4 border-t border-white/10">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
+          </div>
+        </div>
+
+      </div>
+    </details>
+
+    <details class="group mt-12">
+      <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
+        Colaborações
+        <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="mt-6 card rounded-2xl p-6">
+        <h3 class="font-semibold">Colaborações</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Em casos específicos, a BunQr Labs participa de colaborações e briefings privados voltados a OPSEC e Inteligência,
+          sempre com foco educacional, responsabilidade e discrição.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- Sobre -->
+  <section id="why" class="mx-auto max-w-7xl px-6 py-20">
   <div class="grid lg:grid-cols-2 gap-10 items-start">
 
     <!-- Coluna esquerda -->
@@ -10,10 +587,9 @@
         exposição e impacto no domínio cibernético. Seu trabalho conecta OPSEC e Inteligência Cibernética
         à produção de critérios analíticos para apoio à decisão.
       </p>
-
     </div>
 
-    <!-- Coluna da direita -->
+    <!-- Coluna direita -->
     <div>
       <p class="text-white/70">
         Treinamentos e conteúdos conduzidos por
@@ -21,9 +597,168 @@
            class="underline font-medium hover:text-white focus-ring">Vinícius Vieira</a>,
         especialista em OPSEC e Inteligência Cibernética, com atuação prática e experiência como formador de profissionais.
       </p>
-
-     
     </div>
 
   </div>
 </section>
+
+
+  <!-- Recursos -->
+  <section id="resources" class="border-y border-neutral-900 bg-neutral-950/50">
+    <div class="mx-auto max-w-7xl px-6 py-20">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Recursos</h2>
+
+        <p class="mt-4 text-white/70">
+          Guias e materiais educacionais para apoiar decisões mais conscientes e reduzir exposição.
+        </p>
+
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">Guia Prático de Privacidade Digital</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Um guia introdutório para leigos, famílias e profissionais que desejam
+              compreender riscos digitais reais, golpes comuns no Brasil e cuidados essenciais
+              com redes sociais, mensageiros e celulares.
+            </p>
+            <div class="mt-5">
+              <a href="/guia-privacidade-digital/"
+                 class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">
+                Acessar guia →
+              </a>
+            </div>
+            <p class="mt-3 text-xs text-white/50">
+              Conteúdo gratuito • Leitura online • Atualizado continuamente
+            </p>
+          </div>
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">OPSEC em 9 Decisões</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Material complementar focado em critérios de decisão, disciplina operacional
+              e redução de exposição, organizado em princípios práticos de OPSEC.
+            </p>
+            <div class="mt-5">
+              <a href="OPSEC_em_9_Decisoes_A5.pdf" target="_blank" rel="noopener"
+                 class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">
+                Baixar PDF →
+              </a>
+            </div>
+            <p class="mt-3 text-xs text-white/50">
+              *Formato PDF para leitura offline.
+            </p>
+          </div>
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">Lista de lançamentos</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Avisos sobre novas turmas, publicações e programas assíncronos.
+              Comunicação pontual, sem ruído.
+            </p>
+            <div class="mt-5">
+              <a href="https://tally.so/r/Gxv4De" target="_blank" rel="noopener"
+                 class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">
+                Entrar na lista →
+              </a>
+            </div>
+            <p class="mt-3 text-xs text-white/50">
+              *Você pode sair a qualquer momento.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="mt-10">
+          <a href="https://www.linkedin.com/in/v1n1v131r4/recent-activity/articles/" target="_blank" rel="noopener"
+             class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">
+            Ver publicações →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact" class="mx-auto max-w-7xl px-6 py-20">
+    <div class="grid lg:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Contato</h2>
+
+        <p class="mt-4 text-white/70">
+          Para agenda, treinamentos, workshops e informações, entre em contato por e-mail.
+        </p>
+
+        <ul class="mt-6 text-sm text-white/75 space-y-2">
+          <li>• E-mail: <a href="mailto:contact@bunqrlabs.com" class="underline hover:text-white focus-ring">contact@bunqrlabs.com</a></li>
+          <li>• PGP: 1a3a7f45b5824093983140ddc35dd80927b4916f</li>
+        </ul>
+
+        <p class="mt-6 text-xs text-white/50">
+          Nota: Conteúdo e treinamentos de natureza educacional. Não há vínculo com empregadores, clientes ou organizações citadas em exemplos.
+        </p>
+      </div>
+
+      <details class="group rounded-2xl border border-white/10 p-6 bg-white/5 glass">
+        <summary class="cursor-pointer font-semibold text-white/90 hover:text-white select-none focus-ring">
+          Preferência de contato
+        </summary>
+        <div class="mt-3">
+          <p class="text-sm text-white/70">
+            Para solicitações sensíveis, inclua contexto mínimo e evite detalhes desnecessários. A resposta seguirá o mesmo princípio.
+          </p>
+          <p class="mt-3 text-sm text-white/70">
+            Se a demanda for treinamento corporativo, informe: formato (online/presencial), número de participantes e janela de datas.
+          </p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-neutral-900">
+    <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden>
+          <g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
+            <path d="M24 30 h16 v20 H24z"/>
+            <path d="M30 34 v6"/>
+          </g>
+        </svg>
+        <span>© <span id="year"></span> BunQr Labs. Todos os direitos reservados.</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Instagram</a>
+        <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">LinkedIn</a>
+        <a href="/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
+        <a href="/terms" class="hover:text-white/80 focus-ring">Termos</a>
+        <a href="/policy" class="hover:text-white/80 focus-ring">Política</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu
+    const btn = document.getElementById('menuBtn');
+    const panel = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => {
+      const isOpen = !panel.classList.contains('hidden');
+      panel.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // close mobile menu on click
+    panel?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
