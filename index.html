@@ -10,44 +10,116 @@
 
   <link rel="icon" type="image/png" href="logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* micro-ajustes que dão “acabamento” sem virar framework */
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .card {
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+    .card:hover {
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.045);
+      transform: translateY(-2px);
+    }
+    .card, .btn, .navlink {
+      transition: all 180ms ease;
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid rgba(255,255,255,0.35);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+  </style>
 </head>
 
 <body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
 
   <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
-    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+  <header class="sticky top-0 z-40 border-b border-neutral-800/80 glass">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
 
-      <a href="#home" class="flex items-center gap-3 group">
-        <img src="logo.png" alt="Logo BunQr Labs" class="w-8 h-8 object-contain">
-        <span class="text-xl font-semibold tracking-tight">BunQr Labs</span>
+      <a href="#home" class="flex items-center gap-3 group focus-ring">
+        <img src="logo.png" alt="Logo BunQr Labs" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
+        <span class="text-lg sm:text-xl font-semibold tracking-tight">BunQr Labs</span>
       </a>
 
+      <!-- Desktop nav -->
       <nav class="hidden md:flex items-center gap-8 text-sm">
-        <a href="#training" class="hover:text-white/90 text-white/70">Treinamentos</a>
-        <a href="#book" class="hover:text-white/90 text-white/70">Livro</a>
-        <a href="#services" class="hover:text-white/90 text-white/70">Programas</a>
-        <a href="#why" class="hover:text-white/90 text-white/70">Sobre</a>
-        <a href="#resources" class="hover:text-white/90 text-white/70">Recursos</a>
-        <a href="#contact" class="hover:text-white/90 text-white/70">Contato</a>
-        <a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
-           class="rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-medium hover:bg-white/90 transition">
+        <a href="#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
+        <a href="#book" class="navlink text-white/70 hover:text-white focus-ring">Livro</a>
+        <a href="#services" class="navlink text-white/70 hover:text-white focus-ring">Programas</a>
+        <a href="#why" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
+        <a href="#resources" class="navlink text-white/70 hover:text-white focus-ring">Recursos</a>
+        <a href="#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+        >
           Alunos
         </a>
       </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        id="menuBtn"
+        class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="mr-2">Menu</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile nav panel -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800/80 glass">
+      <div class="mx-auto max-w-7xl px-6 py-4 grid gap-2 text-sm">
+        <a href="#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
+        <a href="#book" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Livro</a>
+        <a href="#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Programas</a>
+        <a href="#why" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
+        <a href="#resources" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Recursos</a>
+        <a href="#contact" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+        >
+          Alunos
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="relative">
-    <div class="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(255,255,255,0.08),rgba(0,0,0,0))]"></div>
+  <section id="home" class="relative overflow-hidden">
+    <!-- Ambient background -->
+    <div class="absolute inset-0">
+      <!-- base vignette -->
+      <div class="absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_0%,rgba(255,255,255,0.10),rgba(0,0,0,0))]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/60"></div>
 
-    <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-16 lg:pt-28 lg:pb-20">
-      <div class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-10">
+      <!-- subtle glow blobs -->
+      <div class="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/10 blur-3xl"></div>
+      <div class="absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-white/5 blur-3xl"></div>
+    </div>
 
+    <div class="relative mx-auto max-w-7xl px-6 pt-16 pb-14 sm:pt-20 sm:pb-16 lg:pt-28 lg:pb-20">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+        <!-- Left: text -->
         <div class="max-w-2xl">
-          <span class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs text-white/70">
-            <span class="inline-block h-1.5 w-1.5 rounded-full bg-white"></span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 glass">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-white/80"></span>
             OPSEC • Inteligência • Sobrevivência Digital
           </span>
 
@@ -55,59 +127,85 @@
             OPSEC e Inteligência Cibernética
           </h1>
 
-          <p class="mt-6 text-white/70 text-lg leading-relaxed">
-            A BunQr Labs desenvolve profissionais e equipes para atuar com <span class="text-white font-semibold">disciplina operacional</span>,
-            <span class="text-white font-semibold">modelagem de ameaça</span> e <span class="text-white font-semibold">proteção de identidade</span>.
+          <p class="mt-6 text-white/70 text-base sm:text-lg leading-relaxed">
+            A BunQr Labs desenvolve profissionais e equipes para atuar com
+            <span class="text-white font-semibold">disciplina operacional</span>,
+            <span class="text-white font-semibold">modelagem de ameaça</span> e
+            <span class="text-white font-semibold">proteção de identidade</span>.
           </p>
 
           <details class="group mt-4">
-            <summary class="cursor-pointer text-xs text-white/50 hover:text-white/70 select-none">
+            <summary class="cursor-pointer text-xs text-white/50 hover:text-white/70 select-none focus-ring inline-flex items-center gap-2">
               Ler mais
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </summary>
             <div class="mt-3 text-xs text-white/50 leading-relaxed">
               sob vigilância digital e física. Metodologia baseada em experiência prática e ensino aplicado. Conteúdo educacional com foco em responsabilidade e discrição.
             </div>
           </details>
 
-          <div class="mt-8 flex flex-wrap gap-3">
+          <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
             <a href="#training"
-               class="rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+               class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center">
               Ver Treinamentos
             </a>
             <a href="#resources"
-               class="rounded-xl px-5 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">
+               class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">
               Recursos Gratuitos
             </a>
           </div>
         </div>
 
-        <div class="flex-shrink-0">
-          <img src="logo.png" alt="Logo BunQr Labs" class="w-[280px] h-[280px] object-contain opacity-90">
+        <!-- Right: logo card -->
+        <div class="flex justify-center lg:justify-end">
+          <div class="relative rounded-3xl p-6 sm:p-8 border border-white/10 bg-white/5 glass">
+            <div class="absolute -inset-px rounded-3xl bg-gradient-to-b from-white/10 to-transparent opacity-70 pointer-events-none"></div>
+
+            <img
+              src="logo.png"
+              alt="Logo BunQr Labs"
+              class="w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-contain opacity-95"
+            />
+
+            <div class="mt-6 grid grid-cols-1 gap-3 text-sm">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-white/80">
+                <div class="text-xs text-white/60">Foco</div>
+                <div class="mt-1 font-medium">Disciplina • Risco • Identidade</div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-white/80">
+                <div class="text-xs text-white/60">Método</div>
+                <div class="mt-1 font-medium">Critério aplicável no tempo</div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Highlights (3 cards, menos densidade) -->
+  <!-- Highlights -->
   <section class="border-y border-neutral-900 bg-neutral-950/50">
     <div class="mx-auto max-w-7xl px-6 py-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+      <div class="card card rounded-2xl p-6">
         <h3 class="font-semibold">Disciplina Operacional</h3>
         <p class="mt-2 text-sm text-white/70">
           Rotinas, comportamento e consistência sob pressão.
         </p>
       </div>
 
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+      <div class="card rounded-2xl p-6">
         <h3 class="font-semibold">Identidade Operacional</h3>
         <p class="mt-2 text-sm text-white/70">
           Gestão de rastros e risco de correlação no tempo.
         </p>
       </div>
 
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+      <div class="card rounded-2xl p-6">
         <h3 class="font-semibold">Inteligência Aplicada</h3>
         <p class="mt-2 text-sm text-white/70">
           Coleta, validação e análise com foco em decisão.
@@ -117,8 +215,7 @@
     </div>
   </section>
 
-
- <!-- Treinamentos -->
+  <!-- Treinamentos -->
   <section id="training" class="border-y border-neutral-900 bg-neutral-950/50">
     <div class="mx-auto max-w-7xl px-6 py-20">
       <div class="max-w-3xl">
@@ -131,8 +228,11 @@
         </p>
 
         <details class="group mt-4">
-          <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none">
+          <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
             Formatos disponíveis
+            <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </summary>
           <div class="mt-3 text-white/70">
             <p>
@@ -142,13 +242,13 @@
           </div>
         </details>
 
-        <div class="mt-8 flex flex-wrap gap-3">
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
           <a href="https://cursointeligenciacibernetica.kpages.online/turma-4" target="_blank"
-             class="inline-block rounded-xl px-6 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+             class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">
             Ver turma atual →
           </a>
           <a href="#contact"
-             class="inline-block rounded-xl px-6 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">
+             class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">
             Solicitar informações →
           </a>
         </div>
@@ -156,15 +256,18 @@
 
       <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Curso principal -->
-        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <div class="card rounded-2xl p-6">
           <h3 class="font-semibold text-lg">OPSEC e Inteligência Cibernética na Prática</h3>
           <p class="mt-2 text-sm text-white/70">
             Treinamento baseado em cenários e estudos de caso: risco, disciplina operacional, identidade e decisões
             sob pressão em ambientes digitais e físicos.
           </p>
           <details class="group mt-3">
-            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none">
+            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
               Ver tópicos
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </summary>
             <div class="mt-3">
               <ul class="space-y-2 text-sm text-white/70">
@@ -175,25 +278,28 @@
               </ul>
             </div>
           </details>
-          <div class="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
+          <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
             <a href="https://cursointeligenciacibernetica.kpages.online/turma-4" target="_blank"
-               class="text-sm font-medium underline underline-offset-4">Ver detalhes →</a>
+               class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Ver detalhes →</a>
             <a href="https://cursointeligenciacibernetica.kpages.online/turma-4" target="_blank"
-               class="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">
+               class="btn rounded-lg px-3 py-2 border border-white/10 hover:border-white/20 text-xs glass focus-ring">
               Inscreva-se
             </a>
           </div>
         </div>
 
-        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <div class="card rounded-2xl p-6">
           <h3 class="font-semibold text-lg">Inteligência Aplicada (Método e Critério)</h3>
           <p class="mt-2 text-sm text-white/70">
             Formação orientada a método: coleta, validação, inferência e comunicação de inteligência com foco em risco e exposição.
             Sem dependência de ferramentas específicas.
           </p>
           <details class="group mt-3">
-            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none">
+            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
               Ver tópicos
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </summary>
             <div class="mt-3">
               <ul class="space-y-2 text-sm text-white/70">
@@ -204,24 +310,26 @@
               </ul>
             </div>
           </details>
-          <div class="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
-            <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar agenda →</a>
+          <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar agenda →</a>
             <a href="#contact"
-               class="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">
+               class="btn rounded-lg px-3 py-2 border border-white/10 hover:border-white/20 text-xs glass focus-ring">
               In company
             </a>
           </div>
         </div>
 
-        <!-- Workshop -->
-        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <div class="card rounded-2xl p-6">
           <h3 class="font-semibold text-lg">Workshop de Modelagem de Ameaças</h3>
           <p class="mt-2 text-sm text-white/70">
             Sessão intensiva para alinhar linguagem, critérios e decisões sobre risco, exposição e resposta em equipe.
           </p>
           <details class="group mt-3">
-            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none">
+            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
               Ver tópicos
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </summary>
             <div class="mt-3">
               <ul class="space-y-2 text-sm text-white/70">
@@ -232,10 +340,10 @@
               </ul>
             </div>
           </details>
-          <div class="mt-5 pt-4 border-t border-neutral-900 flex items-center justify-between">
-            <a href="#contact" class="text-sm font-medium underline underline-offset-4">Agendar workshop →</a>
+          <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Agendar workshop →</a>
             <a href="#contact"
-               class="rounded-lg px-3 py-2 border border-neutral-800 hover:border-neutral-700 text-xs">
+               class="btn rounded-lg px-3 py-2 border border-white/10 hover:border-white/20 text-xs glass focus-ring">
               Contato
             </a>
           </div>
@@ -243,10 +351,13 @@
       </div>
 
       <details class="group mt-14">
-        <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none">
+        <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
           Próximos programas (assíncronos)
+          <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </summary>
-        <div class="mt-6 rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+        <div class="mt-6 card rounded-2xl p-6">
           <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div class="max-w-3xl">
               <h3 class="font-semibold text-lg">Próximos programas (assíncronos)</h3>
@@ -258,13 +369,13 @@
                 <li>• Identidade Operacional (persona, rastros e transição digital/física)</li>
               </ul>
             </div>
-            <div class="flex flex-wrap gap-3">
+            <div class="flex flex-col sm:flex-row gap-3">
               <a href="#resources"
-                 class="rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+                 class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center">
                 Entrar na lista →
               </a>
               <a href="#contact"
-                 class="rounded-xl px-5 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">
+                 class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">
                 Falar sobre formato
               </a>
             </div>
@@ -275,73 +386,70 @@
     </div>
   </section>
 
-
   <!-- Livro -->
-<section id="book" class="border-y border-neutral-900 bg-neutral-950/50">
-  <div class="mx-auto max-w-7xl px-6 py-20">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <section id="book" class="border-y border-neutral-900 bg-neutral-950/50">
+    <div class="mx-auto max-w-7xl px-6 py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-      <!-- Capa do livro (esquerda) -->
-      <div class="flex justify-center lg:justify-start">
-        <img
-          src="capa-opsec.jpg"
-          alt="Capa do livro OPSEC — Inteligência Cibernética na Prática"
-          class="w-[260px] md:w-[300px] rounded-xl border border-neutral-900 bg-neutral-900/20 shadow-sm"
-        >
-      </div>
-
-      <!-- Conteúdo (direita) -->
-      <div class="max-w-2xl">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
-          Livro OPSEC — Inteligência Cibernética na Prática
-        </h2>
-
-        <p class="mt-4 text-white/70">
-          Este volume organiza conceitos, técnicas e táticas para operar com mais critério em ambientes digitais
-          — do básico ao avançado — incluindo ferramentas quando elas são necessárias para sustentar decisão e reduzir exposição.
-        </p>
-
-        <details class="group mt-4">
-          <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none">
-            Ler mais
-          </summary>
-          <div class="mt-3 text-white/70 leading-relaxed">
-            <p>
-              O foco não é “truque” nem promessa de anonimato: é método, trade-offs e execução com responsabilidade.
-              Muitos dos princípios aplicados nos treinamentos e recursos gratuitos partem dessas bases.
-            </p>
-          </div>
-        </details>
-
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a
-            href="https://www.amazon.com.br/OPSEC-Intelig%C3%AAncia-Cibern%C3%A9tica-na-Pr%C3%A1tica-ebook/dp/B09WG4FYKH"
-            target="_blank"
-            rel="noopener"
-            class="rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition"
+        <div class="flex justify-center lg:justify-start">
+          <img
+            src="capa-opsec.jpg"
+            alt="Capa do livro OPSEC — Inteligência Cibernética na Prática"
+            class="w-[260px] md:w-[300px] rounded-2xl border border-white/10 bg-white/5 shadow-sm"
           >
-            Ver na Amazon →
-          </a>
-
-          <a
-            href="#contact"
-            class="rounded-xl px-5 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90"
-          >
-            Falar sobre uso em equipe
-          </a>
         </div>
 
-        <p class="mt-4 text-xs text-white/50">
-          Conteúdo educacional. Técnicas e ferramentas são apresentadas com foco em contexto, critério e responsabilidade.
-        </p>
+        <div class="max-w-2xl">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+            Livro OPSEC — Inteligência Cibernética na Prática
+          </h2>
+
+          <p class="mt-4 text-white/70">
+            Este volume organiza conceitos, técnicas e táticas para operar com mais critério em ambientes digitais
+            — do básico ao avançado — incluindo ferramentas quando elas são necessárias para sustentar decisão e reduzir exposição.
+          </p>
+
+          <details class="group mt-4">
+            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
+              Ler mais
+              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="mt-3 text-white/70 leading-relaxed">
+              <p>
+                O foco não é “truque” nem promessa de anonimato: é método, trade-offs e execução com responsabilidade.
+                Muitos dos princípios aplicados nos treinamentos e recursos gratuitos partem dessas bases.
+              </p>
+            </div>
+          </details>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://www.amazon.com.br/OPSEC-Intelig%C3%AAncia-Cibern%C3%A9tica-na-Pr%C3%A1tica-ebook/dp/B09WG4FYKH"
+              target="_blank"
+              rel="noopener"
+              class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center"
+            >
+              Ver na Amazon →
+            </a>
+
+            <a
+              href="#contact"
+              class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center"
+            >
+              Falar sobre uso em equipe
+            </a>
+          </div>
+
+          <p class="mt-4 text-xs text-white/50">
+            Conteúdo educacional. Técnicas e ferramentas são apresentadas com foco em contexto, critério e responsabilidade.
+          </p>
+        </div>
+
       </div>
-
     </div>
-  </div>
-</section>
-
-
- 
+  </section>
 
   <!-- Programas / Orientação -->
   <section id="services" class="mx-auto max-w-7xl px-6 py-20">
@@ -354,9 +462,8 @@
       </p>
     </div>
 
-    <!-- Top 3 visíveis -->
     <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+      <div class="card rounded-2xl p-6 flex flex-col">
         <h3 class="font-semibold text-lg">OPSEC Risk Assessment</h3>
         <ul class="mt-3 space-y-2 text-sm text-white/70">
           <li>• Rotinas, SOPs e pontos de falha</li>
@@ -364,12 +471,12 @@
           <li>• Comunicação sob pressão</li>
           <li>• Priorização por consequência</li>
         </ul>
-        <div class="mt-5 pt-4 border-t border-neutral-900">
-          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
+        <div class="mt-5 pt-4 border-t border-white/10">
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
         </div>
       </div>
 
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+      <div class="card rounded-2xl p-6 flex flex-col">
         <h3 class="font-semibold text-lg">Comunicação Resiliente</h3>
         <ul class="mt-3 space-y-2 text-sm text-white/70">
           <li>• Continuidade e dependências críticas</li>
@@ -377,12 +484,12 @@
           <li>• Modelagem de risco e trade-offs</li>
           <li>• Procedimentos de contingência</li>
         </ul>
-        <div class="mt-5 pt-4 border-t border-neutral-900">
-          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
+        <div class="mt-5 pt-4 border-t border-white/10">
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
         </div>
       </div>
 
-      <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+      <div class="card rounded-2xl p-6 flex flex-col">
         <h3 class="font-semibold text-lg">Identidade Operacional</h3>
         <ul class="mt-3 space-y-2 text-sm text-white/70">
           <li>• Gestão de rastros e exposição</li>
@@ -390,21 +497,23 @@
           <li>• Transição digital/físico</li>
           <li>• Disciplina e consistência controlada</li>
         </ul>
-        <div class="mt-5 pt-4 border-t border-neutral-900">
-          <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
+        <div class="mt-5 pt-4 border-t border-white/10">
+          <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
         </div>
       </div>
     </div>
 
-    <!-- Restante colapsado -->
     <details class="group mt-10">
-      <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none">
+      <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
         Ver todos os programas
+        <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </summary>
 
       <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+        <div class="card rounded-2xl p-6 flex flex-col">
           <h3 class="font-semibold text-lg">Inteligência Aplicada</h3>
           <ul class="mt-3 space-y-2 text-sm text-white/70">
             <li>• Coleta e validação</li>
@@ -412,12 +521,12 @@
             <li>• Gestão de incerteza</li>
             <li>• Comunicação de inteligência</li>
           </ul>
-          <div class="mt-5 pt-4 border-t border-neutral-900">
-            <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
+          <div class="mt-5 pt-4 border-t border-white/10">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
           </div>
         </div>
 
-        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+        <div class="card rounded-2xl p-6 flex flex-col">
           <h3 class="font-semibold text-lg">OPSEC para Red Team</h3>
           <ul class="mt-3 space-y-2 text-sm text-white/70">
             <li>• Exposição durante simulações</li>
@@ -425,12 +534,12 @@
             <li>• Evidências e rastros</li>
             <li>• Redução de risco colateral</li>
           </ul>
-          <div class="mt-5 pt-4 border-t border-neutral-900">
-            <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
+          <div class="mt-5 pt-4 border-t border-white/10">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
           </div>
         </div>
 
-        <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20 flex flex-col">
+        <div class="card rounded-2xl p-6 flex flex-col">
           <h3 class="font-semibold text-lg">Briefings Executivos</h3>
           <ul class="mt-3 space-y-2 text-sm text-white/70">
             <li>• Linguagem comum sobre risco</li>
@@ -438,8 +547,8 @@
             <li>• Critérios e priorização</li>
             <li>• Alinhamento com liderança</li>
           </ul>
-          <div class="mt-5 pt-4 border-t border-neutral-900">
-            <a href="#contact" class="text-sm font-medium underline underline-offset-4">Consultar formato →</a>
+          <div class="mt-5 pt-4 border-t border-white/10">
+            <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
           </div>
         </div>
 
@@ -447,10 +556,13 @@
     </details>
 
     <details class="group mt-12">
-      <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none">
+      <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
         Colaborações
+        <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </summary>
-      <div class="mt-6 rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+      <div class="mt-6 card rounded-2xl p-6">
         <h3 class="font-semibold">Colaborações</h3>
         <p class="mt-3 text-sm text-white/70">
           Em casos específicos, a BunQr Labs participa de colaborações e briefings privados voltados a OPSEC e Inteligência,
@@ -473,13 +585,16 @@
         </p>
 
         <details class="group mt-4">
-          <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none">
+          <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
             Ler mais
+            <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </summary>
           <div class="mt-3 text-white/70">
             <p>
               Treinamentos e conteúdos conduzidos por
-              <a href="https://www.linkedin.com/in/v1n1v131r4/" target="_blank" rel="noopener" class="underline font-medium">Vinícius Vieira</a>,
+              <a href="https://www.linkedin.com/in/v1n1v131r4/" target="_blank" rel="noopener" class="underline font-medium hover:text-white focus-ring">Vinícius Vieira</a>,
               especialista em OPSEC e Inteligência Cibernética, com atuação prática e experiência como formador de profissionais.
             </p>
 
@@ -494,8 +609,8 @@
         </details>
       </div>
 
-      <details class="group rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-        <summary class="cursor-pointer font-semibold text-white/90 hover:text-white select-none">
+      <details class="group rounded-2xl border border-white/10 p-6 bg-white/5 glass">
+        <summary class="cursor-pointer font-semibold text-white/90 hover:text-white select-none focus-ring">
           Abordagem
         </summary>
         <div class="mt-3">
@@ -524,8 +639,7 @@
 
         <div class="mt-10 grid md:grid-cols-2 gap-6">
 
-          <!-- Guia principal -->
-          <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+          <div class="card rounded-2xl p-6">
             <h3 class="font-semibold">Guia Prático de Privacidade Digital</h3>
             <p class="mt-2 text-sm text-white/70">
               Um guia introdutório para leigos, famílias e profissionais que desejam
@@ -534,7 +648,7 @@
             </p>
             <div class="mt-5">
               <a href="/guia-privacidade-digital/"
-                 class="inline-block rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+                 class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">
                 Acessar guia →
               </a>
             </div>
@@ -543,8 +657,7 @@
             </p>
           </div>
 
-          <!-- Guia complementar -->
-          <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+          <div class="card rounded-2xl p-6">
             <h3 class="font-semibold">OPSEC em 9 Decisões</h3>
             <p class="mt-2 text-sm text-white/70">
               Material complementar focado em critérios de decisão, disciplina operacional
@@ -552,7 +665,7 @@
             </p>
             <div class="mt-5">
               <a href="OPSEC_em_9_Decisoes_A5.pdf" target="_blank" rel="noopener"
-                 class="inline-block rounded-xl px-5 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90 transition">
+                 class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">
                 Baixar PDF →
               </a>
             </div>
@@ -561,8 +674,7 @@
             </p>
           </div>
 
-          <!-- Lista -->
-          <div class="rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
+          <div class="card rounded-2xl p-6">
             <h3 class="font-semibold">Lista de lançamentos</h3>
             <p class="mt-2 text-sm text-white/70">
               Avisos sobre novas turmas, publicações e programas assíncronos.
@@ -570,7 +682,7 @@
             </p>
             <div class="mt-5">
               <a href="https://tally.so/r/Gxv4De" target="_blank" rel="noopener"
-                 class="inline-block rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 transition">
+                 class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">
                 Entrar na lista →
               </a>
             </div>
@@ -583,7 +695,7 @@
 
         <div class="mt-10">
           <a href="https://www.linkedin.com/in/v1n1v131r4/recent-activity/articles/" target="_blank" rel="noopener"
-             class="inline-block rounded-xl px-6 py-3 border border-neutral-800 hover:border-neutral-700 text-white/90">
+             class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">
             Ver publicações →
           </a>
         </div>
@@ -602,7 +714,7 @@
         </p>
 
         <ul class="mt-6 text-sm text-white/75 space-y-2">
-          <li>• E-mail: <a href="mailto:contact@bunqrlabs.com" class="underline">contact@bunqrlabs.com</a></li>
+          <li>• E-mail: <a href="mailto:contact@bunqrlabs.com" class="underline hover:text-white focus-ring">contact@bunqrlabs.com</a></li>
           <li>• PGP: 1a3a7f45b5824093983140ddc35dd80927b4916f</li>
         </ul>
 
@@ -611,8 +723,8 @@
         </p>
       </div>
 
-      <details class="group rounded-2xl border border-neutral-900 p-6 bg-neutral-900/20">
-        <summary class="cursor-pointer font-semibold text-white/90 hover:text-white select-none">
+      <details class="group rounded-2xl border border-white/10 p-6 bg-white/5 glass">
+        <summary class="cursor-pointer font-semibold text-white/90 hover:text-white select-none focus-ring">
           Preferência de contato
         </summary>
         <div class="mt-3">
@@ -641,18 +753,36 @@
         <span>© <span id="year"></span> BunQr Labs. Todos os direitos reservados.</span>
       </div>
 
-      <div class="flex items-center gap-6">
-        <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80">Instagram</a>
-        <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80">LinkedIn</a>
-        <a href="/privacy" class="hover:text-white/80">Privacidade</a>
-        <a href="/terms" class="hover:text-white/80">Termos</a>
-        <a href="/policy" class="hover:text-white/80">Política</a>
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Instagram</a>
+        <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">LinkedIn</a>
+        <a href="/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
+        <a href="/terms" class="hover:text-white/80 focus-ring">Termos</a>
+        <a href="/policy" class="hover:text-white/80 focus-ring">Política</a>
       </div>
     </div>
   </footer>
 
   <script>
+    // year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu
+    const btn = document.getElementById('menuBtn');
+    const panel = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => {
+      const isOpen = !panel.classList.contains('hidden');
+      panel.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // close mobile menu on click
+    panel?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
   </script>
 </body>
 </html>
