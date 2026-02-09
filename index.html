@@ -102,16 +102,27 @@
 
   <!-- Hero -->
   <section id="home" class="relative overflow-hidden">
-    <!-- Ambient background -->
-    <div class="absolute inset-0">
-      <!-- base vignette -->
-      <div class="absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_0%,rgba(255,255,255,0.10),rgba(0,0,0,0))]"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/60"></div>
+    <!-- Background image + overlays -->
+<div class="absolute inset-0">
+  <!-- Background image -->
+  <img
+    src="hero.webp"
+    alt=""
+    class="h-full w-full object-cover object-center opacity-55"
+    loading="eager"
+    fetchpriority="high"
+  />
 
-      <!-- subtle glow blobs -->
-      <div class="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/10 blur-3xl"></div>
-      <div class="absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-white/5 blur-3xl"></div>
-    </div>
+  <!-- Overlay escuro (legibilidade) -->
+  <div class="absolute inset-0 bg-black/65"></div>
+
+  <!-- Gradiente para profundidade -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/80"></div>
+
+  <!-- Glow sutil (mantém estética anterior) -->
+  <div class="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/10 blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-white/5 blur-3xl"></div>
+</div>
 
     <div class="relative mx-auto max-w-7xl px-6 pt-16 pb-14 sm:pt-20 sm:pb-16 lg:pt-28 lg:pb-20">
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
