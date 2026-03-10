@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>HUMINT Training | BunQr Labs</title>
+  <meta name="description" content="Curso HUMINT Training da BunQr Labs. Formação aplicada em inteligência de fontes humanas, avaliação de confiabilidade, OPSEC, análise de risco e produção de inteligência orientada à decisão." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="BunQr Labs" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://bunqrlabs.com/humint.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="BunQr Labs" />
+  <meta property="og:title" content="HUMINT Training | BunQr Labs" />
+  <meta property="og:description" content="Formação aplicada em inteligência de fontes humanas, coleta, validação, OPSEC e produção de inteligência orientada à decisão." />
+  <meta property="og:url" content="https://bunqrlabs.com/humint.html" />
+  <meta property="og:image" content="https://bunqrlabs.com/humint-banner.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HUMINT Training | BunQr Labs" />
+  <meta name="twitter:description" content="Curso aplicado em HUMINT, avaliação de confiabilidade, OPSEC e produção de inteligência." />
+  <meta name="twitter:image" content="https://bunqrlabs.com/humint-banner.jpg" />
+
+  <link rel="icon" type="image/png" href="logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .card {
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+    .card:hover {
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.045);
+      transform: translateY(-2px);
+    }
+    .card, .btn, .navlink {
+      transition: all 180ms ease;
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid rgba(255,255,255,0.35);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "HUMINT Training",
+    "description": "Curso de inteligência de fontes humanas aplicada, com foco em objetivos de informação, coleta, avaliação de confiabilidade, OPSEC e produção de inteligência orientada à decisão.",
+    "provider": {
+      "@type": "Organization",
+      "name": "BunQr Labs",
+      "url": "https://bunqrlabs.com"
+    },
+    "url": "https://bunqrlabs.com/humint.html"
+  }
+  </script>
+</head>
+
+<body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-neutral-800/80 glass">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
+
+      <a href="index.html" class="flex items-center gap-3 group focus-ring">
+        <img src="logo.png" alt="Logo BunQr Labs" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
+        <span class="text-lg sm:text-xl font-semibold tracking-tight">BunQr Labs</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
+        <a href="index.html#book" class="navlink text-white/70 hover:text-white focus-ring">Livro</a>
+        <a href="index.html#services" class="navlink text-white/70 hover:text-white focus-ring">Programas</a>
+        <a href="index.html#why" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
+        <a href="index.html#resources" class="navlink text-white/70 hover:text-white focus-ring">Recursos</a>
+        <a href="index.html#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+          target="_blank"
+          rel="noopener"
+        >
+          Alunos
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        id="menuBtn"
+        class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="mr-2">Menu</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile nav panel -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800/80 glass">
+      <div class="mx-auto max-w-7xl px-6 py-4 grid gap-2 text-sm">
+        <a href="index.html#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
+        <a href="index.html#book" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Livro</a>
+        <a href="index.html#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Programas</a>
+        <a href="index.html#why" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
+        <a href="index.html#resources" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Recursos</a>
+        <a href="index.html#contact" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+          target="_blank"
+          rel="noopener"
+        >
+          Alunos
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Top nav / breadcrumb -->
+    <section class="border-b border-neutral-900">
+      <div class="mx-auto max-w-7xl px-6 py-6">
+        <div class="flex flex-wrap items-center gap-4 text-sm text-white/60">
+          <button
+            type="button"
+            onclick="history.back()"
+            class="inline-flex items-center gap-2 hover:text-white focus-ring"
+            aria-label="Voltar para a página anterior"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Voltar
+          </button>
+
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2">
+            <a href="index.html" class="hover:text-white focus-ring">BunQr Labs</a>
+            <span class="text-white/30">/</span>
+            <span class="text-white">HUMINT Training</span>
+          </nav>
+        </div>
+
+        <h1 class="mt-6 text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
+          HUMINT Training
+        </h1>
+
+        <p class="mt-4 max-w-3xl text-base sm:text-lg text-white/70 leading-relaxed">
+          Formação aplicada em inteligência de fontes humanas, com foco em coleta estruturada, avaliação de confiabilidade, OPSEC e produção de inteligência orientada à decisão.
+        </p>
+      </div>
+    </section>
+
+    <!-- Course content -->
+    <section class="mx-auto max-w-7xl px-6 py-12 sm:py-16">
+      <div class="grid gap-10 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-14 items-start">
+
+        <!-- Left column -->
+        <aside class="space-y-6">
+          <div class="card rounded-3xl p-3">
+            <img
+              src="humint-banner.jpg"
+              alt="Banner do curso HUMINT Training"
+              class="w-full aspect-square rounded-2xl object-cover bg-white/5"
+              loading="eager"
+            />
+          </div>
+
+          <a
+            href="https://hotmart.com/pt-br/marketplace/produtos/humint-training/S104242849S?sck=HOTMART_SITE&src="
+            target="_blank"
+            rel="noopener"
+            class="btn w-full inline-flex items-center justify-center rounded-2xl px-6 py-4 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring text-base"
+          >
+            Inscreva-se
+          </a>
+        </aside>
+
+        <!-- Right column -->
+        <article class="max-w-3xl">
+          <div class="prose prose-invert max-w-none">
+            <p class="text-white/75 leading-relaxed">
+              O curso <strong class="text-white">HUMINT Training — Inteligência de Fontes Humanas Aplicada</strong> foi estruturado para formar profissionais capazes de compreender e aplicar a HUMINT como disciplina integrada ao processo de inteligência e ao apoio à tomada de decisão sob incerteza.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              Em vez de tratar HUMINT como um conjunto superficial de técnicas de entrevista ou de persuasão interpessoal, o treinamento posiciona a atividade dentro de um contexto mais sério: objetivos de informação, planejamento, análise de risco, segurança operacional e transformação da coleta em conhecimento utilizável.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              O foco do curso está na capacidade de extrair, avaliar e transformar informação humana em inteligência relevante, mantendo critérios éticos, consciência operacional e disciplina metodológica. A proposta é formar operadores e analistas que entendam não apenas como coletar, mas também como validar, proteger e comunicar.
+            </p>
+
+            <div class="mt-8 card rounded-2xl p-6">
+              <h2 class="text-xl font-semibold tracking-tight">O que o aluno desenvolve ao longo do curso</h2>
+              <ul class="mt-4 space-y-3 text-white/75">
+                <li>• Compreensão do papel da HUMINT no ecossistema das disciplinas de inteligência</li>
+                <li>• Estruturação de operações HUMINT a partir de objetivos e necessidades de informação</li>
+                <li>• Princípios e práticas de coleta por meio de entrevistas e interação humana</li>
+                <li>• Avaliação de confiabilidade e validação de informações humanas</li>
+                <li>• Integração da HUMINT com outras disciplinas de inteligência</li>
+                <li>• Aplicação de OPSEC para proteger operadores, fontes e operações</li>
+                <li>• Compreensão de limites legais, éticos e psicológicos envolvidos na atividade</li>
+                <li>• Transformação da coleta em produtos de inteligência orientados a decisores</li>
+              </ul>
+            </div>
+
+            <p class="mt-8 text-white/75 leading-relaxed">
+              Trata-se de um treinamento fortemente orientado a processo, raciocínio e decisão, e não a ferramenta. Exercícios analíticos e cenários práticos são utilizados para consolidar o aprendizado, com ênfase em disciplina operacional e maturidade analítica.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              O curso é especialmente indicado para profissionais de inteligência, segurança, investigação, risco e análise que desejam atuar com HUMINT de maneira mais estruturada, profissional e coerente com contextos modernos, inclusive no domínio cibernético.
+            </p>
+
+            <div class="mt-10 grid gap-4 sm:grid-cols-2">
+              <div class="card rounded-2xl p-5">
+                <h3 class="font-semibold">Indicado para</h3>
+                <p class="mt-2 text-sm text-white/70">
+                  Profissionais de inteligência, segurança, investigação, análise e gestão de risco que precisam trabalhar com informação humana de forma estruturada.
+                </p>
+              </div>
+
+              <div class="card rounded-2xl p-5">
+                <h3 class="font-semibold">Abordagem</h3>
+                <p class="mt-2 text-sm text-white/70">
+                  Formação voltada a método, avaliação, proteção operacional e produção de inteligência útil para contexto decisório.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <a
+                href="https://hotmart.com/pt-br/marketplace/produtos/humint-training/S104242849S?sck=HOTMART_SITE&src="
+                target="_blank"
+                rel="noopener"
+                class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+              >
+                Ir para a página de inscrição →
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-neutral-900">
+    <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden>
+          <g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
+            <path d="M24 30 h16 v20 H24z"/>
+            <path d="M30 34 v6"/>
+          </g>
+        </svg>
+        <span>© <span id="year"></span> BunQr Labs. Todos os direitos reservados.</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <a href="https://blog.bunqrlabs.com/" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Blog</a>
+        <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Instagram</a>
+        <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">LinkedIn</a>
+        <a href="/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
+        <a href="/terms" class="hover:text-white/80 focus-ring">Termos</a>
+        <a href="/policy" class="hover:text-white/80 focus-ring">Política</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const btn = document.getElementById('menuBtn');
+    const panel = document.getElementById('mobileMenu');
+
+    btn?.addEventListener('click', () => {
+      const isOpen = !panel.classList.contains('hidden');
+      panel.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    panel?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
