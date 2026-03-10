@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>OPSEC: Segurança Operacional Aplicada | BunQr Labs</title>
+  <meta name="description" content="Curso OPSEC: Segurança Operacional Aplicada da BunQr Labs. Formação aplicada em análise de risco, disciplina operacional, exposição informacional, modelagem de ameaça e proteção de identidade em ambientes digitais e físicos." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="BunQr Labs" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://bunqrlabs.com/opsec-seguranca-operacional-aplicada.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="BunQr Labs" />
+  <meta property="og:title" content="OPSEC: Segurança Operacional Aplicada | BunQr Labs" />
+  <meta property="og:description" content="Formação aplicada em OPSEC, análise de risco, disciplina operacional, exposição informacional e proteção de identidade." />
+  <meta property="og:url" content="https://bunqrlabs.com/opsec-seguranca-operacional-aplicada.html" />
+  <meta property="og:image" content="https://bunqrlabs.com/opsec-banner.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OPSEC: Segurança Operacional Aplicada | BunQr Labs" />
+  <meta name="twitter:description" content="Curso aplicado em OPSEC, gestão de exposição, modelagem de ameaça e disciplina operacional." />
+  <meta name="twitter:image" content="https://bunqrlabs.com/opsec-banner.jpg" />
+
+  <link rel="icon" type="image/png" href="logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .card {
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+    .card:hover {
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.045);
+      transform: translateY(-2px);
+    }
+    .card, .btn, .navlink {
+      transition: all 180ms ease;
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid rgba(255,255,255,0.35);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "OPSEC: Segurança Operacional Aplicada",
+    "description": "Curso de OPSEC aplicado à análise de risco, disciplina operacional, gestão consciente da exposição informacional e proteção de identidade em ambientes digitais e físicos.",
+    "provider": {
+      "@type": "Organization",
+      "name": "BunQr Labs",
+      "url": "https://bunqrlabs.com"
+    },
+    "url": "https://bunqrlabs.com/cursos/opsec/index.html"
+  }
+  </script>
+</head>
+
+<body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-neutral-800/80 glass">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
+
+      <a href="index.html" class="flex items-center gap-3 group focus-ring">
+        <img src="https://bunqrlabs.com/logo.png" alt="Logo BunQr Labs" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
+        <span class="text-lg sm:text-xl font-semibold tracking-tight">BunQr Labs</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
+        <a href="index.html#book" class="navlink text-white/70 hover:text-white focus-ring">Livro</a>
+        <a href="index.html#services" class="navlink text-white/70 hover:text-white focus-ring">Programas</a>
+        <a href="index.html#why" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
+        <a href="index.html#resources" class="navlink text-white/70 hover:text-white focus-ring">Recursos</a>
+        <a href="index.html#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+          target="_blank"
+          rel="noopener"
+        >
+          Alunos
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        id="menuBtn"
+        class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="mr-2">Menu</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile nav panel -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800/80 glass">
+      <div class="mx-auto max-w-7xl px-6 py-4 grid gap-2 text-sm">
+        <a href="index.html#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
+        <a href="index.html#book" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Livro</a>
+        <a href="index.html#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Programas</a>
+        <a href="index.html#why" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
+        <a href="index.html#resources" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Recursos</a>
+        <a href="index.html#contact" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+          target="_blank"
+          rel="noopener"
+        >
+          Alunos
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Top nav / breadcrumb -->
+    <section class="border-b border-neutral-900">
+      <div class="mx-auto max-w-7xl px-6 py-6">
+        <div class="flex flex-wrap items-center gap-4 text-sm text-white/60">
+          <button
+            type="button"
+            onclick="history.back()"
+            class="inline-flex items-center gap-2 hover:text-white focus-ring"
+            aria-label="Voltar para a página anterior"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Voltar
+          </button>
+
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2">
+            <a href="index.html" class="hover:text-white focus-ring">BunQr Labs</a>
+            <span class="text-white/30">/</span>
+            <span class="text-white">OPSEC: Segurança Operacional Aplicada</span>
+          </nav>
+        </div>
+
+        <h1 class="mt-6 text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
+          OPSEC: Segurança Operacional Aplicada
+        </h1>
+
+        <p class="mt-4 max-w-3xl text-base sm:text-lg text-white/70 leading-relaxed">
+          Formação aplicada para profissionais e indivíduos que precisam compreender OPSEC como processo contínuo de análise, decisão e gestão consciente da exposição informacional em ambientes digitais e físicos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Course content -->
+    <section class="mx-auto max-w-7xl px-6 py-12 sm:py-16">
+      <div class="grid gap-10 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-14 items-start">
+
+        <!-- Left column -->
+        <aside class="space-y-6">
+          <div class="card rounded-3xl p-3">
+            <img
+              src="opsec-banner.jpg"
+              alt="Banner do curso OPSEC: Segurança Operacional Aplicada"
+              class="w-full aspect-square rounded-2xl object-cover bg-white/5"
+              loading="eager"
+            />
+          </div>
+
+          <a
+            href="https://hotmart.com/pt-br/marketplace/produtos/opsec-seguranca-operacional-aplicada/P104267985C?sck=HOTMART_PRODUCT_PAGE"
+            target="_blank"
+            rel="noopener"
+            class="btn w-full inline-flex items-center justify-center rounded-2xl px-6 py-4 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring text-base"
+          >
+            Inscreva-se
+          </a>
+        </aside>
+
+        <!-- Right column -->
+        <article class="max-w-3xl">
+          <div class="prose prose-invert max-w-none">
+            <p class="text-white/75 leading-relaxed">
+              O curso <strong class="text-white">OPSEC: Segurança Operacional Aplicada</strong> parte de uma premissa simples, mas frequentemente negligenciada: segurança operacional não é sinônimo de sigilo, anonimização ou ferramenta. Na prática, OPSEC é um processo contínuo de análise, decisão e gestão consciente da exposição informacional. Essa é, inclusive, a linha central apresentada na página pública do curso. 
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              Ao longo do treinamento, OPSEC é tratada como disciplina cognitiva e operacional aplicável ao ciberespaço, à inteligência, a organizações e a indivíduos que operam sob observação constante. Isso inclui desde adversários intencionais até coletores passivos, fraudadores, jornalistas, concorrentes e sistemas automatizados de correlação. O problema central não está apenas em quem vê, mas em quem consegue inferir, correlacionar e antecipar comportamento a partir de sinais dispersos. 
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              A formação trabalha a lógica de que muitos riscos operacionais não surgem do acesso direto a uma informação crítica, mas da reconstrução indireta feita a partir de fragmentos aparentemente inofensivos, públicos ou legítimos. Por isso, o foco do curso não está em “esconder tudo”, mas em reduzir a capacidade adversária de compreender, prever e decidir com base naquilo que é observado. Esse princípio também está explicitamente refletido na descrição pública da Hotmart. 
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              Na prática, o aluno é levado a pensar OPSEC como disciplina de redução de assinatura, controle de exposição, modelagem de ameaça e gestão de comportamento. Isso inclui leitura de contexto, identificação de superfícies observáveis, análise de vulnerabilidades operacionais, compreensão de padrões e construção de contramedidas proporcionais ao risco real.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              O curso também avança sobre a relação entre identidade, previsibilidade e inferência adversária. Rotina, linguagem, presença digital, vínculos públicos, relações profissionais, deslocamentos, hábitos de comunicação e postura online deixam de ser vistos como elementos isolados e passam a ser tratados como parte de uma assinatura operacional cumulativa. É justamente nessa camada que grande parte da exposição acontece.
+            </p>
+
+            <div class="mt-8 card rounded-2xl p-6">
+              <h2 class="text-xl font-semibold tracking-tight">O que o aluno desenvolve ao longo do curso</h2>
+              <ul class="mt-4 space-y-3 text-white/75">
+                <li>• Compreensão de OPSEC como processo contínuo de análise e decisão</li>
+                <li>• Identificação de superfícies observáveis e vetores de exposição</li>
+                <li>• Modelagem de ameaça aplicada a indivíduos, equipes e operações</li>
+                <li>• Avaliação de vulnerabilidades operacionais e custo de exposição</li>
+                <li>• Leitura de assinaturas comportamentais e padrões exploráveis</li>
+                <li>• Construção de contramedidas realistas e proporcionais ao contexto</li>
+                <li>• Redução de previsibilidade e correlação adversária</li>
+                <li>• Proteção de identidade, rotina, comunicação e processo decisório</li>
+                <li>• Integração entre OPSEC, inteligência e ambiente cibernético</li>
+              </ul>
+            </div>
+
+            <p class="mt-8 text-white/75 leading-relaxed">
+              A proposta do treinamento é sair do entendimento superficial de segurança operacional e entrar em um modelo mais maduro: aquele em que exposição, comportamento, contexto e decisão são analisados conjuntamente. OPSEC, aqui, não é acessório. É disciplina estruturante para quem precisa preservar margem de manobra, reduzir vulnerabilidade informacional e operar com mais critério.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              O curso é indicado para profissionais de segurança, inteligência, investigação, risco, liderança técnica e também para indivíduos que precisam operar com mais consciência em ambientes observáveis, correlacionáveis e potencialmente hostis. Serve tanto como base conceitual quanto como mudança de postura para quem entendeu que exposição raramente acontece de uma vez; quase sempre ela é construída em camadas.
+            </p>
+
+            <div class="mt-10 grid gap-4 sm:grid-cols-2">
+              <div class="card rounded-2xl p-5">
+                <h3 class="font-semibold">Indicado para</h3>
+                <p class="mt-2 text-sm text-white/70">
+                  Profissionais e indivíduos que precisam reduzir exposição, preservar previsibilidade limitada e operar com mais consciência em ambientes digitais e físicos.
+                </p>
+              </div>
+
+              <div class="card rounded-2xl p-5">
+                <h3 class="font-semibold">Abordagem</h3>
+                <p class="mt-2 text-sm text-white/70">
+                  Formação orientada a risco, inferência adversária, disciplina operacional, comportamento e gestão consciente da exposição informacional.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <a
+                href="https://hotmart.com/pt-br/marketplace/produtos/opsec-seguranca-operacional-aplicada/P104267985C?sck=HOTMART_PRODUCT_PAGE"
+                target="_blank"
+                rel="noopener"
+                class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+              >
+                Ir para a página de inscrição →
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-neutral-900">
+    <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden>
+          <g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
+            <path d="M24 30 h16 v20 H24z"/>
+            <path d="M30 34 v6"/>
+          </g>
+        </svg>
+        <span>© <span id="year"></span> BunQr Labs. Todos os direitos reservados.</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <a href="https://blog.bunqrlabs.com/" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Blog</a>
+        <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Instagram</a>
+        <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">LinkedIn</a>
+        <a href="/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
+        <a href="/terms" class="hover:text-white/80 focus-ring">Termos</a>
+        <a href="/policy" class="hover:text-white/80 focus-ring">Política</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const btn = document.getElementById('menuBtn');
+    const panel = document.getElementById('mobileMenu');
+
+    btn?.addEventListener('click', () => {
+      const isOpen = !panel.classList.contains('hidden');
+      panel.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    panel?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
