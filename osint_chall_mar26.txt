@@ -1,0 +1,22 @@
+Você é Analista de Inteligência de uma operação contra grupos cyber criminosos Russos. 
+
+De posse do nick de um determinado ator de ameaças (Slavik) descubra as informações abaixo: 
+
+1. O nome do malware principal associado à botnet onde Slavik operava
+2. O nome real do operador acusado 
+3. Um alias utilizado por ele em atividades online 
+4. A cidade associada ao indivíduo 
+5. O valor da recompensa oferecida por autoridades dos EUA por informações que levem à sua prisão 
+6. O nome da operação internacional que desmantelou parte da infraestrutura da botnet 
+7. A foto da esposa de Slavik 
+8. O nome da principal operação citada no livro, de autoria da pessoa que postou a foto da esposa de Slavik na internet.
+
+
+
+
+Estruture seu relatório contendo todos os passos descritos, bem como os prints e links como evidências. 
+
+Envie para contact[@]bunqrlabs[.]com
+
+Os 5 primeios que enviarem os reports corretos, ganharão um voucher de 100% de desconto para o curso de
+Fundamentos de Inteligência Cibernética da BunQr Labs, com o Vinícius Vieira.
