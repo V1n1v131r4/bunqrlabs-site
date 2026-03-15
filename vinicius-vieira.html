@@ -1,288 +1,323 @@
 <!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Vinícius Vieira | BunQr Labs</title>
+  <title>Vinícius Vieira | BunQr Labs</title>
+  <meta name="description" content="Vinícius Vieira é especialista em OPSEC e Inteligência Cibernética, autor do livro OPSEC: Inteligência Cibernética na Prática, pesquisador de Cyber Security e profissional com mais de 19 anos de experiência em segurança da informação." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="BunQr Labs" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://bunqrlabs.com/about.html" />
 
-<meta name="description" content="Vinícius Vieira é pesquisador de Cyber Security, autor do livro OPSEC: Inteligência Cibernética na Prática e profissional com mais de 19 anos de experiência em segurança da informação, inteligência cibernética e segurança operacional." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="BunQr Labs" />
+  <meta property="og:title" content="Vinícius Vieira | BunQr Labs" />
+  <meta property="og:description" content="Especialista em OPSEC e Inteligência Cibernética, pesquisador de Cyber Security, autor e profissional com mais de 19 anos de experiência em segurança da informação." />
+  <meta property="og:url" content="https://bunqrlabs.com/about.html" />
+  <meta property="og:image" content="https://bunqrlabs.com/vinicius-vieira.jpg" />
 
-<meta name="robots" content="index, follow" />
-<meta name="author" content="BunQr Labs" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vinícius Vieira | BunQr Labs" />
+  <meta name="twitter:description" content="Especialista em OPSEC e Inteligência Cibernética, pesquisador de Cyber Security e autor." />
+  <meta name="twitter:image" content="https://bunqrlabs.com/vinicius-vieira.jpg" />
 
-<link rel="canonical" href="https://bunqrlabs.com/about.html" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="BunQr Labs" />
-<meta property="og:title" content="Vinícius Vieira | BunQr Labs" />
-<meta property="og:description" content="Pesquisador de Cyber Security, autor e especialista em Inteligência Cibernética e Segurança Operacional." />
-<meta property="og:url" content="https://bunqrlabs.com/about.html" />
+  <style>
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .card {
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+    .card:hover {
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.045);
+      transform: translateY(-2px);
+    }
+    .card, .btn, .navlink {
+      transition: all 180ms ease;
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid rgba(255,255,255,0.35);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+  </style>
 
-<link rel="icon" type="image/png" href="logo.png" />
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<style>
-.glass {
-background: rgba(255,255,255,0.04);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-}
-
-.card {
-border: 1px solid rgba(255,255,255,0.06);
-background: rgba(255,255,255,0.03);
-}
-
-.card:hover {
-border-color: rgba(255,255,255,0.14);
-background: rgba(255,255,255,0.045);
-transform: translateY(-2px);
-}
-
-.card, .btn, .navlink {
-transition: all 180ms ease;
-}
-
-.focus-ring:focus-visible {
-outline: 2px solid rgba(255,255,255,0.35);
-outline-offset: 2px;
-border-radius: 12px;
-}
-</style>
-
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "Person",
-"name": "Vinícius Vieira",
-"jobTitle": "Security Operations Manager",
-"worksFor": {
-"@type": "Organization",
-"name": "Trustly"
-},
-"url": "https://bunqrlabs.com/about.html",
-"sameAs": [
-"https://x.com/v1n1v131r4",
-"https://www.linkedin.com/in/v1n1v131r4/",
-"https://github.com/V1n1v131r4"
-]
-}
-</script>
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vinícius Vieira",
+    "jobTitle": "Security Operations Manager",
+    "url": "https://bunqrlabs.com/about.html",
+    "sameAs": [
+      "https://x.com/v1n1v131r4",
+      "https://www.linkedin.com/in/v1n1v131r4/",
+      "https://github.com/V1n1v131r4"
+    ]
+  }
+  </script>
 </head>
 
 <body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
 
-<!-- Header -->
-<header class="sticky top-0 z-40 border-b border-neutral-800/80 glass">
-<div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
-
-<a href="index.html" class="flex items-center gap-3 group focus-ring">
-<img src="logo.png" alt="Logo BunQr Labs" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
-<span class="text-lg sm:text-xl font-semibold tracking-tight">BunQr Labs</span>
-</a>
-
-<nav class="hidden md:flex items-center gap-8 text-sm">
-<a href="index.html#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
-<a href="index.html#book" class="navlink text-white/70 hover:text-white focus-ring">Livro</a>
-<a href="index.html#services" class="navlink text-white/70 hover:text-white focus-ring">Programas</a>
-<a href="index.html#resources" class="navlink text-white/70 hover:text-white focus-ring">Recursos</a>
-<a href="index.html#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
-</nav>
-
-</div>
-</header>
-
-<main>
-
-<!-- breadcrumb -->
-<section class="border-b border-neutral-900">
-<div class="mx-auto max-w-7xl px-6 py-6">
-
-<div class="flex items-center gap-4 text-sm text-white/60">
-
-<button onclick="history.back()" class="inline-flex items-center gap-2 hover:text-white focus-ring">
-
-<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
-<path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
-
-Voltar
-</button>
-
-<nav class="flex items-center gap-2">
-
-<a href="index.html" class="hover:text-white">BunQr Labs</a>
-
-<span>/</span>
-
-<span class="text-white">Vinícius Vieira</span>
-
-</nav>
-
-</div>
-
-<h1 class="mt-6 text-4xl sm:text-5xl font-bold tracking-tight">
-
-Vinícius Vieira
-
-</h1>
-
-<p class="mt-4 text-white/70 max-w-3xl text-lg">
-
-Pesquisador de Cyber Security, especialista em Inteligência Cibernética e Segurança Operacional.
-
-</p>
-
-</div>
-</section>
-
-<!-- content -->
-<section class="mx-auto max-w-7xl px-6 py-16">
-
-<div class="grid gap-10 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-14 items-start">
-
-<!-- left -->
-
-<aside class="space-y-6">
-
-<div class="card rounded-3xl p-3">
-
-<img src="vinicius-vieira.jpg"
-alt="Vinícius Vieira"
-class="w-full aspect-square rounded-2xl object-cover bg-white/5">
-
-</div>
-
-<div class="card rounded-2xl p-6">
-
-<h3 class="font-semibold text-lg">Redes</h3>
-
-<ul class="mt-4 space-y-3 text-sm text-white/70">
-
-<li>
-
-<a href="https://x.com/v1n1v131r4" target="_blank" class="hover:text-white">
-
-X / Twitter
-
-</a>
-
-</li>
-
-<li>
-
-<a href="https://www.linkedin.com/in/v1n1v131r4/" target="_blank" class="hover:text-white">
-
-LinkedIn
-
-</a>
-
-</li>
-
-<li>
-
-<a href="https://github.com/V1n1v131r4" target="_blank" class="hover:text-white">
-
-GitHub
-
-</a>
-
-</li>
-
-</ul>
-
-</div>
-
-</aside>
-
-<!-- right -->
-
-<article class="max-w-3xl">
-
-<p class="text-white/75 leading-relaxed">
-
-Vinícius Vieira é pesquisador de Cyber Security e especialista em Inteligência Cibernética, com atuação voltada à análise de risco, produção de inteligência e segurança operacional em ambientes digitais.
-
-</p>
-
-<p class="mt-5 text-white/75 leading-relaxed">
-
-Veterano da inteligência das Forças Armadas, sua experiência profissional conecta práticas de inteligência, análise de ameaças e segurança da informação a contextos corporativos e tecnológicos complexos.
-
-</p>
-
-<p class="mt-5 text-white/75 leading-relaxed">
-
-É autor do livro <strong>“OPSEC: Inteligência Cibernética na Prática”</strong>, no qual apresenta conceitos de segurança operacional e inteligência aplicados ao mundo digital, traduzindo princípios tradicionalmente utilizados em ambientes de inteligência para realidades técnicas, organizacionais e humanas.
-
-</p>
-
-<p class="mt-5 text-white/75 leading-relaxed">
-
-Ao longo de sua carreira publicou vulnerabilidades, CVEs e exploits, atuando também em pesquisa de segurança e análise de ameaças avançadas.
-
-</p>
-
-<p class="mt-5 text-white/75 leading-relaxed">
-
-Atualmente atua como <strong>Security Operations Manager na Trustly</strong>, liderando equipes de segurança focadas em redução de risco, resiliência operacional e alinhamento entre segurança e negócio.
-
-</p>
-
-<p class="mt-5 text-white/75 leading-relaxed">
-
-Sua atuação combina liderança estratégica — definição de prioridades, governança e métricas — com participação técnica ativa em operações de segurança e decisões em cenários críticos.
-
-</p>
-
-<p class="mt-5 text-white/75 leading-relaxed">
-
-Paralelamente à atuação executiva, acumula mais de sete anos como professor universitário e coordenador acadêmico na FIAP, formando profissionais de segurança capazes de atuar em ambientes complexos, ambíguos e de alta pressão.
-
-</p>
-
-<p class="mt-5 text-white/75 leading-relaxed">
-
-Seu trabalho busca conectar inteligência, segurança operacional e prática de mercado, contribuindo para o desenvolvimento de profissionais e organizações mais conscientes sobre risco, exposição e tomada de decisão em segurança da informação.
-
-</p>
-
-</article>
-
-</div>
-
-</section>
-
-</main>
-
-<footer class="border-t border-neutral-900">
-
-<div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
-
-<div>© <span id="year"></span> BunQr Labs</div>
-
-<div class="flex gap-6">
-
-<a href="https://blog.bunqrlabs.com" class="hover:text-white">Blog</a>
-
-<a href="https://www.instagram.com/bunqrlabs" class="hover:text-white">Instagram</a>
-
-<a href="https://www.linkedin.com/company/bunqr-labs" class="hover:text-white">LinkedIn</a>
-
-</div>
-
-</div>
-
-</footer>
-
-<script>
-
-document.getElementById('year').textContent = new Date().getFullYear();
-
-</script>
-
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-neutral-800/80 glass">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
+
+      <a href="index.html" class="flex items-center gap-3 group focus-ring">
+        <img src="logo.png" alt="Logo BunQr Labs" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
+        <span class="text-lg sm:text-xl font-semibold tracking-tight">BunQr Labs</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
+        <a href="index.html#book" class="navlink text-white/70 hover:text-white focus-ring">Livro</a>
+        <a href="index.html#services" class="navlink text-white/70 hover:text-white focus-ring">Programas</a>
+        <a href="index.html#why" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
+        <a href="index.html#resources" class="navlink text-white/70 hover:text-white focus-ring">Recursos</a>
+        <a href="index.html#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+          target="_blank"
+          rel="noopener"
+        >
+          Alunos
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        id="menuBtn"
+        class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="mr-2">Menu</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile nav panel -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800/80 glass">
+      <div class="mx-auto max-w-7xl px-6 py-4 grid gap-2 text-sm">
+        <a href="index.html#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
+        <a href="index.html#book" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Livro</a>
+        <a href="index.html#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Programas</a>
+        <a href="index.html#why" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
+        <a href="index.html#resources" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Recursos</a>
+        <a href="index.html#contact" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Contato</a>
+        <a
+          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
+          class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
+          target="_blank"
+          rel="noopener"
+        >
+          Alunos
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Top nav / breadcrumb -->
+    <section class="border-b border-neutral-900">
+      <div class="mx-auto max-w-7xl px-6 py-6">
+        <div class="flex flex-wrap items-center gap-4 text-sm text-white/60">
+          <button
+            type="button"
+            onclick="history.back()"
+            class="inline-flex items-center gap-2 hover:text-white focus-ring"
+            aria-label="Voltar para a página anterior"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Voltar
+          </button>
+
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2">
+            <a href="index.html" class="hover:text-white focus-ring">BunQr Labs</a>
+            <span class="text-white/30">/</span>
+            <span class="text-white">Vinícius Vieira</span>
+          </nav>
+        </div>
+
+        <h1 class="mt-6 text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
+          Vinícius Vieira
+        </h1>
+
+        <p class="mt-4 max-w-3xl text-base sm:text-lg text-white/70 leading-relaxed">
+          Especialista em OPSEC e Inteligência Cibernética, pesquisador de Cyber Security, autor e executivo de segurança com mais de 19 anos de experiência.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="mx-auto max-w-7xl px-6 py-12 sm:py-16">
+      <div class="grid gap-10 lg:grid-cols-[520px_minmax(0,1fr)] lg:gap-14 items-start">
+
+        <!-- Left column -->
+        <aside class="space-y-6">
+          <div class="card rounded-3xl p-3">
+            <img
+              src="vini.webp"
+              alt="Vinícius Vieira"
+              class="w-full aspect-square rounded-2xl object-cover bg-white/5"
+              loading="eager"
+            />
+          </div>
+
+          <div class="flex items-center justify-center gap-4">
+            <a
+              href="https://x.com/v1n1v131r4"
+              target="_blank"
+              rel="noopener"
+              class="btn inline-flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 hover:border-white/20 glass focus-ring"
+              aria-label="X / Twitter de Vinícius Vieira"
+            >
+              <img src="icons/x.png" alt="X / Twitter" class="w-5 h-5 object-contain" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/v1n1v131r4/"
+              target="_blank"
+              rel="noopener"
+              class="btn inline-flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 hover:border-white/20 glass focus-ring"
+              aria-label="LinkedIn de Vinícius Vieira"
+            >
+              <img src="icons/linkedin.png" alt="LinkedIn" class="w-5 h-5 object-contain" />
+            </a>
+
+            <a
+              href="https://github.com/V1n1v131r4"
+              target="_blank"
+              rel="noopener"
+              class="btn inline-flex items-center justify-center w-12 h-12 rounded-xl border border-white/10 hover:border-white/20 glass focus-ring"
+              aria-label="GitHub de Vinícius Vieira"
+            >
+              <img src="icons/github.png" alt="GitHub" class="w-5 h-5 object-contain" />
+            </a>
+          </div>
+        </aside>
+
+        <!-- Right column -->
+        <article class="max-w-3xl">
+          <div class="prose prose-invert max-w-none">
+            <p class="text-white/75 leading-relaxed">
+              Vinícius Vieira é especialista em <strong class="text-white">OPSEC e Inteligência Cibernética</strong>, com atuação voltada à análise de risco, produção de inteligência, segurança operacional e redução de exposição em ambientes digitais.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              Veterano da inteligência das Forças Armadas, sua trajetória combina experiência em inteligência, pesquisa de segurança e atuação prática no mercado de Segurança da Informação, sempre com foco em contexto operacional, método analítico e tomada de decisão sob pressão.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              É autor do livro <strong class="text-white">“OPSEC: Inteligência Cibernética na Prática”</strong>, no qual conecta teoria, método e realidade operacional, traduzindo conceitos de inteligência e segurança operacional para cenários técnicos, corporativos e humanos.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              Atua também como pesquisador de Cyber Security, com histórico de publicação de <strong class="text-white">CVEs e exploits</strong>, além de reconhecimento no <strong class="text-white">Google Hall of Fame</strong>, por contribuições reportadas por meio do programa VRP.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              Com mais de 19 anos de experiência em grandes empresas e no governo, atua hoje como <strong class="text-white">Gerente de SecOps na Trustly</strong>, liderando equipes de segurança com foco direto em redução de risco, resiliência operacional e alinhamento entre segurança e negócio.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              Sua atuação combina gestão estratégica de segurança — definição de prioridades, governança, processos e métricas — com envolvimento técnico ativo, incluindo análise de ameaças avançadas e decisões em cenários críticos. Acredita que liderança em segurança exige proximidade real com a operação, e não apenas visão administrativa.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              Paralelamente à atuação executiva, acumula mais de sete anos como professor universitário e coordenador acadêmico na FIAP, formando profissionais para lidar com ambientes de alta complexidade, ambiguidade e pressão — características centrais da cibersegurança moderna.
+            </p>
+
+            <p class="mt-5 text-white/75 leading-relaxed">
+              Mestre em Tecnologias Emergentes em Educação, especialista em Cyber Security e Guerra Cibernética, com certificações como <strong class="text-white">OSCP</strong>, <strong class="text-white">CEH</strong> e <strong class="text-white">LPIC</strong>, seu trabalho busca conectar inteligência, segurança operacional, pesquisa aplicada e prática de mercado de forma concreta e útil.
+            </p>
+
+            <div class="mt-10 grid gap-4 sm:grid-cols-2">
+              <div class="card rounded-2xl p-5">
+                <h3 class="font-semibold">Foco principal</h3>
+                <p class="mt-2 text-sm text-white/70">
+                  OPSEC, Inteligência Cibernética, análise de risco, redução de exposição e segurança aplicada a ambientes complexos.
+                </p>
+              </div>
+
+              <div class="card rounded-2xl p-5">
+                <h3 class="font-semibold">Atuação</h3>
+                <p class="mt-2 text-sm text-white/70">
+                  Inteligência, pesquisa de segurança, liderança executiva, formação de profissionais e segurança operacional orientada à prática.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-neutral-900">
+    <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden>
+          <g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
+            <path d="M24 30 h16 v20 H24z"/>
+            <path d="M30 34 v6"/>
+          </g>
+        </svg>
+        <span>© <span id="year"></span> BunQr Labs. Todos os direitos reservados.</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <a href="https://blog.bunqrlabs.com/" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Blog</a>
+        <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Instagram</a>
+        <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">LinkedIn</a>
+        <a href="/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
+        <a href="/terms" class="hover:text-white/80 focus-ring">Termos</a>
+        <a href="/policy" class="hover:text-white/80 focus-ring">Política</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const btn = document.getElementById('menuBtn');
+    const panel = document.getElementById('mobileMenu');
+
+    btn?.addEventListener('click', () => {
+      const isOpen = !panel.classList.contains('hidden');
+      panel.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    panel?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
