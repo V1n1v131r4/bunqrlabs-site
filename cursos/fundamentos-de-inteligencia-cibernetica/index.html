@@ -66,6 +66,18 @@
       outline-offset: 2px;
       border-radius: 12px;
     }
+    .testimonial-viewport {
+      overflow: hidden;
+    }
+    .testimonial-track {
+      display: flex;
+      transition: transform 280ms ease;
+      will-change: transform;
+    }
+    .testimonial-slide {
+      min-width: 100%;
+      max-width: 100%;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -228,6 +240,124 @@
           </div>
         </div>
       </a>
+
+      <section class="card rounded-3xl p-5" aria-label="Depoimentos de alunos">
+        <div class="flex items-center justify-between gap-3 mb-4">
+          <h3 class="text-lg font-semibold tracking-tight">Depoimentos</h3>
+          <div class="flex items-center gap-2">
+            <button
+              type="button"
+              id="testimonialPrev"
+              class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/10 text-white/80 hover:text-white hover:border-white/20 focus-ring"
+              aria-label="Depoimento anterior"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button
+              type="button"
+              id="testimonialNext"
+              class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/10 text-white/80 hover:text-white hover:border-white/20 focus-ring"
+              aria-label="Próximo depoimento"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonial-viewport">
+          <div id="testimonialTrack" class="testimonial-track">
+
+             <article class="testimonial-slide pr-1">
+              <p class="text-sm text-white/75 leading-relaxed">
+                As discussões e exemplos práticos elevam o nível do aprendizado. Não é apenas absorver conteúdo, mas desenvolver senso crítico e consciência sobre como o mundo realmente funciona.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/jofuraste/"
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-flex text-sm font-semibold text-white hover:text-white/80 focus-ring"
+              >
+                João Furaste
+              </a>
+            </article>
+
+            <article class="testimonial-slide pr-1">
+              <p class="text-sm text-white/75 leading-relaxed">
+                O curso entrega algo raro: clareza. Você passa a enxergar padrões, relações e riscos que antes eram invisíveis. Isso muda completamente a forma de interpretar informações e tomar decisões.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/gsimeoni/"
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-flex text-sm font-semibold text-white hover:text-white/80 focus-ring"
+              >
+                Gabriel Simeoni
+              </a>
+            </article>
+
+            <article class="testimonial-slide pr-1">
+              <p class="text-sm text-white/75 leading-relaxed">
+                Não é sobre certo ou errado, é sobre entender motivações, contexto e impacto. O curso amplia sua visão e fortalece sua consciência situacional em um ambiente cada vez mais complexo e hostil.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/lopes-kelvin/"
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-flex text-sm font-semibold text-white hover:text-white/80 focus-ring"
+              >
+                Kelvin Lopes
+              </a>
+            </article>
+
+            <article class="testimonial-slide pr-1">
+              <p class="text-sm text-white/75 leading-relaxed">
+                Mais do que um curso técnico, é uma mudança de mentalidade. Você passa a entender como informações se conectam, como decisões são tomadas e como sua própria exposição pode ser explorada. É uma imersão real em inteligência aplicada.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/gabrielgrisolia/"
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-flex text-sm font-semibold text-white hover:text-white/80 focus-ring"
+              >
+                Gabriel Grisolia
+              </a>
+            </article>
+
+            <article class="testimonial-slide pr-1">
+              <p class="text-sm text-white/75 leading-relaxed">
+                O diferencial não está nas ferramentas, mas na forma de pensar. O curso conecta teoria e prática de forma clara, trazendo a inteligência para o dia a dia e mostrando como reduzir incerteza em cenários reais.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/gabriel-pess0a/"
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-flex text-sm font-semibold text-white hover:text-white/80 focus-ring"
+              >
+                Gabriel Pessoa
+              </a>
+            </article>
+
+            <article class="testimonial-slide pr-1">
+              <p class="text-sm text-white/75 leading-relaxed">
+                Conteúdo extremamente atual e dinâmico. Mesmo revisitando o curso, é possível perceber evolução constante, acompanhando mudanças no cenário global, leis e novas superfícies de exposição.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/rodrigo-monteiro-sec/"
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-flex text-sm font-semibold text-white hover:text-white/80 focus-ring"
+              >
+                Rodrigo Monteiro
+              </a>
+            </article>
+
+          </div>
+        </div>
+      </section>
         </aside>
 
         <!-- Right column -->
@@ -379,6 +509,29 @@
         btn.setAttribute('aria-expanded', 'false');
       });
     });
+
+    const testimonialTrack = document.getElementById('testimonialTrack');
+    const testimonialPrev = document.getElementById('testimonialPrev');
+    const testimonialNext = document.getElementById('testimonialNext');
+
+    if (testimonialTrack && testimonialPrev && testimonialNext) {
+      const slides = testimonialTrack.children;
+      let currentSlide = 0;
+
+      const updateSlider = () => {
+        testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      };
+
+      testimonialPrev.addEventListener('click', () => {
+        currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+        updateSlider();
+      });
+
+      testimonialNext.addEventListener('click', () => {
+        currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+        updateSlider();
+      });
+    }
   </script>
 </body>
 </html>
