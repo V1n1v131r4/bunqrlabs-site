@@ -433,30 +433,47 @@
     </section>
   </main>
 
-  <!-- Rodapé -->
-  <footer class="border-t border-neutral-900">
-    <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden>
-          <g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
-            <path d="M24 30 h16 v20 H24z"/>
-            <path d="M30 34 v6"/>
-          </g>
-        </svg>
-        <span>© <span id="year"></span> BunQr Labs. Todos os direitos reservados.</span>
-      </div>
-
-      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-        <a href="https://blog.bunqrlabs.com/" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Blog</a>
-        <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Instagram</a>
-        <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">LinkedIn</a>
-        <a href="https://bunqrlabs.com/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
-        <a href="https://bunqrlabs.com/terms" class="hover:text-white/80 focus-ring">Termos</a>
-        <a href="https://bunqrlabs.com/policy" class="hover:text-white/80 focus-ring">Política</a>
-      </div>
+<!-- Rodapé -->
+<footer class="border-t border-neutral-900">
+  <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+    
+    <div class="flex items-center gap-3">
+      <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden>
+        <g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
+          <path d="M24 30 h16 v20 H24z"/>
+          <path d="M30 34 v6"/>
+        </g>
+      </svg>
+      <span>© <span id="year"></span> BunQr Labs. Todos os direitos reservados.</span>
     </div>
-  </footer>
+
+    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+      <a href="https://blog.bunqrlabs.com/" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Blog</a>
+      <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Instagram</a>
+      <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">LinkedIn</a>
+      <a href="https://bunqrlabs.com/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
+      <a href="https://bunqrlabs.com/terms" class="hover:text-white/80 focus-ring">Termos</a>
+      <a href="https://bunqrlabs.com/policy" class="hover:text-white/80 focus-ring">Política</a>
+
+      <!-- WhatsApp -->
+      <a
+        href="https://wa.me/447897033170?text=Olá%2C%20vim%20pela%20página%20do%20curso%20e%20quero%20mais%20informações."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Tirar dúvidas sobre o curso no WhatsApp"
+        class="inline-flex items-center gap-2 hover:text-red-500 focus-ring transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="w-4 h-4" aria-hidden="true">
+          <path d="M19.11 17.27c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.28-.95.93-.95 2.26 0 1.33.97 2.61 1.11 2.79.14.18 1.9 2.89 4.61 4.05.64.28 1.14.45 1.53.57.64.2 1.22.17 1.68.1.51-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+          <path d="M16.02 3.2c-7.05 0-12.78 5.73-12.78 12.78 0 2.25.59 4.45 1.71 6.39L3 29l6.82-1.79a12.76 12.76 0 0 0 6.2 1.59h.01c7.05 0 12.78-5.73 12.78-12.78S23.07 3.2 16.02 3.2zm0 23.27h-.01a10.44 10.44 0 0 1-5.32-1.46l-.38-.22-4.05 1.06 1.08-3.95-.25-.4a10.45 10.45 0 1 1 8.93 4.97z"/>
+        </svg>
+        <span>Tirar dúvidas</span>
+      </a>
+    </div>
+
+  </div>
+</footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
