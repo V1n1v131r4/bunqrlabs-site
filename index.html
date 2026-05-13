@@ -327,50 +327,73 @@
   </section>
 
 
-  <!-- Velkris -->
-  <section id="velkris" class="border-y border-neutral-900 bg-neutral-950/50">
-    <div class="mx-auto max-w-7xl px-6 py-20">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- Velkris -->
+  <section id="velkris" class="relative overflow-hidden border-y border-neutral-900 bg-neutral-950/50">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-24 right-1/4 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl"></div>
+      <div class="absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-fuchsia-500/10 blur-3xl"></div>
+    </div>
 
-        <div class="max-w-2xl">
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Velkris</h2>
+    <div class="relative mx-auto max-w-7xl px-6 py-20">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_460px] gap-12 items-center">
 
-          <p class="mt-4 text-white/70">
-            O Velkris é o novo produto da BunQr Labs para apoiar equipes na leitura contínua de exposição, sinais externos e ameaças observáveis contra uma organização.
+        <div class="max-w-3xl">
+          <span class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/5 px-3 py-1 text-xs text-cyan-100/80 glass">
+            Novo produto BunQr Labs
+          </span>
+
+          <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Velkris Threat Intelligence</h2>
+
+          <p class="mt-4 text-white/70 leading-relaxed">
+            O Velkris é a plataforma da BunQr Labs para transformar exposição externa em inteligência acionável. A proposta é mostrar o que atacantes, fraudadores e grupos de interesse já conseguem observar sobre uma organização: infraestrutura, funcionários, presença digital, vazamentos, indicadores de ameaça e sinais públicos que podem ser correlacionados antes de um incidente.
           </p>
 
-          <p class="mt-4 text-white/70">
-            A proposta é transformar dados dispersos sobre infraestrutura, marca, pessoas e indicadores de ameaça em visão operacional para decisão, priorização e redução de risco.
+          <p class="mt-4 text-white/70 leading-relaxed">
+            Desenvolvido para equipes de segurança, executivos e responsáveis por risco organizacional, o produto conecta monitoramento, contexto e priorização para apoiar decisões com base em evidências, reduzindo a distância entre superfície exposta e resposta operacional.
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
             <a
               href="https://velkris.io"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center"
             >
               Acessar velkris.io →
+            </a>
+
+            <a
+              href="#contact"
+              class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center"
+            >
+              Falar sobre uso corporativo
             </a>
           </div>
         </div>
 
         <div class="flex justify-center lg:justify-end">
-          <div class="relative rounded-3xl p-6 sm:p-8 border border-white/10 bg-white/5 glass">
-            <div class="absolute -inset-px rounded-3xl bg-gradient-to-b from-white/10 to-transparent opacity-70 pointer-events-none"></div>
-
-            <img
-              src="velkris_site_logo_transp.png"
-              alt="Logo Velkris"
-              class="relative w-full max-w-md object-contain opacity-95"
-              loading="lazy"
-            />
-          </div>
+          <a
+            href="https://velkris.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card block rounded-3xl p-6 sm:p-8 focus-ring w-full max-w-md"
+          >
+            <div class="relative">
+              <div class="absolute inset-8 rounded-full bg-cyan-400/10 blur-3xl"></div>
+              <img
+                src="velkris_site_logo_transp.png"
+                alt="Velkris Threat Intelligence"
+                class="relative w-full h-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+          </a>
         </div>
 
       </div>
     </div>
   </section>
+  
 <!-- Programas de Inteligência -->
 <section id="services" class="mx-auto max-w-7xl px-6 py-20">
   <div class="max-w-3xl">
