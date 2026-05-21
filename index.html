@@ -2,26 +2,82 @@
 <html lang="pt-BR" class="scroll-smooth">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18009124403"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18009124403"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18009124403');
+  </script>
 
-  gtag('config', 'AW-18009124403');
-</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>BunQr Labs — OPSEC • Inteligência • Sobrevivência Digital</title>
+  <title>BunQr Labs — OPSEC, Inteligência Cibernética e Threat Exposure</title>
 
-  <meta name="description" content="BunQr Labs — treinamentos e conteúdos em OPSEC e Inteligência Cibernética. Modelagem de ameaça, risco, disciplina operacional e proteção de identidade em ambientes digitais e físicos." />
+  <meta name="description" content="BunQr Labs — treinamentos, serviços e plataforma de inteligência aplicada para OPSEC, threat exposure, inteligência cibernética, redução de exposição e tomada de decisão em ambientes adversos." />
 
-  <link rel="icon" type="image/png" href="logo.png" />
+  <meta property="og:title" content="BunQr Labs — OPSEC, Inteligência Cibernética e Threat Exposure" />
+  <meta property="og:description" content="Treinamentos, serviços e plataforma de inteligência aplicada para reduzir exposição, antecipar ameaças e fortalecer decisões em ambientes adversos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bunqrlabs.com/" />
+  <meta property="og:image" content="https://bunqrlabs.com/hero.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BunQr Labs",
+    "url": "https://bunqrlabs.com",
+    "logo": "https://bunqrlabs.com/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/bunqr-labs",
+      "https://www.instagram.com/bunqrlabs",
+      "https://blog.bunqrlabs.com"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Velkris",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web",
+    "url": "https://velkris.io"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "OPSEC - Segurança Operacional Aplicada",
+    "provider": {
+      "@type": "Organization",
+      "name": "BunQr Labs",
+      "sameAs": "https://bunqrlabs.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="https://bunqrlabs.com/logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* micro-ajustes que dão “acabamento” sem virar framework */
+    @keyframes floatSlow {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes pulseGlow {
+      0% { opacity: .35; }
+      50% { opacity: .6; }
+      100% { opacity: .35; }
+    }
     .glass {
       background: rgba(255,255,255,0.04);
       backdrop-filter: blur(10px);
@@ -34,21 +90,35 @@
     .card:hover {
       border-color: rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.045);
-      transform: translateY(-2px);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(0,0,0,.28);
     }
-    .card, .btn, .navlink {
-      transition: all 180ms ease;
-    }
+    .card, .btn, .navlink { transition: all 180ms ease; }
     .focus-ring:focus-visible {
       outline: 2px solid rgba(255,255,255,0.35);
       outline-offset: 2px;
       border-radius: 12px;
     }
-    .training-thumb img {
-      transition: transform 220ms ease;
-}
-    .training-thumb:hover img {
-      transform: scale(1.02);
+    .training-thumb img { transition: transform 220ms ease; }
+    .training-thumb:hover img { transform: scale(1.02); }
+    .hero-glow {
+      animation: pulseGlow 8s ease-in-out infinite;
+    }
+
+    .floating {
+      animation: floatSlow 7s ease-in-out infinite;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.04);
+      padding: .25rem .75rem;
+      border-radius: 999px;
+      font-size: .75rem;
+      color: rgba(255,255,255,.68);
     }
   </style>
 </head>
@@ -60,275 +130,106 @@
     <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
 
       <a href="#home" class="flex items-center gap-3 group focus-ring">
-        <img src="logo.png" alt="Logo BunQr Labs" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
+        <img src="https://bunqrlabs.com/logo.png" alt="Logo BunQr Labs" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
         <span class="text-lg sm:text-xl font-semibold tracking-tight">BunQr Labs</span>
       </a>
 
-      <!-- Desktop nav -->
-      <nav class="hidden md:flex items-center gap-8 text-sm">
+      <nav class="hidden md:flex items-center gap-7 text-sm">
+        <a href="#platform" class="navlink text-white/70 hover:text-white focus-ring">Plataforma</a>
+        <a href="#services" class="navlink text-white/70 hover:text-white focus-ring">Serviços</a>
         <a href="#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
-        <a href="#book" class="navlink text-white/70 hover:text-white focus-ring">Livro</a>
-        <a href="#services" class="navlink text-white/70 hover:text-white focus-ring">Programas</a>
-        <a href="#why" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
-        <a href="#resources" class="navlink text-white/70 hover:text-white focus-ring">Recursos</a>
+        <a href="#research" class="navlink text-white/70 hover:text-white focus-ring">Research</a>
+        <a href="#about" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
         <a href="#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
-        <a
-          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
-          class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
-        >
-          Alunos
-        </a>
+        <a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica" class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Alunos</a>
       </nav>
 
-      <!-- Mobile menu button -->
-      <button
-        id="menuBtn"
-        class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-      >
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <span class="mr-2">Menu</span>
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
-
     </div>
 
-    <!-- Mobile nav panel -->
     <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800/80 glass">
       <div class="mx-auto max-w-7xl px-6 py-4 grid gap-2 text-sm">
+        <a href="#platform" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Plataforma</a>
+        <a href="#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Serviços</a>
         <a href="#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
-        <a href="#book" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Livro</a>
-        <a href="#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Programas</a>
-        <a href="#why" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
-        <a href="#resources" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Recursos</a>
+        <a href="#research" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Research</a>
+        <a href="#about" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
         <a href="#contact" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Contato</a>
-        <a
-          href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica"
-          class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
-        >
-          Alunos
-        </a>
+        <a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica" class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Alunos</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
   <section id="home" class="relative overflow-hidden">
-    <!-- Background image + overlays -->
-<div class="absolute inset-0">
-  <!-- Background image -->
-  <img
-    src="hero.webp"
-    alt=""
-    class="h-full w-full object-cover object-center"
-    loading="eager"
-    fetchpriority="high"
-  />
+    <div class="absolute inset-0">
+      <img src="https://bunqrlabs.com/hero.webp" alt="" class="h-full w-full object-cover object-center" loading="eager" fetchpriority="high" />
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/55 to-neutral-950"></div>
+      <div class="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl hero-glow"></div>
+      <div class="absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-fuchsia-500/10 blur-3xl hero-glow"></div>
+      <div class="absolute top-1/3 right-10 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl hero-glow"></div>
+    </div>
 
-  <!-- Overlay escuro (legibilidade) -->
-  <div class="absolute inset-0 bg-black/05"></div>
+    <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-32 lg:pb-24">
+      <div class="max-w-4xl">
+        <span class="section-kicker glass">
+          OPSEC • Inteligência Cibernética • Threat Exposure
+        </span>
 
-  <!-- Gradiente para profundidade -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/80"></div>
+        <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+          Inteligência aplicada para reduzir exposição e fortalecer decisões em ambientes adversos.
+        </h1>
 
-  <!-- Glow sutil (mantém estética anterior) -->
-  <div class="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/10 blur-3xl"></div>
-  <div class="absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-white/5 blur-3xl"></div>
-</div>
+        <p class="mt-6 max-w-3xl text-white/72 text-base sm:text-lg leading-relaxed">
+          A BunQr Labs combina <span class="text-white font-semibold">treinamento especializado</span>, <span class="text-white font-semibold">serviços de inteligência e OPSEC</span> e <span class="text-white font-semibold">plataforma própria de threat exposure</span> para apoiar profissionais e organizações que precisam operar com método, discrição e clareza sob incerteza.
+        </p>
 
-    <div class="relative mx-auto max-w-7xl px-6 pt-16 pb-14 sm:pt-20 sm:pb-16 lg:pt-28 lg:pb-20">
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-
-        <!-- Left: text -->
-        <div class="max-w-2xl">
-          <!--<span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 glass">
-            <span class="inline-block h-1.5 w-1.5 rounded-full bg-white/80"></span>
-            OPSEC • Inteligência • Decisão
-          </span>-->
-
-          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            OPSEC e Inteligência Cibernética
-          </h1>
-
-          <p class="mt-6 text-white/70 text-base sm:text-lg leading-relaxed">
-            A BunQr Labs desenvolve profissionais e equipes para atuar com
-            <span class="text-white font-semibold">Inteligência e Contrainteligência</span>,
-            <span class="text-white font-semibold">Segurança Operacional (OPSEC)</span> e
-            <span class="text-white font-semibold">Proteção de Identidades</span>.
-          </p>
-
-          <!--<details class="group mt-4">
-            <summary class="cursor-pointer text-xs text-white/50 hover:text-white/70 select-none focus-ring inline-flex items-center gap-2">
-              Ler mais
-              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </summary>
-            <div class="mt-3 text-xs text-white/50 leading-relaxed">
-              sob vigilância digital e física. Metodologia baseada em experiência prática e ensino aplicado. Conteúdo educacional com foco em responsabilidade e discrição.
-            </div>
-          </details>-->
-
-          <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
-            <a href="#training"
-               class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center">
-              Ver Treinamentos
-            </a>
-            <a href="#resources"
-               class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">
-              Recursos Gratuitos
-            </a>
-          </div>
+        <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
+          <a href="#platform" class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center">Conhecer a plataforma</a>
+          <a href="#services" class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">Serviços corporativos</a>
+          <a href="#training" class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">Treinamentos</a>
         </div>
-
-        <!-- Right: logo card -->
-        <div class="flex justify-center lg:justify-end">
-         <!-- <div class="relative rounded-3xl p-6 sm:p-8 border border-white/10 bg-white/5 glass">
-            <div class="absolute -inset-px rounded-3xl bg-gradient-to-b from-white/10 to-transparent opacity-70 pointer-events-none"></div>
-
-            <img
-              src="logo.png"
-              alt="Logo BunQr Labs"
-              class="w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-contain opacity-95"
-            />-->
-
-            
-
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Highlights -->
-  <section class="border-y border-neutral-900 bg-neutral-950/50">
-    <div class="mx-auto max-w-7xl px-6 py-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Verticais -->
+  <section class="border-y border-neutral-900 bg-neutral-950/70">
+    <div class="mx-auto max-w-7xl px-6 py-12">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 floating">
+        <a href="#platform" class="card rounded-2xl p-6 focus-ring block">
+          <p class="text-xs uppercase tracking-[0.22em] text-white/40">Platform</p>
+          <h3 class="mt-3 font-semibold text-lg">Velkris</h3>
+          <p class="mt-2 text-sm text-white/65 leading-relaxed">Plataforma de threat exposure intelligence para observar, correlacionar e priorizar sinais externos de risco.</p>
+        </a>
 
-      <div class="card card rounded-2xl p-6">
-        <h3 class="font-semibold">Segurança Operacional</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Controle sistemático de exposição e comportamento em ambientes de risco.
-        </p>
+        <a href="#services" class="card rounded-2xl p-6 focus-ring block">
+          <p class="text-xs uppercase tracking-[0.22em] text-white/40">Services</p>
+          <h3 class="mt-3 font-semibold text-lg">Intelligence & OPSEC</h3>
+          <p class="mt-2 text-sm text-white/65 leading-relaxed">Assessments, simulações e advisory para reduzir exposição, antecipar ameaças e amadurecer resposta operacional.</p>
+        </a>
+
+        <a href="#training" class="card rounded-2xl p-6 focus-ring block">
+          <p class="text-xs uppercase tracking-[0.22em] text-white/40">Academy</p>
+          <h3 class="mt-3 font-semibold text-lg">Treinamentos</h3>
+          <p class="mt-2 text-sm text-white/65 leading-relaxed">Formação em OPSEC, inteligência cibernética e HUMINT aplicada para profissionais e equipes.</p>
+        </a>
+
+        <a href="#research" class="card rounded-2xl p-6 focus-ring block">
+          <p class="text-xs uppercase tracking-[0.22em] text-white/40">Research</p>
+          <h3 class="mt-3 font-semibold text-lg">Conteúdo e estudos</h3>
+          <p class="mt-2 text-sm text-white/65 leading-relaxed">Guias, artigos, briefings e materiais para sustentar pensamento crítico em segurança, exposição e inteligência.</p>
+        </a>
       </div>
-
-      <div class="card rounded-2xl p-6">
-        <h3 class="font-semibold">Proteção de Identidades</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Redução deliberada de assinaturas e vulnerabilidades associadas à identidade.
-        </p>
-      </div>
-
-      <div class="card rounded-2xl p-6">
-        <h3 class="font-semibold">Inteligência Cibernética</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Investigação estruturada e produção de conhecimento para decisão estratégica.
-        </p>
-      </div>
-
     </div>
   </section>
 
-  <!-- Treinamentos -->
-  <section id="training" class="border-y border-neutral-900 bg-neutral-950/50">
-    <div class="mx-auto max-w-7xl px-6 py-20">
-      <div class="max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Treinamentos em OPSEC e Inteligência Cibernética</h2>
-
-        <p class="mt-4 text-white/70">
-          Programas de formação para profissionais e equipes que precisam sustentar
-          <span class="text-white font-semibold">critérios de decisão</span>, <span class="text-white font-semibold">disciplina operacional</span>
-          e <span class="text-white font-semibold">redução de exposição</span> com consistência.
-        </p>
-
-        
-      </div>
-
-      <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-  <div class="card rounded-2xl p-4">
-    <a href="https://bunqrlabs.com/cursos/OPSEC/index.html" class="block focus-ring rounded-xl overflow-hidden">
-      <div class="training-thumb aspect-square w-full bg-neutral-900 rounded-xl overflow-hidden">
-        <img
-          src="cursos/OPSEC/opsec-banner.jpg"
-          alt="OPSEC - Segurança Operacional Aplicada"
-          class="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    </a>
-
-    <p class="mt-3 text-sm text-white/70 leading-relaxed">
-      Redução de exposição, modelagem de ameaça e controle de assinatura em ambientes digitais e físicos.
-    </p>
-
-    <a
-      href="https://bunqrlabs.com/cursos/OPSEC/index.html"
-      class="btn mt-4 w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
-    >
-      Saiba mais
-    </a>
-  </div>
-
-  <div class="card rounded-2xl p-4">
-    <a href="https://bunqrlabs.com/cursos/fundamentos-de-inteligencia-cibernetica/index.html" class="block focus-ring rounded-xl overflow-hidden">
-      <div class="training-thumb aspect-square w-full bg-neutral-900 rounded-xl overflow-hidden">
-        <img
-          src="cursos/fundamentos-de-inteligencia-cibernetica/fundamentos-inteligencia-cibernetica-banner.jpg"
-          alt="Fundamentos de Inteligência Cibernética"
-          class="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    </a>
-
-    <p class="mt-3 text-sm text-white/70 leading-relaxed">
-      Produção de inteligência, análise e tomada de decisão sob incerteza.
-    </p>
-
-    <a
-      href="https://bunqrlabs.com/cursos/fundamentos-de-inteligencia-cibernetica/index.html"
-      class="btn mt-4 w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
-    >
-      Saiba mais
-    </a>
-  </div>
-
-  <div class="card rounded-2xl p-4">
-    <a href="https://bunqrlabs.com/cursos/humint-training/index.html" class="block focus-ring rounded-xl overflow-hidden">
-      <div class="training-thumb aspect-square w-full bg-neutral-900 rounded-xl overflow-hidden">
-        <img
-          src="cursos/humint-training/humint-banner.jpg"
-          alt="HUMINT Training"
-          class="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    </a>
-
-    <p class="mt-3 text-sm text-white/70 leading-relaxed">
-      Coleta humana, validação de informação e proteção operacional de fontes e interações.
-    </p>
-
-    <a
-      href="https://bunqrlabs.com/cursos/humint-training/index.html"
-      class="btn mt-4 w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring"
-    >
-      Saiba mais
-    </a>
-  </div>
-
-</div>
-
-    </div>
-  </section>
-
-
-<!-- Velkris -->
-  <section id="velkris" class="relative overflow-hidden border-y border-neutral-900 bg-neutral-950/50">
+  <!-- Velkris / Platform -->
+  <section id="platform" class="relative overflow-hidden border-b border-neutral-900 bg-neutral-950">
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute -top-24 right-1/4 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl"></div>
       <div class="absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-fuchsia-500/10 blur-3xl"></div>
@@ -336,447 +237,285 @@
 
     <div class="relative mx-auto max-w-7xl px-6 py-20">
       <div class="grid lg:grid-cols-[minmax(0,1fr)_460px] gap-12 items-center">
-
         <div class="max-w-3xl">
-          <span class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/5 px-3 py-1 text-xs text-cyan-100/80 glass">
-            Novo produto BunQr Labs
-          </span>
-
-          <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Velkris Threat Intelligence</h2>
+          <span class="section-kicker glass text-cyan-100/80 border-cyan-300/20 bg-cyan-300/5">Plataforma proprietária</span>
+          <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Velkris Threat Exposure Intelligence</h2>
 
           <p class="mt-4 text-white/70 leading-relaxed">
             O Velkris é a plataforma da BunQr Labs para transformar exposição externa em inteligência acionável. A proposta é mostrar o que atacantes, fraudadores e grupos de interesse já conseguem observar sobre uma organização: infraestrutura, funcionários, presença digital, vazamentos, indicadores de ameaça e sinais públicos que podem ser correlacionados antes de um incidente.
           </p>
 
-          <p class="mt-4 text-white/70 leading-relaxed">
-            Desenvolvido para equipes de segurança, executivos e responsáveis por risco organizacional, o produto conecta monitoramento, contexto e priorização para apoiar decisões com base em evidências, reduzindo a distância entre superfície exposta e resposta operacional.
-          </p>
+          <div class="mt-8 grid sm:grid-cols-3 gap-4">
+            <div class="card rounded-2xl p-4"><h3 class="font-semibold text-sm">Exposição externa</h3><p class="mt-2 text-xs text-white/60 leading-relaxed">Superfícies, ativos, identidades e presença pública observável.</p></div>
+            <div class="card rounded-2xl p-4"><h3 class="font-semibold text-sm">Credenciais e sinais</h3><p class="mt-2 text-xs text-white/60 leading-relaxed">Indícios de vazamento, correlação e priorização contextual.</p></div>
+            <div class="card rounded-2xl p-4"><h3 class="font-semibold text-sm">Decisão operacional</h3><p class="mt-2 text-xs text-white/60 leading-relaxed">Achados organizados para reduzir a distância entre alerta e ação.</p></div>
+          </div>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a
-              href="https://velkris.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center"
-            >
-              Acessar velkris.io →
-            </a>
-
-            <a
-              href="#contact"
-              class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center"
-            >
-              Falar sobre uso corporativo
-            </a>
+            <a href="https://velkris.io" target="_blank" rel="noopener noreferrer" class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center">Acessar velkris.io →</a>
+            <a href="#contact" class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">Falar sobre uso corporativo</a>
           </div>
         </div>
 
         <div class="flex justify-center lg:justify-end">
-          <a
-            href="https://velkris.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="card block rounded-3xl p-6 sm:p-8 focus-ring w-full max-w-md"
-          >
+          <a href="https://velkris.io" target="_blank" rel="noopener noreferrer" class="card block rounded-3xl p-6 sm:p-8 focus-ring w-full max-w-md">
             <div class="relative">
               <div class="absolute inset-8 rounded-full bg-cyan-400/10 blur-3xl"></div>
-              <img
-                src="velkris_site_logo_transp.png"
-                alt="Velkris Threat Intelligence"
-                class="relative w-full h-auto object-contain"
-                loading="lazy"
-              />
+              <img src="https://bunqrlabs.com/velkris_site_logo_transp.png" alt="Velkris Threat Intelligence" class="relative w-full h-auto object-contain" loading="lazy" />
             </div>
           </a>
         </div>
-
       </div>
     </div>
   </section>
-  
-<!-- Programas de Inteligência -->
-<section id="services" class="mx-auto max-w-7xl px-6 py-20">
-  <div class="max-w-3xl">
-    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Programas de Inteligência</h2>
 
-    <p class="mt-4 text-white/70">
-      Capacidades desenvolvidas para reduzir exposição, antecipar ameaças e fortalecer decisões em ambientes adversos,
-      conectando OPSEC, inteligência cibernética e resposta operacional.
-    </p>
-  </div>
+  <!-- Serviços -->
+  <section id="services" class="mx-auto max-w-7xl px-6 py-24 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(circle_at_top_right,white,transparent_35%)]"></div>
+    <div class="grid lg:grid-cols-[360px_minmax(0,1fr)] gap-12 items-start">
+      <div class="lg:sticky lg:top-28">
+        <span class="section-kicker glass">Services</span>
+        <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Serviços de inteligência e OPSEC</h2>
+        <p class="mt-4 text-white/70 leading-relaxed">
+          Programas corporativos para reduzir exposição, testar hipóteses adversariais e fortalecer decisões em contextos onde segurança, reputação, operação e informação se cruzam.
+        </p>
+        <a href="#contact" class="btn mt-8 inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Solicitar conversa</a>
+      </div>
 
-  <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-    
-    <!-- OPSEC Risk Assessment -->
-    <div class="card rounded-2xl p-6 flex flex-col h-full">
-      <h3 class="font-semibold text-lg">OPSEC Risk Assessment</h3>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        Exposição raramente é explícita. Ela emerge da combinação entre dados disponíveis, comportamento e previsibilidade ao longo do tempo.
-      </p>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        A avaliação identifica como essas camadas podem ser observadas e correlacionadas por terceiros, permitindo inferência, antecipação e exploração, com contramedidas aplicáveis para redução de superfície.
-      </p>
-      <div class="mt-auto pt-5 border-t border-white/10">
-        <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a>
+      <div class="grid md:grid-cols-2 gap-6 items-stretch">
+        <div class="card rounded-2xl p-6 flex flex-col h-full">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/38">Assessment</p>
+          <h3 class="mt-3 font-semibold text-lg">OPSEC Risk Assessment</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Avaliação de exposição organizacional e individual a partir da combinação entre dados disponíveis, comportamento, previsibilidade e inferências possíveis por terceiros.</p>
+          <div class="mt-auto pt-5 border-t border-white/10"><a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Consultar formato →</a></div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col h-full">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/38">Maturity</p>
+          <h3 class="mt-3 font-semibold text-lg">Intelligence Readiness</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Diagnóstico de lacunas entre coleta, análise e decisão para organizações que possuem dados, mas ainda não operam inteligência de forma estruturada.</p>
+          <div class="mt-auto pt-5 border-t border-white/10"><a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Ver diagnóstico →</a></div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col h-full">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/38">Simulation</p>
+          <h3 class="mt-3 font-semibold text-lg">Threat Simulation</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Simulações orientadas por inteligência, utilizando TTPs observáveis, superfícies de exposição e hipóteses plausíveis para validar processos, decisões e resposta.</p>
+          <div class="mt-auto pt-5 border-t border-white/10"><a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Explorar abordagem →</a></div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col h-full">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/38">Response</p>
+          <h3 class="mt-3 font-semibold text-lg">Incident Readiness</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Avaliação de comunicação, escalonamento, interpretação e tomada de decisão sob pressão, fora de cenários controlados e com informação incompleta.</p>
+          <div class="mt-auto pt-5 border-t border-white/10"><a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Agendar simulação →</a></div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col h-full">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/38">Investigation</p>
+          <h3 class="mt-3 font-semibold text-lg">Threat Hunting</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Investigações baseadas em hipóteses de inteligência para buscar padrões, desvios e inconsistências que não necessariamente geram alertas convencionais.</p>
+          <div class="mt-auto pt-5 border-t border-white/10"><a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Iniciar análise →</a></div>
+        </div>
+
+        <div class="card rounded-2xl p-6 flex flex-col h-full">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/38">Advisory</p>
+          <h3 class="mt-3 font-semibold text-lg">Strategic Advisory</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Suporte estratégico em cenários de exposição, risco, comunicação sensível e decisões que dependem de leitura contextual sob incerteza.</p>
+          <div class="mt-auto pt-5 border-t border-white/10"><a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Falar com especialista →</a></div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Intelligence Readiness -->
-    <div class="card rounded-2xl p-6 flex flex-col h-full">
-      <h3 class="font-semibold text-lg">Intelligence Readiness</h3>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        Ter dados não significa operar inteligência. Em muitos casos, a organização reage sem critério por não possuir estrutura para produzir leitura contextual.
-      </p>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        O programa avalia onde a inteligência deveria existir e não existe — na coleta, análise ou decisão — e como essa lacuna impacta diretamente a operação.
-      </p>
-      <div class="mt-auto pt-5 border-t border-white/10">
-        <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Ver diagnóstico →</a>
-      </div>
-    </div>
-
-    <!-- Threat Simulation -->
-    <div class="card rounded-2xl p-6 flex flex-col h-full">
-      <h3 class="font-semibold text-lg">Threat Simulation</h3>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        A maioria dos exercícios ofensivos parte de escopo fixo. Adversários reais operam a partir de oportunidade, contexto e leitura de ambiente.
-      </p>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        As simulações são orientadas por inteligência, utilizando TTPs observáveis, superfícies de exposição e hipóteses plausíveis, com foco no encadeamento de ações ao longo do ciclo adversarial.
-      </p>
-      <div class="mt-auto pt-5 border-t border-white/10">
-        <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Explorar abordagem →</a>
-      </div>
-    </div>
-
-    <!-- Incident Readiness -->
-    <div class="card rounded-2xl p-6 flex flex-col h-full">
-      <h3 class="font-semibold text-lg">Incident Readiness</h3>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        Falhas em incidentes raramente são técnicas. Elas acontecem na interpretação e na tomada de decisão sob pressão.
-      </p>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        A avaliação observa como a organização reage com informação incompleta, analisando comunicação, escalonamento e consistência das ações fora de cenários controlados.
-      </p>
-      <div class="mt-auto pt-5 border-t border-white/10">
-        <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Agendar simulação →</a>
-      </div>
-    </div>
-
-    <!-- Threat Hunting -->
-    <div class="card rounded-2xl p-6 flex flex-col h-full">
-      <h3 class="font-semibold text-lg">Threat Hunting</h3>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        Nem toda atividade adversária gera alerta. Em muitos casos, ela se dilui dentro do comportamento esperado.
-      </p>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        As investigações partem de hipóteses baseadas em inteligência e buscam padrões, desvios e inconsistências que indicam presença ou movimentação não evidente.
-      </p>
-      <div class="mt-auto pt-5 border-t border-white/10">
-        <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Iniciar análise →</a>
-      </div>
-    </div>
-
-    <!-- Strategic Advisory -->
-    <div class="card rounded-2xl p-6 flex flex-col h-full">
-      <h3 class="font-semibold text-lg">Strategic Advisory</h3>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        Algumas decisões não são técnicas. São contextuais e envolvem leitura de risco sob incerteza.
-      </p>
-      <p class="mt-3 text-sm text-white/70 leading-relaxed">
-        O suporte atua em cenários onde exposição e operação se cruzam, ajudando na priorização e definição de caminhos com base em inteligência.
-      </p>
-      <div class="mt-auto pt-5 border-t border-white/10">
-        <a href="#contact" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Falar com especialista →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  <!-- Livro -->
-  <section id="book" class="border-y border-neutral-900 bg-neutral-950/50">
+  <!-- Treinamentos -->
+  <section id="training" class="border-y border-neutral-900 bg-gradient-to-b from-neutral-950 via-neutral-900/60 to-neutral-950 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(circle_at_bottom_left,white,transparent_35%)]"></div>
     <div class="mx-auto max-w-7xl px-6 py-20">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-        <div class="flex justify-center lg:justify-start">
-          <img
-            src="capa-opsec.jpg"
-            alt="Capa do livro OPSEC — Inteligência Cibernética na Prática"
-            class="w-[260px] md:w-[300px] rounded-2xl border border-white/10 bg-white/5 shadow-sm"
-          >
-        </div>
-
-        <div class="max-w-2xl">
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
-            Livro OPSEC — Inteligência Cibernética na Prática
-          </h2>
-
-          <p class="mt-4 text-white/70">
-            Este volume organiza conceitos, técnicas e táticas para operar com mais critério em ambientes digitais
-            — do básico ao avançado — incluindo ferramentas quando elas são necessárias para sustentar decisão e reduzir exposição.
-          </p>
-
-          <details class="group mt-4">
-            <summary class="cursor-pointer text-sm text-white/60 hover:text-white/80 select-none focus-ring inline-flex items-center gap-2">
-              Ler mais
-              <svg class="w-4 h-4 opacity-70 group-open:rotate-180 transition" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </summary>
-            <div class="mt-3 text-white/70 leading-relaxed">
-              <p>
-                O foco não é “truque” nem promessa de anonimato: é método, trade-offs e execução com responsabilidade.
-                Muitos dos princípios aplicados nos treinamentos e recursos gratuitos partem dessas bases.
-              </p>
-            </div>
-          </details>
-
-          <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a
-              href="https://www.amazon.com.br/OPSEC-Intelig%C3%AAncia-Cibern%C3%A9tica-na-Pr%C3%A1tica-ebook/dp/B09WG4FYKH"
-              target="_blank"
-              rel="noopener"
-              class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center"
-            >
-              Ver na Amazon →
-            </a>
-
-            <a
-              href="#contact"
-              class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center"
-            >
-              Falar sobre uso em equipe
-            </a>
-          </div>
-
-          <p class="mt-4 text-xs text-white/50">
-            Conteúdo educacional. Técnicas e ferramentas são apresentadas com foco em contexto, critério e responsabilidade.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Sobre -->
-  <section id="why" class="mx-auto max-w-7xl px-6 py-20">
-    <div class="grid lg:grid-cols-[minmax(0,1fr)_360px] gap-10 items-start">
-
-      <!-- Coluna esquerda -->
       <div class="max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Sobre a BunQr Labs</h2>
-
-        <p class="mt-4 text-white/70">
-          A BunQr Labs é um núcleo independente voltado à aplicação de <span class="text-white font-semibold">OPSEC</span>, <span class="text-white font-semibold">Inteligência Cibernética</span> e <span class="text-white font-semibold">proteção de identidades</span> em contextos reais de risco, exposição e tomada de decisão.
-        </p>
-
-        <p class="mt-4 text-white/70">
-          Seu trabalho conecta análise, disciplina operacional e produção de conhecimento para apoiar profissionais, equipes e indivíduos que precisam reduzir vulnerabilidades informacionais e operar com mais critério em ambientes digitais e físicos.
-        </p>
-
-        <p class="mt-4 text-white/70">
-          Mais do que apresentar ferramentas ou técnicas isoladas, a BunQr Labs desenvolve método, critérios e maturidade analítica para cenários em que exposição, comportamento e inferência adversária precisam ser tratados com seriedade.
-        </p>
+        <span class="section-kicker glass">Academy</span>
+        <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Treinamentos em OPSEC e Inteligência Cibernética</h2>
+        <p class="mt-4 text-white/70 leading-relaxed">Programas de formação para profissionais e equipes que precisam sustentar critérios de decisão, disciplina operacional e redução de exposição com consistência.</p>
       </div>
 
-      <!-- Coluna direita -->
-      <div>
-        <a
-          href="https://bunqrlabs.com/vinicius-vieira.html"
-          class="card block rounded-3xl p-5 focus-ring"
-        >
-          <h3 class="text-lg font-semibold tracking-tight mb-4">Direção técnica</h3>
-          <div class="flex items-start gap-4">
-            <img
-              src="/vini.jpg"
-              alt="Vinícius Vieira"
-              class="w-20 h-20 rounded-2xl object-cover bg-white/5 shrink-0"
-              loading="lazy"
-            />
-            <div>
-              <h4 class="text-base font-semibold tracking-tight">Vinícius Vieira</h4>
-              <p class="mt-2 text-sm text-white/70 leading-relaxed">
-                Autor de <span class="text-white">OPSEC: Inteligência Cibernética na Prática</span>, com mais de 18 anos de experiência em segurança da informação e inteligência, além de atuação como professor e formador de profissionais na área.
-              </p>
-              <p class="mt-3 text-sm font-medium text-white/80">
-                Conheça Vinícius Vieira →
-              </p>
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card rounded-2xl p-4">
+          <a href="https://bunqrlabs.com/cursos/OPSEC/index.html" class="block focus-ring rounded-xl overflow-hidden">
+            <div class="training-thumb aspect-square w-full bg-neutral-900 rounded-xl overflow-hidden">
+              <img src="https://bunqrlabs.com/cursos/OPSEC/opsec-banner.jpg" alt="OPSEC - Segurança Operacional Aplicada" class="h-full w-full object-cover" loading="lazy" />
             </div>
-          </div>
-        </a>
-      </div>
+          </a>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Redução de exposição, modelagem de ameaça e controle de assinatura em ambientes digitais e físicos.</p>
+          <a href="https://bunqrlabs.com/cursos/OPSEC/index.html" class="btn mt-4 w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Saiba mais</a>
+        </div>
 
+        <div class="card rounded-2xl p-4">
+          <a href="https://bunqrlabs.com/cursos/fundamentos-de-inteligencia-cibernetica/index.html" class="block focus-ring rounded-xl overflow-hidden">
+            <div class="training-thumb aspect-square w-full bg-neutral-900 rounded-xl overflow-hidden">
+              <img src="https://bunqrlabs.com/cursos/fundamentos-de-inteligencia-cibernetica/fundamentos-inteligencia-cibernetica-banner.jpg" alt="Fundamentos de Inteligência Cibernética" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+          </a>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Produção de inteligência, análise e tomada de decisão sob incerteza.</p>
+          <a href="https://bunqrlabs.com/cursos/fundamentos-de-inteligencia-cibernetica/index.html" class="btn mt-4 w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Saiba mais</a>
+        </div>
+
+        <div class="card rounded-2xl p-4">
+          <a href="https://bunqrlabs.com/cursos/humint-training/index.html" class="block focus-ring rounded-xl overflow-hidden">
+            <div class="training-thumb aspect-square w-full bg-neutral-900 rounded-xl overflow-hidden">
+              <img src="https://bunqrlabs.com/cursos/humint-training/humint-banner.jpg" alt="HUMINT Training" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+          </a>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Coleta humana, validação de informação e proteção operacional de fontes e interações.</p>
+          <a href="https://bunqrlabs.com/cursos/humint-training/index.html" class="btn mt-4 w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Saiba mais</a>
+        </div>
+      </div>
     </div>
   </section>
 
-
-  <!-- Recursos -->
-  <section id="resources" class="border-y border-neutral-900 bg-neutral-950/50">
-  <div class="mx-auto max-w-7xl px-6 py-20">
-
-    <!-- Cabeçalho da seção -->
+  <!-- Research / Recursos / Livro -->
+  <section id="research" class="mx-auto max-w-7xl px-6 py-20">
     <div class="max-w-3xl">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Recursos</h2>
-
-      <p class="mt-4 text-white/70">
-        Guias e materiais educacionais para apoiar decisões mais conscientes e reduzir exposição.
-      </p>
+      <span class="section-kicker glass">Research</span>
+      <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Pesquisa, guias e materiais</h2>
+      <p class="mt-4 text-white/70 leading-relaxed">A produção de conteúdo da BunQr organiza conceitos, estudos de caso e materiais educacionais para apoiar decisões mais conscientes em OPSEC, inteligência e exposição digital.</p>
     </div>
 
-    <!-- Cards -->
-    <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
       <div class="card rounded-2xl p-6 flex flex-col lg:col-span-2">
         <h3 class="font-semibold">Guia Prático de Privacidade Digital</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Ponto de partida para entender riscos reais no ambiente digital e reduzir exposição no dia a dia.
-        </p>
-        <div class="mt-5">
-          <a href="/guia-privacidade-digital/"
-             class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">
-            Começar pelo guia →
-          </a>
-        </div>
-        <p class="mt-3 text-xs text-white/50">
-          Conteúdo gratuito • Leitura online • Atualizado continuamente
-        </p>
-      </div>
-
-      <div class="card rounded-2xl p-6 flex flex-col">
-        <h3 class="font-semibold">OPSEC em 9 Decisões</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Material prático para aplicação de critérios de decisão em OPSEC.
-        </p>
-        <div class="mt-5">
-          <a href="OPSEC_em_9_Decisoes_A5.pdf" target="_blank" rel="noopener"
-             class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">
-            Baixar PDF →
-          </a>
-        </div>
-        <p class="mt-3 text-xs text-white/50">
-          *Formato PDF para leitura offline.
-        </p>
+        <p class="mt-2 text-sm text-white/70 leading-relaxed">Ponto de partida para entender riscos reais no ambiente digital e reduzir exposição no dia a dia.</p>
+        <div class="mt-5"><a href="https://bunqrlabs.com/guia-privacidade-digital/" class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Começar pelo guia →</a></div>
+        <p class="mt-3 text-xs text-white/50">Conteúdo gratuito • Leitura online • Atualizado continuamente</p>
       </div>
 
       <div class="card rounded-2xl p-6 flex flex-col">
         <h3 class="font-semibold">Acesse nosso Blog</h3>
-        <p class="mt-2 text-sm text-white/70">
-          Análises, estudos de caso e cenários reais envolvendo OPSEC, inteligência e exposição.
-        </p>
-        <div class="mt-5">
-          <a href="https://blog.bunqrlabs.com" target="_blank" rel="noopener"
-             class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">
-            Acesse aqui →
-          </a>
-        </div>
-        <p class="mt-3 text-xs text-white/50">
-          Conteúdos exclusivos.
-        </p>
+        <p class="mt-2 text-sm text-white/70 leading-relaxed">Análises, estudos de caso e cenários reais envolvendo OPSEC, inteligência e exposição.</p>
+        <div class="mt-5"><a href="https://blog.bunqrlabs.com" target="_blank" rel="noopener" class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Acesse aqui →</a></div>
+        <p class="mt-3 text-xs text-white/50">Conteúdos exclusivos.</p>
       </div>
 
+      <div class="card rounded-2xl p-6 flex flex-col">
+        <h3 class="font-semibold">OPSEC em 9 Decisões</h3>
+        <p class="mt-2 text-sm text-white/70 leading-relaxed">Material prático para aplicação de critérios de decisão em OPSEC.</p>
+        <div class="mt-5"><a href="https://bunqrlabs.com/OPSEC_em_9_Decisoes_A5.pdf" target="_blank" rel="noopener" class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">Baixar PDF →</a></div>
+        <p class="mt-3 text-xs text-white/50">Formato PDF para leitura offline.</p>
+      </div>
+
+      <div id="book" class="card rounded-2xl p-6 lg:col-span-2 grid sm:grid-cols-[150px_minmax(0,1fr)] gap-6 items-center">
+        <img src="https://bunqrlabs.com/capa-opsec.jpg" alt="Capa do livro OPSEC — Inteligência Cibernética na Prática" class="w-[150px] rounded-2xl border border-white/10 bg-white/5 shadow-sm" loading="lazy" />
+        <div>
+          <h3 class="font-semibold">Livro OPSEC — Inteligência Cibernética na Prática</h3>
+          <p class="mt-2 text-sm text-white/70 leading-relaxed">Volume que organiza conceitos, técnicas e táticas para operar com mais critério em ambientes digitais, com foco em método, trade-offs e execução responsável.</p>
+          <div class="mt-5 flex flex-col sm:flex-row gap-3">
+            <a href="https://www.amazon.com.br/OPSEC-Intelig%C3%AAncia-Cibern%C3%A9tica-na-Pr%C3%A1tica-ebook/dp/B09WG4FYKH" target="_blank" rel="noopener" class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center">Ver na Amazon →</a>
+            <a href="#contact" class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">Uso em equipe</a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- CTA inferior -->
-    <div class="mt-12">
-      <a href="https://tally.so/r/Gxv4De" target="_blank" rel="noopener"
-         class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">
-        Receba análises e materiais diretamente →
-      </a>
-    </div>
+    <div class="mt-12"><a href="https://tally.so/r/Gxv4De" target="_blank" rel="noopener" class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">Receba análises e materiais diretamente →</a></div>
+  </section>
 
-  </div>
-</section>
+  <!-- Sobre -->
+  <section id="about" class="border-y border-neutral-900 bg-neutral-950/50">
+    <div class="mx-auto max-w-7xl px-6 py-20">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_360px] gap-10 items-start">
+        <div class="max-w-3xl">
+          <span class="section-kicker glass">Sobre</span>
+          <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">BunQr Labs</h2>
+          <p class="mt-4 text-white/70 leading-relaxed">A BunQr Labs é um núcleo independente voltado à aplicação de OPSEC, inteligência cibernética e proteção de identidades em contextos reais de risco, exposição e tomada de decisão.</p>
+          <p class="mt-4 text-white/70 leading-relaxed">Seu trabalho conecta análise, disciplina operacional e produção de conhecimento para apoiar profissionais, equipes e organizações que precisam reduzir vulnerabilidades informacionais e operar com mais critério em ambientes digitais e físicos.</p>
+          <p class="mt-4 text-white/70 leading-relaxed">Mais do que apresentar ferramentas ou técnicas isoladas, a BunQr Labs desenvolve método, critérios e maturidade analítica para cenários em que exposição, comportamento e inferência adversária precisam ser tratados com seriedade.</p>
+        </div>
 
-
- <!-- Contato -->
-<section id="contact" class="mx-auto max-w-7xl px-6 py-20">
-  <div class="grid lg:grid-cols-2 gap-10">
-
-    <div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Contato</h2>
-
-      <p class="mt-4 text-white/70">
-        Para agenda, treinamentos, workshops e informações, entre em contato.
-      </p>
-
-      <ul class="mt-6 text-sm text-white/75 space-y-3">
-        <li>
-          • E-mail:
-          <a href="mailto:contact@bunqrlabs.com" class="underline hover:text-white focus-ring">
-            contact[@]bunqrlabs[.]com
+        <div>
+          <a href="https://bunqrlabs.com/vinicius-vieira.html" class="card block rounded-3xl p-5 focus-ring">
+            <h3 class="text-lg font-semibold tracking-tight mb-4">Leadership</h3>
+            <p class="text-sm text-white/70 leading-relaxed">A liderança estratégica e técnica da BunQr Labs é conduzida por Vinícius Vieira, autor de <span class="text-white">OPSEC: Inteligência Cibernética na Prática</span>, com trajetória em segurança da informação, inteligência, operações, ensino e formação de profissionais.</p>
+            <p class="mt-4 text-sm font-medium text-white/80">Conheça a liderança da BunQr →</p>
           </a>
-        </li>
-        <li>• PGP: 1a3a7f45b5824093983140ddc35dd80927b4916f</li>
-        <li>
-          • WhatsApp:
-          <a
-            href="https://wa.me/447897033170?text=Olá%2C%20vim%20pelo%20site%20da%20BunQr."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-white/70 hover:text-emerald-400 focus-ring transition-colors"
-          >
-            Fale conosco
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="w-4 h-4" aria-hidden="true">
-              <path d="M19.11 17.27c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.28-.95.93-.95 2.26 0 1.33.97 2.61 1.11 2.79.14.18 1.9 2.89 4.61 4.05.64.28 1.14.45 1.53.57.64.2 1.22.17 1.68.1.51-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/>
-              <path d="M16.02 3.2c-7.05 0-12.78 5.73-12.78 12.78 0 2.25.59 4.45 1.71 6.39L3 29l6.82-1.79a12.76 12.76 0 0 0 6.2 1.59h.01c7.05 0 12.78-5.73 12.78-12.78S23.07 3.2 16.02 3.2zm0 23.27h-.01a10.44 10.44 0 0 1-5.32-1.46l-.38-.22-4.05 1.06 1.08-3.95-.25-.4a10.45 10.45 0 1 1 8.93 4.97z"/>
-            </svg>
-          </a>
-        </li>
-        <li>
-  • Signal:
-  <a
-    href="https://signal.me/#eu/w0r8avQFXm7zh5rZX3om8lgsGWGZRpzPHFAJ3XMK9PtzuMSBtWlBaYReZ0qtJ7Zm"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="inline-flex items-center gap-2 text-white/70 hover:text-sky-400 focus-ring transition-colors"
-  >
-    Fale conosco
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true">
-      <path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.78 1.62 5.25 4.15 6.9L5 22l4.5-2.36c.8.22 1.65.34 2.5.34 5.52 0 10-3.94 10-8.8S17.52 2 12 2zm0 16.2c-.78 0-1.53-.11-2.24-.31l-.48-.14-2.68 1.4.7-2.55-.31-.49C4.92 14.8 4 12.92 4 10.8 4 6.96 7.58 4 12 4s8 2.96 8 6.8-3.58 7.4-8 7.4z"/>
-    </svg>
-  </a>
-</li>
-      </ul>
-
-      <p class="mt-6 text-xs text-white/50">
-        Nota: Conteúdo e treinamentos de natureza educacional. Não há vínculo com empregadores, clientes ou organizações citadas em exemplos.
-      </p>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- Trust / setores -->
+  <section class="border-y border-neutral-900 bg-neutral-950/70">
+    <div class="mx-auto max-w-7xl px-6 py-14">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <div class="max-w-xl">
+          <span class="section-kicker glass">Trusted by professionals</span>
+          <h2 class="mt-4 text-2xl md:text-3xl font-bold tracking-tight">Profissionais de setores críticos e ambientes de alta exposição</h2>
+          <p class="mt-3 text-white/65 leading-relaxed">
+            Os treinamentos e programas da BunQr Labs são utilizados por profissionais de setores financeiros, governo, tecnologia, investigação, defesa, operações críticas e segurança corporativa.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 min-w-[320px]">
+          <div class="card rounded-2xl px-5 py-6 text-center text-sm text-white/60">Financial Sector</div>
+          <div class="card rounded-2xl px-5 py-6 text-center text-sm text-white/60">Government</div>
+          <div class="card rounded-2xl px-5 py-6 text-center text-sm text-white/60">Technology</div>
+          <div class="card rounded-2xl px-5 py-6 text-center text-sm text-white/60">Threat Intel</div>
+          <div class="card rounded-2xl px-5 py-6 text-center text-sm text-white/60">Corporate Security</div>
+          <div class="card rounded-2xl px-5 py-6 text-center text-sm text-white/60">Critical Operations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact" class="mx-auto max-w-7xl px-6 py-20">
+    <div class="grid lg:grid-cols-2 gap-10">
+      <div>
+        <span class="section-kicker glass">Contato</span>
+        <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Fale com a BunQr Labs</h2>
+        <p class="mt-4 text-white/70 leading-relaxed">Para serviços corporativos, treinamentos, workshops, Velkris ou parcerias institucionais, entre em contato pelo canal mais adequado.</p>
+
+        <ul class="mt-6 text-sm text-white/75 space-y-3">
+          <li>• E-mail: <a href="mailto:contact@bunqrlabs.com" class="underline hover:text-white focus-ring">contact[@]bunqrlabs[.]com</a></li>
+          <li>• PGP: 1a3a7f45b5824093983140ddc35dd80927b4916f</li>
+          <li>• WhatsApp: <a href="https://wa.me/447897033170?text=Olá%2C%20vim%20pelo%20site%20da%20BunQr." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white/70 hover:text-emerald-400 focus-ring transition-colors">Fale conosco</a></li>
+          <li>• Signal: <a href="https://signal.me/#eu/w0r8avQFXm7zh5rZX3om8lgsGWGZRpzPHFAJ3XMK9PtzuMSBtWlBaYReZ0qtJ7Zm" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white/70 hover:text-sky-400 focus-ring transition-colors">Fale conosco</a></li>
+        </ul>
+
+        <p class="mt-6 text-xs text-white/50">Nota: Conteúdo e treinamentos de natureza educacional. Não há vínculo com empregadores, clientes ou organizações citadas em exemplos.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Rodapé -->
-  <footer class="border-t border-neutral-900">
+  <footer class="border-t border-neutral-900 bg-black/40">
     <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden>
-          <g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/>
-            <path d="M24 30 h16 v20 H24z"/>
-            <path d="M30 34 v6"/>
-          </g>
-        </svg>
+        <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden><g fill="none" stroke="#bfbfbf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6 L54 14 V30c0 10.5-8.5 18.5-22 26-13.5-7.5-22-15.5-22-26V14z"/><path d="M24 30 h16 v20 H24z"/><path d="M30 34 v6"/></g></svg>
         <span>© <span id="year"></span> BunQr Labs. Todos os direitos reservados.</span>
       </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+      <div class="flex flex-col items-center md:items-end gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
         <a href="https://blog.bunqrlabs.com/" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Blog</a>
         <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Instagram</a>
         <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">LinkedIn</a>
-        <a href="/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
-        <a href="/terms" class="hover:text-white/80 focus-ring">Termos</a>
-        <a href="/policy" class="hover:text-white/80 focus-ring">Política</a>
+        <a href="https://bunqrlabs.com/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
+        <a href="https://bunqrlabs.com/terms" class="hover:text-white/80 focus-ring">Termos</a>
+        <a href="https://bunqrlabs.com/policy" class="hover:text-white/80 focus-ring">Política</a>
+      </div>
+
+        <div class="text-xs text-white/35 flex flex-wrap justify-center gap-x-4 gap-y-2">
+          <span>BunQr Labs</span>
+          <span>Velkris</span>
+          <span>Research</span>
+          <span>Academy</span>
+          <span>Programs & Advisory</span>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // mobile menu
     const btn = document.getElementById('menuBtn');
     const panel = document.getElementById('mobileMenu');
     btn?.addEventListener('click', () => {
@@ -784,8 +523,6 @@
       panel.classList.toggle('hidden');
       btn.setAttribute('aria-expanded', String(!isOpen));
     });
-
-    // close mobile menu on click
     panel?.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         panel.classList.add('hidden');
