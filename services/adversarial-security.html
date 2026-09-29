@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Adversarial Security | BunQr Intelligence</title>
+  <meta name="description" content="Avaliações técnicas e simulações adversariais orientadas por inteligência para identificar vulnerabilidades, validar controles e compreender caminhos plausíveis de ataque." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="BunQr Intelligence" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://bunqrlabs.com/services/adversarial-security.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="BunQr Intelligence" />
+  <meta property="og:title" content="Adversarial Security | BunQr Intelligence" />
+  <meta property="og:description" content="Avaliações técnicas e simulações orientadas por inteligência para validar segurança contra caminhos plausíveis de ataque." />
+  <meta property="og:url" content="https://bunqrlabs.com/services/adversarial-security.html" />
+  <meta property="og:image" content="https://bunqrlabs.com/hero.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Adversarial Security | BunQr Intelligence" />
+  <meta name="twitter:description" content="Teste controles, exposição e hipóteses sob a perspectiva de um adversário." />
+  <meta name="twitter:image" content="https://bunqrlabs.com/hero.png" />
+
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .card { border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.03); }
+    .card:hover { border-color: rgba(255,255,255,0.14); background: rgba(255,255,255,0.045); transform: translateY(-2px); }
+    .card, .btn, .navlink { transition: all 180ms ease; }
+    .focus-ring:focus-visible { outline: 2px solid rgba(255,255,255,0.35); outline-offset: 2px; border-radius: 12px; }
+    .section-kicker { display:inline-flex; align-items:center; gap:.5rem; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); padding:.25rem .75rem; border-radius:999px; font-size:.75rem; color:rgba(255,255,255,.68); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Adversarial Security",
+    "provider": {
+      "@type": "Organization",
+      "name": "BunQr Intelligence",
+      "url": "https://bunqrlabs.com"
+    },
+    "description": "Avaliações técnicas e simulações adversariais orientadas por inteligência para identificar vulnerabilidades e validar controles de segurança.",
+    "areaServed": "BR",
+    "serviceType": "Offensive and Adversarial Security"
+  }
+  </script>
+</head>
+
+<body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
+
+<header class="sticky top-0 z-40 border-b border-neutral-800/80 glass">
+  <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
+    <a href="../index.html" class="flex items-center gap-3 group focus-ring">
+      <img src="../logo.png" alt="Logo BunQr Intelligence" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
+      <span class="text-lg sm:text-xl font-semibold tracking-tight">BunQr Intelligence</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      <a href="../index.html#services" class="navlink text-white hover:text-white focus-ring">Serviços</a>
+      <a href="../index.html#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
+      <a href="../index.html#research" class="navlink text-white/70 hover:text-white focus-ring">Research</a>
+      <a href="../about.html" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
+      <a href="../index.html#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
+      <a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica" class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring" target="_blank" rel="noopener">Alunos</a>
+    </nav>
+
+    <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="mr-2">Menu</span>
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800/80 glass">
+    <div class="mx-auto max-w-7xl px-6 py-4 grid gap-2 text-sm">
+      <a href="../index.html#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Serviços</a>
+      <a href="../index.html#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
+      <a href="../index.html#research" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Research</a>
+      <a href="../about.html" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
+      <a href="../index.html#contact" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Contato</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="border-b border-neutral-900">
+    <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24">
+      <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-white/50">
+        <a href="../index.html" class="hover:text-white focus-ring">BunQr Intelligence</a>
+        <span>/</span>
+        <a href="../index.html#services" class="hover:text-white focus-ring">Serviços</a>
+        <span>/</span>
+        <span class="text-white/80">Adversarial Security</span>
+      </nav>
+
+      <div class="mt-10 max-w-4xl">
+        <span class="section-kicker glass">OFFENSIVE SECURITY</span>
+        <h1 class="mt-6 text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05]">Adversarial Security</h1>
+        <p class="mt-6 max-w-3xl text-lg sm:text-xl text-white/70 leading-relaxed">
+          Avaliações técnicas e simulações orientadas por inteligência para identificar vulnerabilidades, validar controles e compreender como superfícies digitais, humanas e físicas podem ser exploradas por adversários reais.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="../index.html#contact" class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Fale com a BunQr →</a>
+          <a href="#capabilities" class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">Conheça as capacidades</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+    <div class="grid gap-10 lg:grid-cols-[1fr_380px] lg:gap-16 items-start">
+      <div class="max-w-3xl">
+        <span class="section-kicker glass">THE CHALLENGE</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-bold tracking-tight">Vulnerabilidade não é o mesmo que risco.</h2>
+        <p class="mt-5 text-white/70 leading-relaxed">
+          Encontrar falhas é importante. Compreender quais delas podem ser combinadas, exploradas e transformadas em impacto é o que aproxima uma avaliação da realidade de um ataque.
+        </p>
+        <p class="mt-5 text-white/70 leading-relaxed">
+          A BunQr combina <strong class="text-white">offensive security, intelligence e contexto operacional</strong> para avaliar não apenas controles isolados, mas caminhos plausíveis de comprometimento.
+        </p>
+      </div>
+
+      <aside class="card rounded-3xl p-7">
+        <p class="text-xs uppercase tracking-[0.18em] text-white/40">Our approach</p>
+        <h3 class="mt-4 text-xl font-semibold">Think adversarial. Test responsibly.</h3>
+        <p class="mt-3 text-sm text-white/65 leading-relaxed">
+          Simulamos comportamento adversarial dentro de escopos claramente autorizados, com regras de engajamento, limites técnicos e critérios de segurança definidos antes da execução.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="capabilities" class="border-y border-neutral-900 bg-white/[0.015]">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+      <span class="section-kicker glass">CAPABILITIES</span>
+      <h2 class="mt-5 text-3xl sm:text-4xl font-bold tracking-tight">Teste a segurança pela perspectiva do adversário.</h2>
+      <p class="mt-4 max-w-3xl text-white/65 leading-relaxed">
+        As capacidades podem ser aplicadas isoladamente ou combinadas conforme os objetivos, hipóteses e superfícies que precisam ser avaliados.
+      </p>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-2">
+        <article class="card rounded-3xl p-7">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/40">01</p>
+          <h3 class="mt-4 text-xl font-semibold">Penetration Testing</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Avaliações técnicas de aplicações, infraestrutura e ambientes autorizados para identificar vulnerabilidades exploráveis, demonstrar impacto e apoiar priorização de correções.
+          </p>
+        </article>
+
+        <article class="card rounded-3xl p-7">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/40">02</p>
+          <h3 class="mt-4 text-xl font-semibold">Adversarial Assessment</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Avaliações orientadas por cenários e hipóteses de ataque, conectando diferentes superfícies para compreender caminhos de comprometimento além de vulnerabilidades individuais.
+          </p>
+        </article>
+
+        <article class="card rounded-3xl p-7">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/40">03</p>
+          <h3 class="mt-4 text-xl font-semibold">Social Engineering Assessment</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Avaliação autorizada de vetores humanos e processos de confiança para identificar fragilidades em validação, comunicação e tomada de decisão, com cenários e limites previamente definidos.
+          </p>
+        </article>
+
+        <article class="card rounded-3xl p-7">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/40">04</p>
+          <h3 class="mt-4 text-xl font-semibold">Attack Surface Validation</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Validação prática de superfícies externas e exposições relevantes para determinar se informações, ativos ou configurações observáveis podem ser convertidos em caminhos reais de ataque.
+          </p>
+        </article>
+
+        <article class="card rounded-3xl p-7">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/40">05</p>
+          <h3 class="mt-4 text-xl font-semibold">Detection & Response Validation</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Execução controlada de comportamentos e cenários adversariais para avaliar visibilidade, detecção, triagem, escalonamento e capacidade de resposta das equipes e controles defensivos.
+          </p>
+        </article>
+
+        <article class="card rounded-3xl p-7">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/40">06</p>
+          <h3 class="mt-4 text-xl font-semibold">Physical & Hybrid Scenarios</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Quando aplicável e expressamente autorizado, avaliação de cenários que conectam superfícies digitais, humanas e físicas para testar controles e processos de segurança de forma integrada.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+    <div class="max-w-3xl">
+      <span class="section-kicker glass">INTELLIGENCE-LED</span>
+      <h2 class="mt-5 text-3xl sm:text-4xl font-bold tracking-tight">Não começamos pelo exploit. Começamos pelo contexto.</h2>
+      <p class="mt-5 text-white/70 leading-relaxed">
+        Informações sobre exposição, ativos, processos, ameaças e possíveis objetivos adversariais podem orientar uma avaliação mais relevante. O objetivo é concentrar esforço onde um atacante plausivelmente encontraria oportunidade e impacto.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="card rounded-3xl p-6">
+        <p class="text-xs uppercase tracking-[0.18em] text-white/40">01 · Understand</p>
+        <h3 class="mt-4 font-semibold">Contexto</h3>
+        <p class="mt-2 text-sm text-white/65 leading-relaxed">Objetivos, ativos críticos, exposição e hipóteses relevantes para o negócio.</p>
+      </div>
+      <div class="card rounded-3xl p-6">
+        <p class="text-xs uppercase tracking-[0.18em] text-white/40">02 · Model</p>
+        <h3 class="mt-4 font-semibold">Cenários</h3>
+        <p class="mt-2 text-sm text-white/65 leading-relaxed">Construção de caminhos plausíveis de ataque e critérios de sucesso.</p>
+      </div>
+      <div class="card rounded-3xl p-6">
+        <p class="text-xs uppercase tracking-[0.18em] text-white/40">03 · Test</p>
+        <h3 class="mt-4 font-semibold">Execução</h3>
+        <p class="mt-2 text-sm text-white/65 leading-relaxed">Validação controlada de vulnerabilidades, controles e hipóteses adversariais.</p>
+      </div>
+      <div class="card rounded-3xl p-6">
+        <p class="text-xs uppercase tracking-[0.18em] text-white/40">04 · Improve</p>
+        <h3 class="mt-4 font-semibold">Evolução</h3>
+        <p class="mt-2 text-sm text-white/65 leading-relaxed">Evidências, impacto, priorização e recomendações para reduzir risco real.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-neutral-900 bg-white/[0.015]">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+      <div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <span class="section-kicker glass">BEYOND THE CHECKLIST</span>
+          <h2 class="mt-5 text-3xl sm:text-4xl font-bold tracking-tight">Mais do que encontrar CVEs.</h2>
+        </div>
+        <div class="space-y-5 text-white/70 leading-relaxed">
+          <p>
+            Uma avaliação adversarial precisa explicar <strong class="text-white">o que pode acontecer, por que importa e como diferentes fragilidades se conectam</strong>. Evidências técnicas continuam fundamentais, mas são interpretadas dentro do contexto de risco.
+          </p>
+          <p>
+            Automação e inteligência artificial podem ampliar descoberta, análise e validação. A definição de cenários, decisões de exploração, controle de impacto e interpretação dos resultados permanecem conduzidos por especialistas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+    <div class="grid gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
+      <div>
+        <span class="section-kicker glass">RULES OF ENGAGEMENT</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-bold tracking-tight">Capacidade ofensiva exige controle.</h2>
+        <p class="mt-5 text-white/70 leading-relaxed">
+          Trabalhos ofensivos são executados somente mediante autorização, escopo e regras de engajamento compatíveis com a atividade proposta.
+        </p>
+      </div>
+
+      <div class="card rounded-3xl p-7">
+        <h3 class="text-xl font-semibold">Responsible Adversarial Security</h3>
+        <p class="mt-3 text-sm text-white/70 leading-relaxed">
+          Antes da execução, definimos objetivos, sistemas e superfícies autorizadas, restrições, critérios de interrupção, canais de comunicação e tratamento das evidências produzidas durante o engagement.
+        </p>
+        <p class="mt-5 text-sm font-medium text-white/80">Autorização. Proporcionalidade. Confidencialidade. Responsabilidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-neutral-900 bg-white/[0.015]">
+    <div class="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+      <div class="max-w-3xl">
+        <span class="section-kicker glass">CONNECTED CAPABILITIES</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-bold tracking-tight">Ataque, inteligência e defesa conectados.</h2>
+        <p class="mt-5 text-white/70 leading-relaxed">
+          Uma avaliação adversarial ganha valor quando seus resultados alimentam inteligência, redução de exposição, detecção e capacidade de resposta.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-2">
+        <a href="/services/intelligence-exposure-investigations.html" class="card rounded-3xl p-7 block focus-ring">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/40">INTELLIGENCE</p>
+          <h3 class="mt-4 text-xl font-semibold">Intelligence, Exposure & Investigations</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Use intelligence e análise de exposição para orientar cenários, compreender superfícies e construir hipóteses adversariais mais relevantes.
+          </p>
+          <p class="mt-5 text-sm font-medium text-white/80">Explorar capacidades →</p>
+        </a>
+
+        <a href="/services/cyber-risk-monitoring-response.html" class="card rounded-3xl p-7 block focus-ring">
+          <p class="text-xs uppercase tracking-[0.18em] text-white/40">CONTINUOUS SECURITY</p>
+          <h3 class="mt-4 text-xl font-semibold">Cyber Risk, Monitoring & Response</h3>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">
+            Transforme descobertas ofensivas em melhoria de observabilidade, detecção, readiness e resposta.
+          </p>
+          <p class="mt-5 text-sm font-medium text-white/80">Explorar capacidades →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-16 sm:py-20">
+    <div class="card rounded-3xl p-8 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+      <div class="max-w-2xl">
+        <span class="section-kicker glass">TEST WHAT MATTERS</span>
+        <h2 class="mt-5 text-3xl font-bold tracking-tight">Quais hipóteses de ataque você precisa validar?</h2>
+        <p class="mt-4 text-white/65 leading-relaxed">
+          Conte-nos sobre o ambiente, as superfícies ou os controles que precisam ser avaliados. Definimos o modelo de engagement a partir do risco e dos objetivos do cenário.
+        </p>
+      </div>
+      <a href="../index.html#contact" class="btn shrink-0 inline-flex items-center justify-center rounded-xl px-6 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Fale com a BunQr →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-neutral-900">
+  <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <img src="../logo.png" alt="" class="w-5 h-5 object-contain opacity-70">
+      <span>© <span id="year"></span> BunQr Intelligence. Todos os direitos reservados.</span>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+      <a href="https://blog.bunqrlabs.com/" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Blog</a>
+      <a href="https://www.instagram.com/bunqrlabs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">Instagram</a>
+      <a href="https://www.linkedin.com/company/bunqr-labs" target="_blank" rel="noopener" class="hover:text-white/80 focus-ring">LinkedIn</a>
+      <a href="/privacy" class="hover:text-white/80 focus-ring">Privacidade</a>
+      <a href="/terms" class="hover:text-white/80 focus-ring">Termos</a>
+      <a href="/policy" class="hover:text-white/80 focus-ring">Política</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const btn = document.getElementById('menuBtn');
+  const panel = document.getElementById('mobileMenu');
+  btn?.addEventListener('click', () => {
+    const isOpen = !panel.classList.contains('hidden');
+    panel.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+  panel?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      panel.classList.add('hidden');
+      btn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>
