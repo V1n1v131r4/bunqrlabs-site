@@ -109,6 +109,62 @@
       font-size: .75rem;
       color: rgba(255,255,255,.68);
     }
+
+    /* One graphite palette; contrast comes from surface brightness, not separate colors. */
+    :root {
+      --surface-base: #11171c;
+      --surface-soft: #192128;
+      --surface-raised: #222d35;
+      --accent: #a1b9c5;
+    }
+    body.bg-neutral-950 { background-color: var(--surface-base); }
+    header.glass, #mobileMenu.glass { background: rgba(17,23,28,.94); }
+    .section-blue { background: var(--surface-raised); }
+    .section-slate { background: var(--surface-soft); }
+    .section-paper { background: var(--surface-raised); }
+    .section-muted { background: var(--surface-soft); }
+    .section-blue, .section-slate, .section-paper, .section-muted {
+      border-color: rgba(161,185,197,.16);
+    }
+    .card { background: rgba(224,235,242,.045); border-color: rgba(161,185,197,.17); }
+    .card:hover {
+      background: rgba(224,235,242,.07);
+      border-color: rgba(161,185,197,.32);
+    }
+    .section-kicker { color: #c1cdd4; border-color: rgba(161,185,197,.22); background: rgba(161,185,197,.06); }
+    .focus-ring:focus-visible { outline-color: var(--accent); }
+    .section-blue [class*="text-sky-"] { color: #c0d0d8; }
+    footer.bg-black\/40 { background: #0d1216; }
+    @media (prefers-reduced-motion: reduce) {
+      .floating, .hero-glow { animation: none; }
+      .card, .btn, .navlink, .training-thumb img { transition: none; }
+      html.scroll-smooth { scroll-behavior: auto; }
+    }
+
+    /* Continuous tonal progression from the black hero to the graphite footer. */
+    body.bg-neutral-950 { background-color: #000; }
+    header.glass, #mobileMenu.glass { background: rgba(0,0,0,.94); }
+    #home { background-color: #000; }
+    #home + section { background: linear-gradient(to bottom, #000, #0b1014); }
+    #services { background: linear-gradient(to bottom, #0b1014, #11181e); }
+    #ai-enablement { background: linear-gradient(to bottom, #11181e, #182128); }
+    #ai-enablement + section { background: linear-gradient(to bottom, #182128, #1c262e); }
+    #ai-enablement + section + section { background: linear-gradient(to bottom, #1c262e, #202b34); }
+    #training { background: linear-gradient(to bottom, #202b34, #26323c); }
+    #research { background: linear-gradient(to bottom, #26323c, #2c3944); }
+    #about { background: linear-gradient(to bottom, #2c3944, #303e49); }
+    #about + section { background: linear-gradient(to bottom, #303e49, #34434e); }
+    #about + section + section { background: linear-gradient(to bottom, #34434e, #384752); }
+    #contact { background: linear-gradient(to bottom, #384752, #3c4c58); }
+    footer.bg-black\/40 { background: #3c4c58; }
+    #services, #ai-enablement + section, #contact, #about + section {
+      max-width: none;
+      padding-left: max(1.5rem, calc((100% - 80rem) / 2 + 1.5rem));
+      padding-right: max(1.5rem, calc((100% - 80rem) / 2 + 1.5rem));
+    }
+    main, section, footer { border-color: rgba(161,185,197,.12); }
+    #research [class*="text-white/"], #about [class*="text-white/"],
+    #contact [class*="text-white/"], footer [class*="text-white/"] { color: #d4dce2; }
   </style>
 </head>
 
@@ -125,11 +181,11 @@
 
       <nav class="hidden md:flex items-center gap-7 text-sm">
         <a href="#services" class="navlink text-white/70 hover:text-white focus-ring">Serviços</a>
-        <a href="#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
         <a href="#ai-enablement" class="navlink text-white/70 hover:text-white focus-ring">AI Enablement</a>
+        <a href="#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
         <a href="#about" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
         <a href="#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
-        <a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica" class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Alunos</a>
+        <a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica" class="btn rounded-xl px-3.5 py-2 border border-white/15 text-white/75 hover:text-white hover:border-white/30 focus-ring">Alunos</a>
       </nav>
 
       <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -141,11 +197,11 @@
     <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800/80 glass">
       <div class="mx-auto max-w-7xl px-6 py-4 grid gap-2 text-sm">
         <a href="#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Serviços</a>
-        <a href="#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
         <a href="#ai-enablement" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">AI Enablement</a>
+        <a href="#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
         <a href="#about" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
         <a href="#contact" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Contato</a>
-        <a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica" class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Alunos</a>
+        <a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica" class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-3 border border-white/15 text-white/80 hover:text-white focus-ring">Alunos</a>
       </div>
     </div>
   </header>
@@ -155,10 +211,10 @@
     <div class="absolute inset-0">
       <img src="/hero.png" alt="" class="h-full w-full object-cover object-center" loading="eager" fetchpriority="high" />
       <div class="absolute inset-0 bg-black/20"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/55 to-neutral-950"></div>
-      <div class="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl hero-glow"></div>
-      <div class="absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-fuchsia-500/10 blur-3xl hero-glow"></div>
-      <div class="absolute top-1/3 right-10 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl hero-glow"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/55 to-black"></div>
+      <div class="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-slate-300/10 blur-3xl hero-glow"></div>
+      <div class="absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-slate-300/10 blur-3xl hero-glow"></div>
+      <div class="absolute top-1/3 right-10 h-64 w-64 rounded-full bg-slate-300/10 blur-3xl hero-glow"></div>
     </div>
 
     <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-32 lg:pb-24">
@@ -168,23 +224,23 @@
         </span>
 
         <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-          Segurança e Inteligência.
+          Segurança, inteligência e IA aplicada.
         </h1>
 
         <p class="mt-6 max-w-3xl text-white/72 text-base sm:text-lg leading-relaxed">
-          A BunQr Intelligence ajuda organizações a <span class="text-white font-semibold">identificar riscos</span>, <span class="text-white font-semibold">compreender ameaças</span>, <span class="text-white font-semibold">responder a incidentes</span> e <span class="text-white font-semibold">reduzir exposição</span>, combinando cybersecurity, intelligence e <span class="text-white font-semibold">AI Enablement</span> para apoiar decisões e ampliar a capacidade das operações de segurança e tecnologia.
+          Ajudamos equipes de segurança e tecnologia a <span class="text-white font-semibold">reduzir riscos e trabalho manual</span>, com serviços especializados, agentes de IA e automação.
         </p>
 
         <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
-          <a href="#services" class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">Conheça nossas capacidades</a>
-          <a href="#training" class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">Treinamentos</a>
+          <a href="#contact" class="btn rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring inline-flex items-center justify-center">Converse sobre seu desafio</a>
+          <a href="#services" class="btn rounded-xl px-5 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring inline-flex items-center justify-center">Conheça nossas soluções</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Verticais -->
-  <section class="border-y border-neutral-900 bg-neutral-950/70">
+  <section class="section-muted border-y border-neutral-900">
     <div class="mx-auto max-w-7xl px-6 py-12">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 floating max-w-5xl mx-auto">
         <a href="#services" class="card rounded-2xl p-6 focus-ring block">
@@ -193,16 +249,18 @@
           <p class="mt-2 text-sm text-white/65 leading-relaxed">Capacidades contínuas e especializadas para reduzir riscos, responder a incidentes, investigar ameaças e fortalecer a resiliência de organizações.</p>
         </a>
 
-        <a href="#training" class="card rounded-2xl p-6 focus-ring block">
-          <p class="text-xs uppercase tracking-[0.22em] text-white/40">Academy</p>
-          <h3 class="mt-3 font-semibold text-lg">Treinamentos</h3>
-          <p class="mt-2 text-sm text-white/65 leading-relaxed">Formação em cybersecurity, inteligência, OPSEC, OSINT, HUMINT e investigação para profissionais e equipes.</p>
-        </a>
+
 
         <a href="#ai-enablement" class="card rounded-2xl p-6 focus-ring block">
           <p class="text-xs uppercase tracking-[0.22em] text-white/40">AI Enablement</p>
           <h3 class="mt-3 font-semibold text-lg">IA aplicada à segurança e tecnologia</h3>
           <p class="mt-2 text-sm text-white/65 leading-relaxed">Agentes, automações e integrações de IA para reduzir trabalho manual, conectar conhecimento e ampliar a capacidade das operações.</p>
+        </a>
+
+        <a href="#training" class="card rounded-2xl p-6 focus-ring block">
+          <p class="text-xs uppercase tracking-[0.22em] text-white/40">Academy</p>
+          <h3 class="mt-3 font-semibold text-lg">Treinamentos</h3>
+          <p class="mt-2 text-sm text-white/65 leading-relaxed">Formação em cybersecurity, inteligência, OPSEC, OSINT, HUMINT e investigação para profissionais e equipes.</p>
         </a>
       </div>
     </div>
@@ -216,7 +274,7 @@
         <span class="section-kicker glass">Services</span>
         <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Cybersecurity & Intelligence</h2>
         <p class="mt-4 text-white/70 leading-relaxed">
-          Combinamos segurança cibernética, inteligência e experiência operacional para ajudar organizações a reduzir riscos, ampliar visibilidade, responder a incidentes e enfrentar situações que exigem capacidades além dos controles tradicionais.
+          Apoiamos equipes na evolução da detecção e resposta, na investigação de ameaças e na validação dos controles de segurança. A atuação pode ser contínua ou organizada em projetos com escopo e entregáveis definidos.
         </p>
         <a href="#contact" class="btn mt-8 inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Falar com a BunQr</a>
       </div>
@@ -225,21 +283,21 @@
         <div class="card rounded-2xl p-6 flex flex-col h-full">
           <p class="text-xs uppercase tracking-[0.18em] text-white/38">Continuous Security</p>
           <h3 class="mt-3 font-semibold text-lg">Cyber Risk, Monitoring &amp; Response</h3>
-          <p class="mt-3 text-sm text-white/70 leading-relaxed">Capacidades contínuas de segurança, observabilidade, análise de exposição e resposta para organizações que precisam ampliar visibilidade sobre riscos e fortalecer sua capacidade de detectar, compreender e responder a incidentes.</p>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Revisão de detecções, preparação para incidentes e apoio à investigação e resposta. Para equipes que precisam melhorar a qualidade dos alertas e a coordenação diante de um incidente.</p>
           <div class="mt-auto pt-5 border-t border-white/10"><a href="/services/cyber-risk-monitoring-response.html" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Conhecer capacidades →</a></div>
         </div>
 
         <div class="card rounded-2xl p-6 flex flex-col h-full">
           <p class="text-xs uppercase tracking-[0.18em] text-white/38">Intelligence</p>
           <h3 class="mt-3 font-semibold text-lg">Intelligence, Exposure &amp; Investigations</h3>
-          <p class="mt-3 text-sm text-white/70 leading-relaxed">Inteligência e investigação para compreender ameaças, identificar exposição e reconstruir situações complexas envolvendo ambientes digitais, organizações, indivíduos e diferentes fontes de informação.</p>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Investigação de vazamentos, análise de ameaças e avaliação da exposição de organizações e pessoas-chave. Para compreender o que aconteceu, quem ou o que está envolvido e quais medidas tomar.</p>
           <div class="mt-auto pt-5 border-t border-white/10"><a href="/services/intelligence-exposure-investigations.html" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Explorar capacidades →</a></div>
         </div>
 
         <div class="card rounded-2xl p-6 flex flex-col h-full">
           <p class="text-xs uppercase tracking-[0.18em] text-white/38">Offensive Security</p>
           <h3 class="mt-3 font-semibold text-lg">Adversarial Security</h3>
-          <p class="mt-3 text-sm text-white/70 leading-relaxed">Avaliações técnicas e simulações orientadas por inteligência para identificar vulnerabilidades, validar controles e compreender como superfícies digitais, humanas e físicas podem ser exploradas por adversários reais.</p>
+          <p class="mt-3 text-sm text-white/70 leading-relaxed">Pentests e simulações autorizadas para testar aplicações, infraestrutura e controles. Para identificar falhas exploráveis, demonstrar impacto e verificar se a equipe detecta e responde aos cenários avaliados.</p>
           <div class="mt-auto pt-5 border-t border-white/10"><a href="/services/adversarial-security.html" class="text-sm font-medium underline underline-offset-4 hover:text-white focus-ring">Avaliar segurança →</a></div>
         </div>
       </div>
@@ -247,7 +305,8 @@
   </section>
 
   <!-- AI Enablement -->
-  <section id="ai-enablement" class="mx-auto max-w-7xl px-6 py-20">
+  <section id="ai-enablement" class="section-blue border-y border-slate-700/40">
+    <div class="mx-auto max-w-7xl px-6 py-20">
     <div class="max-w-3xl">
       <span class="section-kicker glass">AI Enablement</span>
       <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">IA aplicada às operações de segurança e tecnologia.</h2>
@@ -271,16 +330,42 @@
         <p class="mt-3 text-sm text-white/70 leading-relaxed">Assistentes para consultar documentação técnica, políticas e procedimentos com indicação de fontes e respeito às permissões de acesso. Conhecimento acessível para acelerar consultas e apoiar decisões das equipes.</p>
       </div>
     </div>
-    <div class="mt-8"><a href="#contact" class="btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Converse sobre seu projeto de IA →</a></div>
+    <div class="mt-12 border-t border-white/15 pt-8">
+      <h3 class="text-xl font-semibold tracking-tight">Do processo à implementação</h3>
+      <ol class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <li><p class="text-sm text-sky-200/80">01 · Avaliação</p><p class="mt-2 text-sm text-white/75 leading-relaxed">Entendemos o processo, os dados disponíveis e as etapas que exigem mais esforço.</p></li>
+        <li><p class="text-sm text-sky-200/80">02 · Caso de uso</p><p class="mt-2 text-sm text-white/75 leading-relaxed">Definimos escopo, integrações, permissões e critérios de sucesso.</p></li>
+        <li><p class="text-sm text-sky-200/80">03 · Piloto</p><p class="mt-2 text-sm text-white/75 leading-relaxed">Validamos qualidade das respostas, esforço de revisão humana, tempo por tarefa e custo operacional.</p></li>
+        <li><p class="text-sm text-sky-200/80">04 · Operação</p><p class="mt-2 text-sm text-white/75 leading-relaxed">Integramos a solução ao fluxo de trabalho, com rastreabilidade e acompanhamento definidos no projeto.</p></li>
+      </ol>
+    </div>
+    <div class="mt-8"><a href="#contact" class="text-sm font-medium underline underline-offset-4 text-sky-100 hover:text-white focus-ring">Converse sobre seu projeto de IA →</a></div>
+    </div>
+  </section>
+
+  <!-- Experiência aplicada -->
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <div class="card rounded-3xl p-7 md:p-9 grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-8">
+      <div>
+        <span class="section-kicker glass">Experiência aplicada</span>
+        <h2 class="mt-5 text-2xl md:text-3xl font-bold tracking-tight">SOC agêntico: uma implementação entregue.</h2>
+        <p class="mt-4 text-white/75 leading-relaxed">Projeto com agente de triagem e fluxo de decisão para alertas de primeiro nível (L1), utilizando Amazon Bedrock. Uma aplicação de IA integrada ao trabalho de operações de segurança.</p>
+      </div>
+      <div class="space-y-5">
+        <div><h3 class="font-semibold">O processo</h3><p class="mt-2 text-sm text-white/70 leading-relaxed">Triagem de alertas de segurança e definição dos próximos passos de análise.</p></div>
+        <div><h3 class="font-semibold">A entrega</h3><p class="mt-2 text-sm text-white/70 leading-relaxed">Agente de IA e fluxo de decisão para apoiar o tratamento de alertas L1.</p></div>
+        <div><h3 class="font-semibold">A aplicação</h3><p class="mt-2 text-sm text-white/70 leading-relaxed">IA aplicada a uma etapa específica do SOC, com critérios de análise e encaminhamento incorporados ao fluxo operacional.</p></div>
+      </div>
+    </div>
   </section>
 
   <!-- Abordagem -->
-  <section class="border-y border-neutral-900 bg-neutral-950/70">
+  <section class="section-muted border-y border-neutral-900">
     <div class="mx-auto max-w-7xl px-6 py-20">
       <div class="max-w-3xl">
         <span class="section-kicker glass">Our Approach</span>
         <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Technology-enabled. Human-led.</h2>
-        <p class="mt-4 text-white/70 leading-relaxed">Utilizamos automação, inteligência artificial e tecnologias emergentes para ampliar capacidade de coleta, correlação, análise e monitoramento. A tecnologia aumenta nossa escala. <span class="text-white font-semibold">Contexto, julgamento e decisões permanecem conduzidos por especialistas.</span></p>
+        <p class="mt-4 text-white/70 leading-relaxed">Automação e inteligência artificial ampliam nossa capacidade de investigar, analisar e executar processos. <span class="text-white font-semibold">Contexto, julgamento e decisões permanecem conduzidos por especialistas.</span></p>
       </div>
       <div class="mt-10 grid md:grid-cols-3 gap-6">
         <div class="card rounded-2xl p-6"><h3 class="font-semibold">Intelligence-driven</h3><p class="mt-2 text-sm text-white/65 leading-relaxed">Segurança orientada por contexto, hipóteses e compreensão do adversário.</p></div>
@@ -291,7 +376,7 @@
   </section>
 
   <!-- Treinamentos -->
-  <section id="training" class="border-y border-neutral-900 bg-gradient-to-b from-neutral-950 via-neutral-900/60 to-neutral-950 relative overflow-hidden">
+  <section id="training" class="section-slate border-y border-slate-700/40 relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(circle_at_bottom_left,white,transparent_35%)]"></div>
     <div class="mx-auto max-w-7xl px-6 py-20">
       <div class="max-w-3xl">
@@ -307,6 +392,7 @@
               <img src="/cursos/OPSEC/opsec-banner.jpg" alt="OPSEC - Segurança Operacional Aplicada" class="h-full w-full object-cover" loading="lazy" />
             </div>
           </a>
+          <h3 class="mt-4 text-lg font-semibold">OPSEC — Segurança Operacional Aplicada</h3>
           <p class="mt-3 text-sm text-white/70 leading-relaxed">Redução de exposição, modelagem de ameaça e controle de assinatura em ambientes digitais e físicos.</p>
           <a href="/cursos/OPSEC/index.html" class="btn mt-4 w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Saiba mais</a>
         </div>
@@ -317,6 +403,7 @@
               <img src="/cursos/fundamentos-de-inteligencia-cibernetica/fundamentos-inteligencia-cibernetica-banner.jpg" alt="Fundamentos de Inteligência Cibernética" class="h-full w-full object-cover" loading="lazy" />
             </div>
           </a>
+          <h3 class="mt-4 text-lg font-semibold">Fundamentos de Inteligência Cibernética</h3>
           <p class="mt-3 text-sm text-white/70 leading-relaxed">Produção de inteligência, análise e tomada de decisão sob incerteza.</p>
           <a href="/cursos/fundamentos-de-inteligencia-cibernetica/index.html" class="btn mt-4 w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Saiba mais</a>
         </div>
@@ -327,6 +414,7 @@
               <img src="/cursos/humint-training/humint-banner.jpg" alt="HUMINT Training" class="h-full w-full object-cover" loading="lazy" />
             </div>
           </a>
+          <h3 class="mt-4 text-lg font-semibold">HUMINT Training</h3>
           <p class="mt-3 text-sm text-white/70 leading-relaxed">Coleta humana, validação de informação e proteção operacional de fontes e interações.</p>
           <a href="/cursos/humint-training/index.html" class="btn mt-4 w-full inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring">Saiba mais</a>
         </div>
@@ -335,7 +423,8 @@
   </section>
 
   <!-- Conteúdos / Recursos / Livro -->
-  <section id="research" class="mx-auto max-w-7xl px-6 py-20">
+  <section id="research" class="section-paper">
+    <div class="mx-auto max-w-7xl px-6 py-20">
     <div class="max-w-3xl">
       <span class="section-kicker glass">Conteúdos</span>
       <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Conteúdos e Publicações</h2>
@@ -378,10 +467,11 @@
     </div>
 
     <div class="mt-12"><a href="https://tally.so/r/Gxv4De" target="_blank" rel="noopener" class="btn inline-flex items-center justify-center rounded-xl px-6 py-3 border border-white/10 hover:border-white/20 text-white/90 glass focus-ring">Receba análises e materiais diretamente →</a></div>
+    </div>
   </section>
 
   <!-- Sobre -->
-<section id="about" class="border-y border-neutral-900 bg-neutral-950/50">
+<section id="about" class="section-muted border-y border-neutral-900">
   <div class="mx-auto max-w-7xl px-6 py-20">
     <div class="grid lg:grid-cols-[minmax(0,1fr)_360px] gap-10 items-start">
       <div class="max-w-3xl">
@@ -431,18 +521,18 @@
   </section>
 
   <!-- Trust / setores -->
-  <section class="border-y border-neutral-900 bg-neutral-950/70">
+  <section class="section-muted border-y border-neutral-900">
     <div class="mx-auto max-w-7xl px-6 py-14">
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
         <div class="max-w-xl">
-          <span class="section-kicker glass">Trusted by professionals</span>
-          <h2 class="mt-4 text-2xl md:text-3xl font-bold tracking-tight">Organizações onde segurança e informação importam</h2>
+          <span class="section-kicker glass">Áreas de aplicação</span>
+          <h2 class="mt-4 text-2xl md:text-3xl font-bold tracking-tight">Segurança e tecnologia em diferentes contextos</h2>
           <p class="mt-3 text-white/65 leading-relaxed">
-            Trabalhamos com organizações e profissionais que operam em ambientes regulados, críticos ou de alta exposição.
+            Nossas soluções podem apoiar equipes em ambientes regulados, operações críticas e atividades com alta exposição. O escopo considera os riscos e as necessidades de cada organização.
           </p>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 min-w-[320px]">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full lg:w-auto">
           <div class="card rounded-2xl px-5 py-6 text-center text-sm text-white/60">Financial Services</div>
           <div class="card rounded-2xl px-5 py-6 text-center text-sm text-white/60">Government</div>
           <div class="card rounded-2xl px-5 py-6 text-center text-sm text-white/60">Technology</div>
@@ -460,14 +550,19 @@
       <div>
         <span class="section-kicker glass">Contato</span>
         <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tight">Fale com a BunQr Intelligence</h2>
-        <p class="mt-4 text-white/70 leading-relaxed">Para projetos de cybersecurity, incident response, intelligence, investigations, adversarial security, AI Enablement, treinamentos ou parcerias institucionais, fale conosco por um dos nossos canais seguros.</p>
+        <p class="mt-4 text-white/70 leading-relaxed">Conte-nos sobre o processo que precisa evoluir, o risco que deseja avaliar ou a situação que precisa investigar. A partir dessa conversa, definimos se e como a BunQr pode apoiar sua equipe.</p>
 
-        <ul class="mt-6 text-sm text-white/75 space-y-3">
+        <ul class="mt-6 text-sm text-white/80 space-y-4">
           <li>• E-mail: <a href="mailto:contact@bunqrlabs.com" class="underline hover:text-white focus-ring">contact[@]bunqrlabs[.]com</a></li>
-          <li>• PGP: 1a3a7f45b5824093983140ddc35dd80927b4916f</li>
           <li>• WhatsApp: <a href="https://wa.me/447897033170?text=Olá%2C%20vim%20pelo%20site%20da%20BunQr." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white/70 hover:text-emerald-400 focus-ring transition-colors">Fale conosco</a></li>
-          <li>• Signal: <a href="https://signal.me/#eu/w0r8avQFXm7zh5rZX3om8lgsGWGZRpzPHFAJ3XMK9PtzuMSBtWlBaYReZ0qtJ7Zm" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white/70 hover:text-sky-400 focus-ring transition-colors">Fale conosco</a></li>
         </ul>
+        <details class="mt-6 text-sm text-white/65">
+          <summary class="cursor-pointer hover:text-white focus-ring">Canais para assuntos sensíveis</summary>
+          <ul class="mt-4 space-y-3 break-words">
+          <li>• Signal: <a href="https://signal.me/#eu/w0r8avQFXm7zh5rZX3om8lgsGWGZRpzPHFAJ3XMK9PtzuMSBtWlBaYReZ0qtJ7Zm" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white/70 hover:text-sky-400 focus-ring transition-colors">Fale conosco</a></li>
+          <li>• PGP: 1a3a7f45b5824093983140ddc35dd80927b4916f</li>
+          </ul>
+        </details>
 
         <p class="mt-6 text-xs text-white/50">Nota: Conteúdo e treinamentos de natureza educacional. Não há vínculo com empregadores, clientes ou organizações citadas em exemplos.</p>
       </div>
