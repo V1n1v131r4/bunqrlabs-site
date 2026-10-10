@@ -58,7 +58,7 @@
 :root{--bg:#06080b;--panel:#0e1319;--line:#ffffff21;--text:#f4f6f7;--muted:#b4bdc7;--accent:#9bbecd;--max:1240px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;display:block}a,button,summary{touch-action:manipulation}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:6px}::selection{background:#7195a750}p{color:var(--muted);line-height:1.75;margin:0}h1,h2,h3{margin:0;font-weight:600}h2{font-size:clamp(30px,4vw,52px);letter-spacing:-.045em;line-height:1.12}h3{font-size:22px;letter-spacing:-.025em;line-height:1.3}.wrap{width:min(var(--max),calc(100% - 96px));margin:auto}.section{padding:112px 0}.label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}.intro{max-width:650px}.intro h2{margin:20px 0 24px}.intro p{font-size:17px}.rule{border-top:1px solid var(--line)}.text-link{font-size:13px;display:inline-flex;align-items:center;gap:22px;padding:14px 0;border-bottom:1px solid #ffffff45;letter-spacing:.025em}.text-link:hover{color:var(--accent);border-color:var(--accent)}.text-link span{font-size:18px}.button{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border:1px solid #fff;font-size:11px;letter-spacing:.13em;text-transform:uppercase;transition:background .2s,color .2s}.button.primary{background:#f1f4f6;color:#0b1015}.button:hover{background:#d4e3ea;color:#0b1015;border-color:#d4e3ea}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
 .header{position:fixed;inset:0 0 auto;z-index:30;background:#05070be8;border-bottom:1px solid #ffffff14;backdrop-filter:blur(14px)}.header-inner{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;gap:12px;align-items:center}.brand img{width:30px;height:30px;object-fit:contain}.brand-name{font-size:15px;letter-spacing:.025em}.brand-name strong{font-weight:700}.brand-name small{display:block;font-size:9px;letter-spacing:.22em;margin-top:4px;color:#c1c9d0;text-transform:uppercase}.nav{display:flex;align-items:center;gap:27px;font-size:11px;letter-spacing:.06em}.nav a{padding:10px 0;color:#c6cdd3}.nav a:hover{color:#fff}.nav .student{border-left:1px solid var(--line);padding-left:24px;color:#98a5b0}.menu-btn{display:none;background:none;color:#fff;border:1px solid var(--line);padding:10px 14px;font-size:12px}.mobile-nav{padding:8px 24px 24px;background:#080b0f;border-top:1px solid var(--line)}.mobile-nav a{display:block;padding:13px 0;font-size:14px;color:#d1d8de}.mobile-nav[hidden]{display:none}
-.hero{position:relative;min-height:780px;min-height:94svh;display:flex;align-items:center;overflow:hidden;background:#000;padding:160px 0 95px}.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.36}.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,#000d 35%,#0005 74%),linear-gradient(0deg,var(--bg),transparent 28%);pointer-events:none}.hero-content{position:relative;z-index:2}.hero .label{color:#bacad4}.hero h1{font-size:clamp(43px,6.4vw,90px);font-weight:600;letter-spacing:-.055em;line-height:.99;margin:30px 0;max-width:900px}.hero h1 span{display:block}.hero h1 .second{color:#c7d4dc}.hero p{max-width:540px;font-size:17px;color:#bfc8d0}.hero .meta{display:flex;gap:24px;margin-top:62px;font-size:9px;letter-spacing:.18em;color:#91a1ad;flex-wrap:wrap}.hero .meta span{border-left:1px solid #7d99aa70;padding-left:12px}.hero-network{position:absolute;right:-2%;top:13%;width:55%;height:77%;z-index:1;opacity:.4;pointer-events:none}.hero-network .orbit{transform-origin:400px 340px;animation:orbit 90s linear infinite}.hero-network .signal{animation:signal 7s ease-in-out infinite}.hero-network .signal:nth-of-type(2n){animation-delay:-3s}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes signal{0%,100%{opacity:.25}50%{opacity:.9}}
+.hero{position:relative;min-height:780px;min-height:94svh;display:flex;align-items:center;overflow:hidden;background:#000;padding:160px 0 95px}.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,#000d 35%,#0005 74%),linear-gradient(0deg,var(--bg),transparent 28%);pointer-events:none}.hero-content{position:relative;z-index:2}.hero .label{color:#bacad4}.hero h1{font-size:clamp(43px,6.4vw,90px);font-weight:600;letter-spacing:-.055em;line-height:.99;margin:30px 0;max-width:900px}.hero h1 span{display:block}.hero h1 .second{color:#c7d4dc}.hero p{max-width:540px;font-size:17px;color:#bfc8d0}.hero .meta{display:flex;gap:24px;margin-top:62px;font-size:9px;letter-spacing:.18em;color:#91a1ad;flex-wrap:wrap}.hero .meta span{border-left:1px solid #7d99aa70;padding-left:12px}.hero-network{transform:translate3d(var(--network-x,0px),var(--network-y,0px),0);position:absolute;right:-2%;top:13%;width:55%;height:77%;z-index:1;opacity:.4;pointer-events:none}.hero-network .orbit{transform-origin:400px 340px;animation:orbit 90s linear infinite}.hero-network .signal{animation:signal 7s ease-in-out infinite}.hero-network .signal:nth-of-type(2n){animation-delay:-3s}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes signal{0%,100%{opacity:.25}50%{opacity:.9}}
 .verticals{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}.vertical{padding:30px 28px 32px 0}.vertical+.vertical{padding-left:32px;border-left:1px solid var(--line)}.vertical .number{font-size:10px;color:#70818f;letter-spacing:.1em}.vertical h3{font-size:16px;margin:12px 0 10px}.vertical p{font-size:13px}.vertical:hover h3{color:var(--accent)}
 .services-head{display:flex;justify-content:space-between;gap:60px;align-items:flex-end}.services-head .text-link{flex-shrink:0}.service-list{margin-top:58px}.service-row{display:grid;grid-template-columns:60px 1.05fr 1.1fr;gap:26px;padding:36px 0;border-top:1px solid var(--line)}.service-row:last-child{border-bottom:1px solid var(--line)}.service-row .index{color:#7894a4;font-size:12px;padding-top:5px}.service-row h3{max-width:340px;margin:10px 0 0}.service-row p{font-size:15px}.service-row .text-link{margin-top:12px}.service-row .label{font-size:9px}
 .ai{position:relative;background:linear-gradient(125deg,#111a22,#0b1016);border-block:1px solid var(--line);overflow:hidden}.ai:before{content:'';position:absolute;right:0;top:0;width:40%;height:100%;background-image:linear-gradient(#6b8ea20b 1px,transparent 1px),linear-gradient(90deg,#6b8ea20b 1px,transparent 1px);background-size:52px 52px;pointer-events:none}.ai-top{position:relative;display:grid;grid-template-columns:1.2fr 1fr;gap:90px;align-items:center}.ai-note{padding:28px 0 28px 28px;border-left:1px solid #8bafc26b}.ai-note p{font-size:15px}.ai-note p+p{margin-top:16px}.ai-note strong{color:#e4ebef;font-weight:500}.ai-solutions{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:64px;position:relative}.ai-solution{padding-top:25px;border-top:1px solid #93b6c660}.ai-solution .label{font-size:9px}.ai-solution h3{margin:16px 0;font-size:22px}.ai-solution p{font-size:14px}.ai-bottom{margin-top:44px;display:flex;align-items:center;justify-content:space-between;gap:32px}.ai-bottom p{font-size:12px;color:#93a5b3;max-width:620px}
@@ -95,7 +95,6 @@
 </header>
 <main id="main">
 <section id="home" class="hero">
-  <img class="hero-image" src="/hero.png" alt="" fetchpriority="high">
   <svg class="hero-network" viewBox="0 0 800 680" fill="none" aria-hidden="true">
     <g stroke="#7fa7bc" stroke-width=".65"><circle cx="400" cy="340" r="255" opacity=".4"/><circle cx="400" cy="340" r="180" opacity=".25"/><ellipse cx="400" cy="340" rx="325" ry="125" transform="rotate(-30 400 340)" opacity=".4"/><path d="M120 500L260 180L570 140L680 360L520 550L120 500M260 180L520 550M120 500L680 360M570 140L400 340L260 180M400 340L520 550" opacity=".35"/></g>
     <g class="orbit" stroke="#b4d0df" stroke-width="1" opacity=".5"><path d="M400 85A255 255 0 0 1 655 340"/><circle cx="655" cy="340" r="3" fill="#c6e2ee"/></g>
@@ -128,7 +127,7 @@
   <div class="wrap">
     <div class="ai-top"><div class="intro"><div class="label">02 / AI Enablement</div><h2>IA integrada<br>à operação.</h2><p>Desenhamos e implementamos agentes, automações e integrações para equipes de segurança e tecnologia. Do processo que precisa evoluir à solução incorporada ao trabalho diário.</p></div><div class="ai-note"><p>Em cybersecurity, <strong>aplicamos IA ao nosso trabalho.</strong></p><p>Em AI Enablement, <strong>implementamos essa capacidade na sua operação.</strong> Segurança orienta o desenho das permissões, do acesso aos dados e das aprovações.</p></div></div>
     <div class="ai-solutions">
-      <article class="ai-solution"><div class="label">Security operations</div><h3>SOC agêntico</h3><p>Agentes para apoiar triagem, investigação e fluxos de decisão. Correlação de contexto e organização de evidências para apoiar o trabalho dos analistas.</p></article>
+      <article class="ai-solution"><div class="label">Security operations</div><h3>SOC agêntico</h3><p>Agentes para triagem, investigação e atuação em segurança. Além de apoiar decisões, podem executar ações de resposta e auto-remediation em casos definidos, integrados ao fluxo operacional.</p></article>
       <article class="ai-solution"><div class="label">Technology operations</div><h3>Agentes e automação</h3><p>Integração de sistemas e processos de TI, do atendimento interno ao onboarding e offboarding. Procedimentos executados dentro de permissões e aprovações definidas.</p></article>
       <article class="ai-solution"><div class="label">Corporate knowledge</div><h3>Conhecimento corporativo</h3><p>Assistentes para consultar documentação técnica, políticas e procedimentos, com indicação de fontes e respeito aos acessos de cada usuário.</p></article>
     </div>
@@ -137,8 +136,8 @@
 </section>
 <section class="case" id="experience">
   <div class="wrap case-grid">
-    <div><div class="label">Experiência aplicada</div><h2>SOC agêntico.<br>Uma entrega concreta.</h2><p>Implementação de um agente de triagem e de um fluxo de decisão para alertas de primeiro nível (L1).</p><p style="margin-top:18px">Uma aplicação de IA a uma etapa definida da operação de segurança, com análise e encaminhamento incorporados ao fluxo de trabalho.</p><div class="case-tags"><span>Triagem L1</span><span>Fluxo de decisão</span></div></div>
-    <div class="flow"><div class="flow-header"><span>APLICAÇÃO / SOC</span><span>AGENTIC WORKFLOW</span></div><ol class="flow-list"><li><span class="flow-num">01</span><div><h3>Alerta de segurança</h3><p>Entrada para o processo de triagem de primeiro nível.</p></div></li><li><span class="flow-num">02</span><div><h3>Agente de triagem</h3><p>Análise apoiada por IA dentro do fluxo definido.</p></div></li><li><span class="flow-num">03</span><div><h3>Decisão e encaminhamento</h3><p>Próximos passos organizados para a operação de segurança.</p></div></li></ol><p class="flow-caption">Representação simplificada da aplicação. Detalhes do ambiente preservados.</p></div>
+    <div><div class="label">Experiência aplicada</div><h2>SOC agêntico.<br>Uma entrega concreta.</h2><p>Implementação de agentes de IA para triagem, análise e atuação em operações de segurança, conectando decisões a ações de resposta.</p><p style="margin-top:18px">O projeto inclui self-healing e auto-remediation para casos definidos: ações automatizadas de correção e recuperação dentro dos fluxos estabelecidos. A atuação combina automação e encaminhamento à equipe conforme o cenário.</p><div class="case-tags"><span>Triagem e análise</span><span>Atuação</span><span>Self-healing</span><span>Auto-remediation</span></div></div>
+    <div class="flow"><div class="flow-header"><span>APLICAÇÃO / SOC</span><span>AGENTIC WORKFLOW</span></div><ol class="flow-list"><li><span class="flow-num">01</span><div><h3>Triagem e análise</h3><p>Avaliação de alertas e informações para orientar o tratamento do cenário.</p></div></li><li><span class="flow-num">02</span><div><h3>Decisão e atuação</h3><p>Definição dos próximos passos e execução de ações de resposta nos fluxos estabelecidos.</p></div></li><li><span class="flow-num">03</span><div><h3>Correção e recuperação</h3><p>Self-healing e auto-remediation nos casos previstos; encaminhamento à equipe quando necessário.</p></div></li></ol><p class="flow-caption">Representação simplificada da aplicação. Detalhes do ambiente preservados.</p></div>
   </div>
 </section>
 <section id="training" class="section academy rule">
@@ -176,6 +175,41 @@ btn.addEventListener('click',()=>{panel.hidden=!panel.hidden;btn.setAttribute('a
 panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){closeMenu();btn.focus()}});
 window.addEventListener('resize',()=>{if(window.innerWidth>800)closeMenu()});
+
+// Subtle pointer parallax. Touch and reduced-motion users keep a static offset.
+const hero=document.getElementById('home');
+const network=hero.querySelector('.hero-network');
+const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)');
+let networkX=0,networkY=0,targetX=0,targetY=0,networkFrame=0;
+function animateNetwork(){
+  networkX+=(targetX-networkX)*0.09;
+  networkY+=(targetY-networkY)*0.09;
+  network.style.setProperty('--network-x',networkX.toFixed(2)+'px');
+  network.style.setProperty('--network-y',networkY.toFixed(2)+'px');
+  if(Math.abs(targetX-networkX)+Math.abs(targetY-networkY)>0.05){
+    networkFrame=requestAnimationFrame(animateNetwork);
+  }else{networkFrame=0;}
+}
+function scheduleNetwork(){if(!networkFrame)networkFrame=requestAnimationFrame(animateNetwork);}
+function resetNetwork(){
+  targetX=0;targetY=0;
+  if(motionPreference.matches||!finePointer.matches){
+    cancelAnimationFrame(networkFrame);networkFrame=0;networkX=0;networkY=0;
+    network.style.setProperty('--network-x','0px');network.style.setProperty('--network-y','0px');
+  }else{scheduleNetwork();}
+}
+hero.addEventListener('pointermove',event=>{
+  if(motionPreference.matches||!finePointer.matches||event.pointerType!=='mouse')return;
+  const bounds=hero.getBoundingClientRect();
+  targetX=((event.clientX-bounds.left)/bounds.width-0.5)*36;
+  targetY=((event.clientY-bounds.top)/bounds.height-0.5)*24;
+  scheduleNetwork();
+},{passive:true});
+hero.addEventListener('pointerleave',resetNetwork);
+window.addEventListener('blur',resetNetwork);
+motionPreference.addEventListener('change',resetNetwork);
+finePointer.addEventListener('change',resetNetwork);
 </script>
 </body>
 </html>
