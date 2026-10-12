@@ -75,6 +75,12 @@
 .icon{width:18px;height:18px;flex-shrink:0;display:inline-block;vertical-align:middle;color:var(--accent)}
 .nav .icon,.mobile-nav .icon,.newsletter .icon,details .icon{width:13px;height:13px;margin-left:5px}
 .publication>.icon{width:22px;height:22px}
+
+/* Canvas globe: existing orbital SVG remains available as a loading/error fallback. */
+.hero-globe{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;transition:opacity .7s ease}
+.hero.globe-ready .hero-globe{opacity:1}
+.hero.globe-ready .hero-network{visibility:hidden}
+@media(prefers-reduced-motion:reduce){.hero-globe{transition:none}}
 </style>
 </head>
 
@@ -95,6 +101,7 @@
 </header>
 <main id="main">
 <section id="home" class="hero">
+  <canvas class="hero-globe" aria-hidden="true"></canvas>
   <svg class="hero-network" viewBox="0 0 800 680" fill="none" aria-hidden="true">
     <g stroke="#7fa7bc" stroke-width=".65"><circle cx="400" cy="340" r="255" opacity=".4"/><circle cx="400" cy="340" r="180" opacity=".25"/><ellipse cx="400" cy="340" rx="325" ry="125" transform="rotate(-30 400 340)" opacity=".4"/><path d="M120 500L260 180L570 140L680 360L520 550L120 500M260 180L520 550M120 500L680 360M570 140L400 340L260 180M400 340L520 550" opacity=".35"/></g>
     <g class="orbit" stroke="#b4d0df" stroke-width="1" opacity=".5"><path d="M400 85A255 255 0 0 1 655 340"/><circle cx="655" cy="340" r="3" fill="#c6e2ee"/></g>
@@ -210,6 +217,47 @@ hero.addEventListener('pointerleave',resetNetwork);
 window.addEventListener('blur',resetNetwork);
 motionPreference.addEventListener('change',resetNetwork);
 finePointer.addEventListener('change',resetNetwork);
+</script>
+<script type="module">
+
+try {
+const [d3,topology,atlas]=await Promise.all([
+ import('https://esm.sh/d3-geo@3.1.1'),
+ import('https://esm.sh/topojson-client@3.1.0'),
+ import('https://esm.sh/@d3-maps/atlas@1.0.0/world/countries/countries-110m')
+]);
+const feature=topology.feature,world=atlas.default;
+const root=document.getElementById('home');
+const hero=root;const canvas=root.querySelector('.hero-globe');const ctx=canvas.getContext('2d');
+const countries=feature(world,world.objects.features);const land={type:'FeatureCollection',features:countries.features.filter(f=>f.properties.id!=='ATA')};
+const graticule=d3.geoGraticule10();const projection=d3.geoOrthographic().clipAngle(90).precision(.5);const path=d3.geoPath(projection,ctx);
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+let width=0,height=0,angle=0,last=0,mx=0,my=0,tx=0,ty=0,raf=0,visible=true;
+const dots=[];for(let lat=-56;lat<=80;lat+=2){const step=2/Math.max(.25,Math.cos(lat*Math.PI/180));for(let lon=-180;lon<180;lon+=step){if(d3.geoContains(land,[lon,lat]))dots.push([lon,lat]);}}
+function resize(){const b=hero.getBoundingClientRect();width=b.width;height=b.height;const ratio=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);ctx.setTransform(ratio,0,0,ratio,0,0);draw();hero.classList.add('globe-ready');}
+function draw(){
+ ctx.clearRect(0,0,width,height);const mobile=width<620;const r=mobile?height*.39:height*.64;const cx=width*(mobile?.94:.89)+mx*18,cy=height*(mobile?.68:.69)+my*12;
+ projection.translate([cx,cy]).scale(r).rotate([22+angle+mx*5,-12+my*4,0]);
+ const halo=ctx.createRadialGradient(cx,cy,r*.89,cx,cy,r*1.12);halo.addColorStop(0,'rgba(60,116,158,0)');halo.addColorStop(.5,'rgba(62,120,160,.14)');halo.addColorStop(1,'rgba(25,63,98,0)');ctx.fillStyle=halo;ctx.beginPath();ctx.arc(cx,cy,r*1.13,0,Math.PI*2);ctx.fill();
+ const ocean=ctx.createRadialGradient(cx-r*.38,cy-r*.5,r*.04,cx+r*.38,cy+r*.2,r*1.25);ocean.addColorStop(0,'#17354c');ocean.addColorStop(.4,'#0b1b2a');ocean.addColorStop(1,'#010508');ctx.beginPath();path({type:'Sphere'});ctx.fillStyle=ocean;ctx.fill();
+ ctx.beginPath();path(land);ctx.fillStyle='rgba(65,94,114,.22)';ctx.fill();ctx.strokeStyle='rgba(151,190,215,.35)';ctx.lineWidth=.5;ctx.stroke();
+ ctx.beginPath();path(graticule);ctx.strokeStyle='rgba(110,159,193,.13)';ctx.lineWidth=.55;ctx.stroke();
+ const center=d3.geoRotation(projection.rotate()).invert([0,0]);for(const point of dots){if(d3.geoDistance(center,point)>Math.PI/2-.02)continue;const xy=projection(point);ctx.fillStyle='rgba(133,173,198,.4)';ctx.fillRect(xy[0],xy[1],.9,.9);}
+ ctx.beginPath();path({type:'Sphere'});ctx.strokeStyle='rgba(151,205,237,.64)';ctx.lineWidth=1;ctx.stroke();
+ // Orbital network, deliberately separate from geographic geometry.
+ ctx.save();ctx.translate(cx,cy);const turns=[-.55,.32,-.1];turns.forEach((tilt,i)=>{ctx.save();ctx.rotate(tilt+mx*.04);ctx.beginPath();ctx.ellipse(0,0,r*(1.25+i*.09),r*(.32+i*.12),0,0,Math.PI*2);ctx.strokeStyle='rgba(122,172,204,.27)';ctx.lineWidth=.7;ctx.stroke();for(let k=0;k<3;k++){const t=angle*.02+k*2.1+i;const x=Math.cos(t)*r*(1.25+i*.09),y=Math.sin(t)*r*(.32+i*.12);ctx.beginPath();ctx.arc(x,y,2.3,0,Math.PI*2);ctx.fillStyle='rgba(161,208,233,.7)';ctx.fill();}ctx.restore();});ctx.restore();
+ const shade=ctx.createLinearGradient(0,0,width,0);shade.addColorStop(0,'rgba(0,0,0,.96)');shade.addColorStop(.38,'rgba(0,0,0,.84)');shade.addColorStop(.68,'rgba(0,0,0,.17)');shade.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=shade;ctx.fillRect(0,0,width,height);
+}
+function tick(time){raf=0;if(!visible)return;const dt=Math.min(50,time-(last||time));last=time;if(!reduced.matches){angle+=dt*.0014;mx+=(tx-mx)*.06;my+=(ty-my)*.06;}draw();if(!reduced.matches)raf=requestAnimationFrame(tick);}
+function start(){last=0;if(!raf&&visible)raf=requestAnimationFrame(tick);}
+hero.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||reduced.matches)return;const b=hero.getBoundingClientRect();tx=(e.clientX-b.left)/b.width-.5;ty=(e.clientY-b.top)/b.height-.5;},{passive:true});hero.addEventListener('pointerleave',()=>{tx=0;ty=0;});
+new ResizeObserver(resize).observe(hero);new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)start();else{cancelAnimationFrame(raf);raf=0;}}).observe(hero);
+reduced.addEventListener('change',()=>{cancelAnimationFrame(raf);raf=0;mx=my=tx=ty=0;draw();start();});resize();start();
+
+} catch(error) {
+ document.getElementById('home').classList.remove('globe-ready');
+ console.warn('Globe unavailable; orbital fallback retained.');
+}
 </script>
 </body>
 </html>
