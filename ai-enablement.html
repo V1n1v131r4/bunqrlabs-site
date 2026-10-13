@@ -82,8 +82,15 @@ function scheduleNetwork(){if(!networkFrame)networkFrame=requestAnimationFrame(a
 function resetNetwork(){targetX=0;targetY=0;if(motionPreference.matches||!finePointer.matches){cancelAnimationFrame(networkFrame);networkFrame=0;networkX=0;networkY=0;network.style.setProperty('--network-x','0px');network.style.setProperty('--network-y','0px')}else{scheduleNetwork()}}
 hero.addEventListener('pointermove',event=>{if(motionPreference.matches||!finePointer.matches||event.pointerType!=='mouse')return;const bounds=hero.getBoundingClientRect();targetX=((event.clientX-bounds.left)/bounds.width-0.5)*36;targetY=((event.clientY-bounds.top)/bounds.height-0.5)*24;scheduleNetwork()},{passive:true});
 hero.addEventListener('pointerleave',resetNetwork);window.addEventListener('blur',resetNetwork);motionPreference.addEventListener('change',resetNetwork);finePointer.addEventListener('change',resetNetwork);
-// Contact clicks are micro-events, NOT verified leads or Google Ads conversions.
-document.querySelectorAll('[data-contact]').forEach(a=>a.addEventListener('click',()=>{if(typeof gtag==='function')gtag('event','contact_click',{contact_channel:a.dataset.contact,page_type:'ai_enablement_landing',transport_type:'beacon'})}));
+// Contact clicks are engagement signals; a WhatsApp click is not a confirmed lead.
+// Google Ads conversion fires only when the visitor clicks the WhatsApp link.
+document.querySelectorAll('[data-contact]').forEach(a=>a.addEventListener('click',()=>{
+  if(typeof gtag!=='function')return;
+  gtag('event','contact_click',{contact_channel:a.dataset.contact,page_type:'ai_enablement_landing',transport_type:'beacon'});
+  if(a.dataset.contact==='whatsapp'){
+    gtag('event','conversion',{'send_to':'AW-18009124403/PyjhCLKh4JsdELPctYtD','transport_type':'beacon'});
+  }
+}));
 </script><script type="module">
 
 try {
