@@ -76,6 +76,8 @@ footer{background:#030507;border-color:var(--line);color:#99a7b2}
 footer .text-sm{font-size:11px}
 @media(max-width:800px){header>.mx-auto{min-height:70px}main>section:not(:first-child){padding-top:64px;padding-bottom:64px}#service-hero>.mx-auto{padding-top:60px;padding-bottom:72px}#service-hero p{font-size:15px}aside.card{border-left:0;border-top:1px solid var(--line);padding-left:0}#capabilities .grid{column-gap:28px}h1{font-size:clamp(38px,8vw,64px)!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn,.navlink{transition:none}}
+.header{position:fixed;inset:0 0 auto;z-index:30;background:#05070be8;border-bottom:1px solid #ffffff14;backdrop-filter:blur(14px)}.header-inner{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;gap:12px;align-items:center}.brand img{width:30px;height:30px;object-fit:contain}.brand-name{font-size:15px;letter-spacing:.025em}.brand-name strong{font-weight:700}.brand-name small{display:block;font-size:9px;letter-spacing:.22em;margin-top:4px;color:#c1c9d0;text-transform:uppercase}.nav{display:flex;align-items:center;gap:27px;font-size:11px;letter-spacing:.06em}.nav a{padding:10px 0;color:#c6cdd3}.nav a:hover{color:#fff}.nav .student{border-left:1px solid var(--line);padding-left:24px;color:#98a5b0}.menu-btn{display:none;background:none;color:#fff;border:1px solid var(--line);padding:10px 14px;font-size:12px}.mobile-nav{padding:8px 24px 24px;background:#080b0f;border-top:1px solid var(--line)}.mobile-nav a{display:block;padding:13px 0;font-size:14px;color:#d1d8de}.mobile-nav[hidden]{display:none}
+.header .wrap{width:min(1240px,calc(100% - 96px));margin:auto}.header .icon{width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:5px;flex-shrink:0}.header nav{font-size:11px;letter-spacing:.06em}.header .brand-name strong{font-weight:700}.header .brand-name{line-height:normal}main{padding-top:82px}.header a:focus-visible,.header button:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(max-width:1100px){.header .wrap{width:calc(100% - 64px)}.header .nav{gap:16px;font-size:10px}}@media(max-width:800px){.header .wrap{width:calc(100% - 40px)}.header-inner{height:70px}.header .nav{display:none}.menu-btn{display:block}.brand-name{font-size:14px}.brand-name small{font-size:8px}main{padding-top:70px}}
 </style>
 
   <script type="application/ld+json">
@@ -97,37 +99,18 @@ footer .text-sm{font-size:11px}
 
 <body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-white/20">
 
-<header class="sticky top-0 z-40 border-b border-neutral-800/80 glass">
-  <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
-    <a href="../index.html" class="flex items-center gap-3 group focus-ring">
-      <img src="../logo.png" alt="Logo BunQr Intelligence" class="w-8 h-8 object-contain opacity-90 group-hover:opacity-100">
-      <span class="text-lg sm:text-xl font-semibold tracking-tight">BunQr Intelligence</span>
-    </a>
-
-    <nav class="hidden md:flex items-center gap-8 text-sm">
-      <a href="../index.html#services" class="navlink text-white hover:text-white focus-ring">Serviços</a>
-      <a href="../index.html#training" class="navlink text-white/70 hover:text-white focus-ring">Treinamentos</a>
-      <a href="../index.html#research" class="navlink text-white/70 hover:text-white focus-ring">Research</a>
-      <a href="../about.html" class="navlink text-white/70 hover:text-white focus-ring">Sobre</a>
-      <a href="../index.html#contact" class="navlink text-white/70 hover:text-white focus-ring">Contato</a>
-      <a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica" class="btn rounded-xl px-3.5 py-2 bg-white text-neutral-900 font-semibold hover:bg-white/90 focus-ring" target="_blank" rel="noopener">Alunos</a>
+<header class="header">
+  <div class="wrap header-inner">
+    <a href="../index.html" class="brand" aria-label="BunQr Intelligence — início"><img src="/logo.png" alt="" width="30" height="30"><span class="brand-name"><strong>BunQr</strong> Intelligence<small>Cybersecurity powered by AI</small></span></a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="../index.html#services">Cybersecurity &amp; Intelligence</a><a href="../index.html#ai-enablement">AI Enablement</a><a href="../index.html#training">Academy</a><a href="../index.html#about">Sobre</a><a href="../index.html#contact">Contato</a>
+      <a class="student" href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica">Alunos <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
     </nav>
-
-    <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-neutral-800/80 px-3 py-2 text-sm text-white/80 hover:text-white hover:border-neutral-700 focus-ring" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span class="mr-2">Menu</span>
-      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
   </div>
-
-  <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800/80 glass">
-    <div class="mx-auto max-w-7xl px-6 py-4 grid gap-2 text-sm">
-      <a href="../index.html#services" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Serviços</a>
-      <a href="../index.html#training" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Treinamentos</a>
-      <a href="../index.html#research" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Research</a>
-      <a href="../about.html" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Sobre</a>
-      <a href="../index.html#contact" class="rounded-xl px-3 py-2 text-white/80 hover:text-white hover:bg-white/5 focus-ring">Contato</a>
-    </div>
-  </div>
+  <nav class="mobile-nav" id="mobileMenu" aria-label="Navegação móvel" hidden>
+    <a href="../index.html#services">Cybersecurity &amp; Intelligence</a><a href="../index.html#ai-enablement">AI Enablement</a><a href="../index.html#training">Academy</a><a href="../index.html#research">Publicações</a><a href="../index.html#about">Sobre</a><a href="../index.html#contact">Contato</a><a href="https://hotmart.com/pt-br/club/curso-inteligencia-cibernetica-na-pratica">Área de alunos <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+  </nav>
 </header>
 
 <main>
@@ -348,22 +331,13 @@ footer .text-sm{font-size:11px}
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const btn = document.getElementById('menuBtn');
-  const panel = document.getElementById('mobileMenu');
-  btn?.addEventListener('click', () => {
-    const isOpen = !panel.classList.contains('hidden');
-    panel.classList.toggle('hidden');
-    btn.setAttribute('aria-expanded', String(!isOpen));
-  });
-  panel?.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      panel.classList.add('hidden');
-      btn?.setAttribute('aria-expanded', 'false');
-    });
-  });
-</script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();
+const btn=document.getElementById('menuBtn'),panel=document.getElementById('mobileMenu');
+function closeMenu(){panel.hidden=true;btn.setAttribute('aria-expanded','false')}
+btn.addEventListener('click',()=>{panel.hidden=!panel.hidden;btn.setAttribute('aria-expanded',String(!panel.hidden))});
+panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){closeMenu();btn.focus()}});
+window.addEventListener('resize',()=>{if(window.innerWidth>800)closeMenu()});</script>
 <script>
 
 (()=>{
